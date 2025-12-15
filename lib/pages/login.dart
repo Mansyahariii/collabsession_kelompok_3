@@ -71,6 +71,15 @@ class _MyLoginState extends State<MyLogin> {
     return Scaffold(
       body: Stack(
         children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/kelompok.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+
           Center(
             child: SingleChildScrollView(
               child: Container(
