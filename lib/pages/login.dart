@@ -97,6 +97,7 @@ class _MyLoginState extends State<MyLogin> {
                   ],
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       "Welcome Back",
