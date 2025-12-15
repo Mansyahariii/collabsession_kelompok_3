@@ -39,12 +39,18 @@ class _MyLoginState extends State<MyLogin> {
       if (!mounted) return;
 
       showDialog(
-        context: context, 
+        context: context,
         builder: (_) => AlertDialog(
           title: const Text('Login Success'),
           content: Text('UID: ${user?.uid}\nEmail: ${user?.email}'),
-          actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK'))],
-        ));
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      );
     } on FirebaseAuthException catch (e) {
       setState(() {
         _error = e.message;
@@ -64,8 +70,20 @@ class _MyLoginState extends State<MyLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Login page")),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: const Color(0xFFF5F5F5),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black54,
+              blurRadius: 30,
+              offset: const Offset(0, 10),
+            ),
+          ],
+        ),
         child: Column(
           children: [
             TextField(
@@ -81,9 +99,14 @@ class _MyLoginState extends State<MyLogin> {
             const SizedBox(height: 16),
             if (_error != null) ...[
               Text(_error!, style: const TextStyle(color: Colors.red)),
-              const SizedBox(height: 8)
+              const SizedBox(height: 8),
             ],
-            ElevatedButton(onPressed: _isLoading ? null : _login, child: _isLoading ? const CircularProgressIndicator() : const Text('Login'))
+            ElevatedButton(
+              onPressed: _isLoading ? null : _login,
+              child: _isLoading
+                  ? const CircularProgressIndicator()
+                  : const Text('Login'),
+            ),
           ],
         ),
       ),
