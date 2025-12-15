@@ -161,6 +161,16 @@ class _MyLoginState extends State<MyLogin> {
                       ),
                     ),
                     const SizedBox(height: 16),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(color: Color(0xFF424242)),
+                        ),
+                      ),
+                    ),
                     if (_error != null) ...[
                       Text(_error!, style: const TextStyle(color: Colors.red)),
                       const SizedBox(height: 8),
