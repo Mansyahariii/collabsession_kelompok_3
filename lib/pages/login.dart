@@ -98,6 +98,14 @@ class _MyLoginState extends State<MyLogin> {
                 ),
                 child: Column(
                   children: [
+                    const Text(
+                      "Welcome Back",
+                      style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF212121),
+                      ),
+                    ),
                     TextField(
                       controller: emailCtrl,
                       decoration: const InputDecoration(labelText: 'Email'),
