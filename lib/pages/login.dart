@@ -126,8 +126,7 @@ class _MyLoginState extends State<MyLogin> {
 
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide:
-                              BorderSide.none, 
+                          borderSide: BorderSide.none,
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
@@ -140,8 +139,26 @@ class _MyLoginState extends State<MyLogin> {
                     const SizedBox(height: 8),
                     TextField(
                       controller: passCtrl,
-                      decoration: const InputDecoration(labelText: 'Password'),
                       obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        prefixIcon: const Icon(Icons.lock_outline),
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
+
+                        filled: true,
+                        fillColor: const Color(0xFFE0E0E0),
+
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide.none,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: Color(0xFF424242),
+                          ),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 16),
                     if (_error != null) ...[
