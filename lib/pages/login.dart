@@ -115,7 +115,27 @@ class _MyLoginState extends State<MyLogin> {
                     const SizedBox(height: 24),
                     TextField(
                       controller: emailCtrl,
-                      decoration: const InputDecoration(labelText: 'Email'),
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        prefixIcon: const Icon(Icons.email_outlined),
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
+
+                        filled: true,
+                        fillColor: const Color(0xFFE0E0E0),
+
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide:
+                              BorderSide.none, 
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: const BorderSide(
+                            color: Color(0xFF424242),
+                          ),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 8),
                     TextField(
