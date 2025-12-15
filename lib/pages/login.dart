@@ -180,6 +180,13 @@ class _MyLoginState extends State<MyLogin> {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : _login,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF424242),
+                          foregroundColor: Colors.white70,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
                         child: _isLoading
                             ? const CircularProgressIndicator()
                             : const Text('Login'),
