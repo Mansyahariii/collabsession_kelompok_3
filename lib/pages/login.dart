@@ -106,6 +106,12 @@ class _MyLoginState extends State<MyLogin> {
                         color: Color(0xFF212121),
                       ),
                     ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      "Login to your account",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    const SizedBox(height: 24),
                     TextField(
                       controller: emailCtrl,
                       decoration: const InputDecoration(labelText: 'Email'),
