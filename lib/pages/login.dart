@@ -136,7 +136,7 @@ class _MyLoginState extends State<MyLogin> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 16),
                     TextField(
                       controller: passCtrl,
                       obscureText: true,
@@ -172,8 +172,8 @@ class _MyLoginState extends State<MyLogin> {
                       ),
                     ),
                     if (_error != null) ...[
-                      Text(_error!, style: const TextStyle(color: Colors.red)),
-                      const SizedBox(height: 8),
+                      Center(child: Text(_error!, style: const TextStyle(color: Colors.red))),
+                      const SizedBox(height: 16),
                     ],
                     SizedBox(
                       width: double.infinity,
@@ -188,8 +188,16 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                         ),
                         child: _isLoading
-                            ? const CircularProgressIndicator()
-                            : const Text('Login'),
+                            ? const CircularProgressIndicator(
+                                color: Colors.white,
+                              )
+                            : const Text(
+                                "Login",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                       ),
                     ),
                   ],
