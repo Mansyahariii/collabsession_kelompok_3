@@ -175,11 +175,15 @@ class _MyLoginState extends State<MyLogin> {
                       Text(_error!, style: const TextStyle(color: Colors.red)),
                       const SizedBox(height: 8),
                     ],
-                    ElevatedButton(
-                      onPressed: _isLoading ? null : _login,
-                      child: _isLoading
-                          ? const CircularProgressIndicator()
-                          : const Text('Login'),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: _isLoading ? null : _login,
+                        child: _isLoading
+                            ? const CircularProgressIndicator()
+                            : const Text('Login'),
+                      ),
                     ),
                   ],
                 ),
