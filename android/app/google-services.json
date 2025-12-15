@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "791442713148",
+    "project_id": "project-uas-appmobile",
+    "storage_bucket": "project-uas-appmobile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791442713148:android:938703ee306da47cdeb139",
+        "android_client_info": {
+          "package_name": "com.example.collabsession"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdt2KxPYITmDSZ8rAWPHbsvg8FdL-4wbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791442713148:android:6d1558403db54303deb139",
+        "android_client_info": {
+          "package_name": "com.kelompok3.appmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdt2KxPYITmDSZ8rAWPHbsvg8FdL-4wbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
