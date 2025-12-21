@@ -10,26 +10,21 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
-/// INIT LOCAL NOTIFICATION (ANDROID)
 Future<void> initLocalNotification() async {
   const AndroidInitializationSettings androidInit =
       AndroidInitializationSettings('@mipmap/ic_launcher');
 
-  const InitializationSettings initSettings =
-      InitializationSettings(android: androidInit);
+  const InitializationSettings initSettings = InitializationSettings(
+    android: androidInit,
+  );
 
   await flutterLocalNotificationsPlugin.initialize(initSettings);
-
-  // ❗ TIDAK ADA requestPermission() DI SINI
-  // Permission notif Android 13+ ditangani FirebaseMessaging
 }
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await Supabase.initialize(
     url: 'https://qwdksuawlhdurxbtikli.supabase.co',
@@ -37,19 +32,15 @@ void main() async {
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF3ZGtzdWF3bGhkdXJ4YnRpa2xpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYyOTY5NDgsImV4cCI6MjA4MTg3Mjk0OH0.UHTzyl3mk5jpJrEbnqSO1pSzfFtnHzwU8Ru3hUtIAAY',
   );
 
-  // 🔒 ANDROID ONLY
   if (!kIsWeb) {
-    // INIT LOCAL NOTIF
     await initLocalNotification();
 
-    // REQUEST NOTIFICATION PERMISSION (ANDROID 13+)
     await FirebaseMessaging.instance.requestPermission(
       alert: true,
       badge: true,
       sound: true,
     );
 
-    // FOREGROUND NOTIFICATION
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       final notif = message.notification;
       if (notif != null) {
