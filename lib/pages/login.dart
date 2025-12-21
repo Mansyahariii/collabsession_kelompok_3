@@ -1,5 +1,9 @@
+import 'package:collabsession/pages/admin/admin_dashboard.dart';
+import 'package:collabsession/pages/user/user_dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
@@ -13,7 +17,6 @@ class _MyLoginState extends State<MyLogin> {
   final passCtrl = TextEditingController();
 
   bool _isLoading = false;
-  String? _error;
 
   @override
   void dispose() {
@@ -23,47 +26,88 @@ class _MyLoginState extends State<MyLogin> {
   }
 
   Future<void> _login() async {
-    setState(() {
-      _isLoading = true;
-      _error = null;
-    });
+    setState(() => _isLoading = true);
 
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailCtrl.text.trim(),
-        password: passCtrl.text,
+        password: passCtrl.text.trim(),
       );
 
       final user = credential.user;
+      if (user == null) {
+        throw Exception('Login gagal');
+      }
+
+      final uid = user.uid;
+      final supabase = Supabase.instance.client;
+
+      final profile = await supabase
+          .from('profiles')
+          .select()
+          .eq('firebase_uid', uid)
+          .maybeSingle();
+
+      if (profile == null) {
+        await supabase.from('profiles').insert({
+          'firebase_uid': uid,
+          'name': user.email ?? 'Mahasiswa',
+          'role': 'user',
+        });
+      }
+
+      final fcmToken = await FirebaseMessaging.instance.getToken();
+      if (fcmToken != null) {
+        await supabase
+            .from('profiles')
+            .update({'fcm_token': fcmToken})
+            .eq('firebase_uid', uid);
+      }
+
+      final updatedProfile = await supabase
+          .from('profiles')
+          .select()
+          .eq('firebase_uid', uid)
+          .single();
+
+      final role = updatedProfile['role'];
 
       if (!mounted) return;
 
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: const Text('Login Success'),
-          content: Text('UID: ${user?.uid}\nEmail: ${user?.email}'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
+      if (role == 'admin') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const AdminDashboard()),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const UserDashboard()),
+        );
+      }
     } on FirebaseAuthException catch (e) {
-      setState(() {
-        _error = e.message;
-      });
+      _showError(e.message ?? 'Login gagal');
     } catch (e) {
-      setState(() {
-        _error = e.toString();
-      });
+      _showError(e.toString());
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) setState(() => _isLoading = false);
     }
+  }
+
+  void _showError(String message) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Error'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -172,10 +216,6 @@ class _MyLoginState extends State<MyLogin> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    if (_error != null) ...[
-                      Center(child: Text(_error!, style: const TextStyle(color: Colors.red))),
-                      const SizedBox(height: 16),
-                    ],
                     SizedBox(
                       width: double.infinity,
                       height: 50,
