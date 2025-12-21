@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDt14yKRuSaopv2MPI6yzoIkZwXFuCQRwk',
-    appId: '1:791442713148:web:1ebf2a48e055fea0deb139',
-    messagingSenderId: '791442713148',
-    projectId: 'project-uas-appmobile',
-    authDomain: 'project-uas-appmobile.firebaseapp.com',
-    storageBucket: 'project-uas-appmobile.firebasestorage.app',
-    measurementId: 'G-TH2ZJ081CD',
+    apiKey: "AIzaSyDDOXbJPRXV4HJvP6Yi80b65F6lVUS6YIY",
+    authDomain: "manajemen-kegiatan.firebaseapp.com",
+    projectId: "manajemen-kegiatan",
+    storageBucket: "manajemen-kegiatan.firebasestorage.app",
+    messagingSenderId: "851657076418",
+    appId: "1:851657076418:web:98089355fa63d6e63b555b",
+    measurementId: "G-0K4S8S4FNT"
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDdt2KxPYITmDSZ8rAWPHbsvg8FdL-4wbo',
-    appId: '1:791442713148:android:938703ee306da47cdeb139',
-    messagingSenderId: '791442713148',
-    projectId: 'project-uas-appmobile',
-    storageBucket: 'project-uas-appmobile.firebasestorage.app',
+    apiKey: 'AIzaSyAoduwrrXUW67dlH3oZ9fPB9smPC8c3vn8',
+    appId: '1:851657076418:android:6e7e765191833b563b555b',
+    messagingSenderId: '851657076418',
+    projectId: 'manajemen-kegiatan',
+    storageBucket: 'manajemen-kegiatan.firebasestorage.app',
   );
 }
