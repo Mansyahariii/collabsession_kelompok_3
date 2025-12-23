@@ -26,7 +26,7 @@ class Splashscreen3 extends StatelessWidget {
               const Text(
                 'Get reminders and stay updated',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
