@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 
-class Splashscreen1 extends StatelessWidget {
-  const Splashscreen1({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    // buat scaffold untuk splash screen //
+    return Scaffold(
+    backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          )
+        )
+      )
+    );
   }
 }
