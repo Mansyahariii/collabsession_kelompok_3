@@ -1,5 +1,5 @@
 // import 'package:card/pages/latihan_card.dart';
-import 'package:collabsession/pages/splashscreen2.dart';
+import 'package:collabsession/pages/splashscreen1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "card UI",
       theme: ThemeData(useMaterial3: true),
-      home: SplashScreen2(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

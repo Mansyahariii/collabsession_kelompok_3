@@ -24,12 +24,12 @@ class SplashScreen2 extends StatelessWidget {
                       child: Image.asset(
                         "assets/images/smart-people.png",
                         fit: BoxFit.cover,
-                        alignment: Alignment(0, 0),
                       ),
                     ),
                   ),
                 ),
               ),
+              const SizedBox(height: 5),
               const Text(
                 'Join your favorite \ncampus activities',
                 style: TextStyle(
