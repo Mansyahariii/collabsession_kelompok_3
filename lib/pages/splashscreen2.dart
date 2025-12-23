@@ -1,4 +1,5 @@
 import 'package:collabsession/pages/splashscreen3.dart';
+import 'package:collabsession/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen2 extends StatelessWidget {
@@ -51,7 +52,12 @@ class SplashScreen2 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyLogin()),
+                      );
+                    },
                     child: const Text(
                       'Skip',
                       style: TextStyle(

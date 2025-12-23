@@ -1,4 +1,5 @@
 import 'package:collabsession/pages/splashscreen4.dart';
+import 'package:collabsession/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class Splashscreen3 extends StatelessWidget {
@@ -43,7 +44,11 @@ class Splashscreen3 extends StatelessWidget {
                   SizedBox(width: 4),
                   Icon(Icons.circle, size: 6, color: Colors.grey),
                   SizedBox(width: 4),
-                  Icon(Icons.circle, size: 6, color: Color.fromARGB(255, 12, 0, 0)),
+                  Icon(
+                    Icons.circle,
+                    size: 6,
+                    color: Color.fromARGB(255, 12, 0, 0),
+                  ),
                   SizedBox(width: 4),
                   Icon(Icons.circle, size: 6, color: Colors.grey),
                 ],
@@ -55,7 +60,10 @@ class Splashscreen3 extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      // Aksi Skip
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyLogin()),
+                      );
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),
@@ -71,10 +79,14 @@ class Splashscreen3 extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => Splashscreen4())
-                      );},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Splashscreen4(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(24),

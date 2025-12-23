@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:collabsession/pages/login.dart';
 
 class Splashscreen4 extends StatelessWidget {
   const Splashscreen4({super.key});
@@ -14,15 +15,15 @@ class Splashscreen4 extends StatelessWidget {
             children: [
               SizedBox(height: 50),
               SizedBox(
-                  width: 500,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/digital-nomad-working-near-beach.png',
-                      width: 325,
-                      height: 325,
-                    ),
+                width: 500,
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/digital-nomad-working-near-beach.png',
+                    width: 325,
+                    height: 325,
                   ),
                 ),
+              ),
               const SizedBox(height: 10),
               Text(
                 "Share Event \nWith Friends",
@@ -49,7 +50,12 @@ class Splashscreen4 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyLogin()),
+                      );
+                    },
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -60,7 +66,12 @@ class Splashscreen4 extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyLogin()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(24),

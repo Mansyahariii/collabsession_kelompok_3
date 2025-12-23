@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/login.dart';
 import 'package:collabsession/pages/splashscreen2.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // buat scaffold untuk splash screen //
     return Scaffold(
-    backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
@@ -38,16 +39,15 @@ class SplashScreen extends StatelessWidget {
               const SizedBox(height: 30),
               // tambahkan Indikator //
               Row(
-                children: 
-                  const [
-                    Icon(Icons.circle, size: 6, color: Colors.black),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                  ],
+                children: const [
+                  Icon(Icons.circle, size: 6, color: Colors.black),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                ],
               ),
               const Spacer(),
               // tambahkan Bottom buttons//
@@ -56,26 +56,34 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      // Aksi Skip 
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MyLogin(),
+                        ),
+                      );
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),
-                      
                     ),
-                    child : const Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.black,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => SplashScreen2())
-                      ); },
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SplashScreen2(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(24),
@@ -87,9 +95,9 @@ class SplashScreen extends StatelessWidget {
               ),
               const SizedBox(height: 25),
             ],
-          )
-        )
-      )
+          ),
+        ),
+      ),
     );
   }
 }
