@@ -40,8 +40,35 @@ class Splashscreen3 extends StatelessWidget {
                     SizedBox(width: 5),
                     Icon(Icons.circle, size: 5, color: Colors.grey),
                     SizedBox(width: 5),
+                    Icon(Icons.circle, size: 5, color: Colors.grey),
+                    SizedBox(width: 5),
                     Icon(Icons.circle, size: 5, color: Colors.black),
                   ],
+              ),
+              const Spacer(),
+              // tambahkan Bottom buttons//
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      // Aksi Skip 
+                    },
+                    style: TextButton.styleFrom(
+                      foregroundColor: const Color.fromARGB(0, 255, 255, 255),
+                    ),
+
+                    child: const Text(
+                      'Skip',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+              
+                ],
               ),
             ]
 
