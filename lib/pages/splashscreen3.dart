@@ -36,11 +36,11 @@ class Splashscreen3 extends StatelessWidget {
               Row(
                 children: 
                   const [
-                    Icon(Icons.circle, size: 12, color: Colors.grey),
-                    SizedBox(width: 8),
-                    Icon(Icons.circle, size: 12, color: Colors.grey),
-                    SizedBox(width: 8),
-                    Icon(Icons.circle, size: 12, color: Colors.black),
+                    Icon(Icons.circle, size: 5, color: Colors.grey),
+                    SizedBox(width: 5),
+                    Icon(Icons.circle, size: 5, color: Colors.grey),
+                    SizedBox(width: 5),
+                    Icon(Icons.circle, size: 5, color: Colors.black),
                   ],
               ),
             ]
