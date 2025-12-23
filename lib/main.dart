@@ -1,6 +1,5 @@
-import 'package:collabsession/pages/splashscreen3.dart';
+import 'package:collabsession/pages/splashscreen1.dart';
 import 'package:flutter/material.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const Splashscreen3(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

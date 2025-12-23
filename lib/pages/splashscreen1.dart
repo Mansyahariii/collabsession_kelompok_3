@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/splashscreen2.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -10,42 +11,43 @@ class SplashScreen extends StatelessWidget {
     backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // tambahkan illustration splash screen //
+              const SizedBox(height: 30),
               Center(
                 child: Image.asset(
                   'assets/images/megaphone-voice-being-heard.png',
-                  width: 300,
-                  height: 300,
+                  width: 500,
+                  height: 500,
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 25),
               // tambahkan teks //
               const Text(
-                'Dapatkan informasi\nkegiatan terbaru.',
+                'Find seminars\nworkshops, and more',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 28),
               // tambahkan Indikator //
               Row(
                 children: 
                   const [
-                    Icon(Icons.circle, size: 12, color: Colors.black),
-                    SizedBox(width: 8),
-                    Icon(Icons.circle, size: 12, color: Colors.grey),
-                    SizedBox(width: 8),
-                    Icon(Icons.circle, size: 12, color: Colors.grey),
+                    Icon(Icons.circle, size: 6, color: Colors.black),
+                    SizedBox(width: 4),
+                    Icon(Icons.circle, size: 6, color: Colors.grey),
+                    SizedBox(width: 4),
+                    Icon(Icons.circle, size: 6, color: Colors.grey),
+                    SizedBox(width: 4),
+                    Icon(Icons.circle, size: 6, color: Colors.grey),
                   ],
               ),
-
               const Spacer(),
               // tambahkan Bottom buttons//
               Row(
@@ -68,19 +70,21 @@ class SplashScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  FloatingActionButton(
-                    backgroundColor: Colors.black,
-                    shape: const CircleBorder(),
-                    onPressed: () {
-                      // Next 
-                    },
-                    child: const Icon(Icons.arrow_forward,
-                      color: Colors.white,
+                  ElevatedButton(
+                    onPressed: () {Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => SplashScreen2())
+                      ); },
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(25),
+                      backgroundColor: Colors.black,
                     ),
-                    
+                    child: const Icon(Icons.arrow_forward, color: Colors.white),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 25),
             ],
           )
         )
