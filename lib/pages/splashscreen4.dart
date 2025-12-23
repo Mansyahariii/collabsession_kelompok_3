@@ -9,7 +9,8 @@ class Splashscreen4 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20.0),
-          child: const Column(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 children: [
@@ -33,11 +34,33 @@ class Splashscreen4 extends StatelessWidget {
                       height: 1.2,
                     ),
                   ),
+                  Row(
+                    children: [
+                      _dot(),
+                      SizedBox(width: 5),
+                      _dot(),
+                      SizedBox(width: 5),
+                      _dot(),
+                      SizedBox(width: 5),
+                      _dot(isActive: true),
+                    ],
+                  ),
                 ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _dot({bool isActive = false}) {
+    return Container(
+      height: 5,
+      width: 5,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isActive ? Colors.black : Colors.grey,
       ),
     );
   }
