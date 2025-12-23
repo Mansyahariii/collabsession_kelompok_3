@@ -30,7 +30,19 @@ class Splashscreen3 extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
-              )
+              ),
+              const SizedBox(height: 16),
+              // tambahkan Indikator //
+              Row(
+                children: 
+                  const [
+                    Icon(Icons.circle, size: 12, color: Colors.grey),
+                    SizedBox(width: 8),
+                    Icon(Icons.circle, size: 12, color: Colors.grey),
+                    SizedBox(width: 8),
+                    Icon(Icons.circle, size: 12, color: Colors.black),
+                  ],
+              ),
             ]
 
           )
