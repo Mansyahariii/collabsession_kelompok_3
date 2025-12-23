@@ -10,31 +10,32 @@ class Splashscreen3 extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // tambahkan illustration splash screen//
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
               Center(
                 child: Image.asset(
                   'assets/images/digital-nomad-working-in-airport.png',
-                  width: 500,
-                  height: 500,
+                  width: 325,
+                  height: 325,
                   fit: BoxFit.cover,
                 ),
               ),
+              const SizedBox(height: 10),
               // tambahkan teks //
               const Text(
                 'Get reminders and stay updated',
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 28),
+              const SizedBox(height: 30),
               // tambahkan Indikator //
               Row(
                 children: const [
@@ -63,7 +64,7 @@ class Splashscreen3 extends StatelessWidget {
                     child: const Text(
                       'Skip',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
@@ -76,7 +77,7 @@ class Splashscreen3 extends StatelessWidget {
                       );},
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(25),
+                      padding: const EdgeInsets.all(24),
                       backgroundColor: Colors.black,
                     ),
                     child: const Icon(Icons.arrow_forward, color: Colors.white),

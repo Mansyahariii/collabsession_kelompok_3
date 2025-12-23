@@ -10,37 +10,31 @@ class SplashScreen2 extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
               Center(
                 child: SizedBox(
-                  width: 500,
-                  height: 500,
-                  child: ClipRect(
-                    child: Transform.scale(
-                      scale: 0.9,
-                      child: Image.asset(
-                        "assets/images/smart-people.png",
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  width: 325,
+                  height: 325,
+                  child: Image.asset(
+                    "assets/images/smart-people.png",
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
+              const SizedBox(height: 10),
               const Text(
                 'Join your favorite \ncampus activities',
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
-                  height: 1.2,
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 32),
               Row(
                 children: [
                   _dot(),
@@ -62,26 +56,30 @@ class SplashScreen2 extends StatelessWidget {
                       'Skip',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => Splashscreen3())
-                      );},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Splashscreen3(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(25),
+                      padding: const EdgeInsets.all(24),
                       backgroundColor: Colors.black,
                     ),
                     child: const Icon(Icons.arrow_forward, color: Colors.white),
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 25),
             ],
           ),
         ),

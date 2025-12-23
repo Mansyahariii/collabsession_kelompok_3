@@ -8,29 +8,28 @@ class Splashscreen4 extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 50),
               SizedBox(
-                height: 300,
-                child: Center(
-                  child: Image(
-                    image: AssetImage(
-                      "assets/images/digital-nomad-working-near-beach.png",
+                  width: 500,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/digital-nomad-working-near-beach.png',
+                      width: 325,
+                      height: 325,
                     ),
-                    fit: BoxFit.contain,
                   ),
                 ),
-              ),
+              const SizedBox(height: 10),
               Text(
                 "Share Event \nWith Friends",
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 30.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
-                  height: 1.2,
                 ),
               ),
               SizedBox(height: 30),
@@ -71,6 +70,7 @@ class Splashscreen4 extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 25),
             ],
           ),
         ),
