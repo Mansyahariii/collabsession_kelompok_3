@@ -17,8 +17,15 @@ class SplashScreen2 extends StatelessWidget {
                 child: SizedBox(
                   width: 500,
                   height: 500,
-                  child: Container(
-                    color: Colors.cyan,
+                  child: ClipRect(
+                    child: Transform.scale(
+                      scale: 0.9,
+                      child: Image.asset(
+                        "assets/images/smart-people.png",
+                        fit: BoxFit.cover,
+                        alignment: Alignment(0, 0),
+                      ),
+                    ),
                   ),
                 ),
               ),
