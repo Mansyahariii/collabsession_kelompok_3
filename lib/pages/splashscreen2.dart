@@ -50,20 +50,47 @@ class SplashScreen2 extends StatelessWidget {
                   _dot(),
                 ],
               ),
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Skip',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(25),
+                      backgroundColor: Colors.black,
+                    ),
+                    child: const Icon(Icons.arrow_forward, color: Colors.white),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
   Widget _dot({bool isActive = false}) {
-  return Container(
-    height: 5,
-    width: 5,
-    decoration: BoxDecoration(
-      shape: BoxShape.circle,
-      color: isActive ? Colors.black : Colors.grey,
-    ),
-  );
-}
+    return Container(
+      height: 5,
+      width: 5,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isActive ? Colors.black : Colors.grey,
+      ),
+    );
+  }
 }
