@@ -45,6 +45,26 @@ class Splashscreen4 extends StatelessWidget {
                       _dot(isActive: true),
                     ],
                   ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(24),
+                      backgroundColor: Colors.black,
+                    ),
+                    child: Icon(Icons.arrow_forward, color: Colors.white),
+                  ),
                 ],
               ),
             ],
