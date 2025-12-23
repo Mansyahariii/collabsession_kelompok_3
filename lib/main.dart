@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/splashscreen1.dart';
 import 'package:collabsession/firebase_options.dart';
 import 'package:collabsession/pages/login.dart';
 import 'package:flutter/foundation.dart';
@@ -14,6 +15,19 @@ Future<void> initLocalNotification() async {
   const AndroidInitializationSettings androidInit =
       AndroidInitializationSettings('@mipmap/ic_launcher');
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Collab Session Kelompok 3",
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      home: const SplashScreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
   const InitializationSettings initSettings = InitializationSettings(
     android: androidInit,
   );

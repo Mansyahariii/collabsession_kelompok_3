@@ -1,25 +1,25 @@
-import 'package:collabsession/pages/splashscreen2.dart';
+import 'package:collabsession/pages/splashscreen4.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class Splashscreen3 extends StatelessWidget {
+  const Splashscreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // buat scaffold untuk splash screen //
     return Scaffold(
-    backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // tambahkan illustration splash screen //
+              // tambahkan illustration splash screen//
               const SizedBox(height: 50),
               Center(
                 child: Image.asset(
-                  'assets/images/megaphone-voice-being-heard.png',
+                  'assets/images/digital-nomad-working-in-airport.png',
                   width: 325,
                   height: 325,
                   fit: BoxFit.cover,
@@ -28,7 +28,7 @@ class SplashScreen extends StatelessWidget {
               const SizedBox(height: 10),
               // tambahkan teks //
               const Text(
-                'Find seminars\nworkshops, and more',
+                'Get reminders and stay updated',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -38,16 +38,15 @@ class SplashScreen extends StatelessWidget {
               const SizedBox(height: 30),
               // tambahkan Indikator //
               Row(
-                children: 
-                  const [
-                    Icon(Icons.circle, size: 6, color: Colors.black),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                  ],
+                children: const [
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Color.fromARGB(255, 12, 0, 0)),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                ],
               ),
               const Spacer(),
               // tambahkan Bottom buttons//
@@ -56,26 +55,26 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      // Aksi Skip 
+                      // Aksi Skip
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),
-                      
                     ),
-                    child : const Text(
+
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontSize: 14,
+                        fontWeight: FontWeight.bold,
                         color: Colors.black,
-                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {Navigator.push(
                       context, 
-                      MaterialPageRoute(builder: (context) => SplashScreen2())
-                      ); },
+                      MaterialPageRoute(builder: (context) => Splashscreen4())
+                      );},
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(24),
@@ -87,9 +86,9 @@ class SplashScreen extends StatelessWidget {
               ),
               const SizedBox(height: 25),
             ],
-          )
-        )
-      )
+          ),
+        ),
+      ),
     );
   }
 }
