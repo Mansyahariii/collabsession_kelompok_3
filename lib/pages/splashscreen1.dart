@@ -47,6 +47,35 @@ class SplashScreen extends StatelessWidget {
               ),
 
               const Spacer(),
+              // tambahkan Bottom buttons//
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      // Aksi Skip 
+                    },
+                    child : const Text(
+                      'Skip',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                  FloatingActionButton(
+                    backgroundColor: Colors.black,
+                    onPressed: () {
+                      // Next 
+                    },
+                    child: const Icon(Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                    
+                  ),
+                ],
+              )
             ],
           )
         )
