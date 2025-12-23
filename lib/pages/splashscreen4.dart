@@ -6,14 +6,15 @@ class Splashscreen4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.all(20.0),
+          margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 30),
               SizedBox(
-                height: 500,
+                height: 300,
                 child: Center(
                   child: Image(
                     image: AssetImage(
@@ -32,6 +33,7 @@ class Splashscreen4 extends StatelessWidget {
                   height: 1.2,
                 ),
               ),
+              SizedBox(height: 30),
               Row(
                 children: [
                   _dot(),
@@ -43,6 +45,7 @@ class Splashscreen4 extends StatelessWidget {
                   _dot(isActive: true),
                 ],
               ),
+              Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
