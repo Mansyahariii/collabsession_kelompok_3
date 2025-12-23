@@ -67,7 +67,17 @@ class Splashscreen3 extends StatelessWidget {
                       ),
                     ),
                   ),
-              
+                  FloatingActionButton(
+                    mini: true,
+                    backgroundColor: Colors.black,
+                    shape: const CircleBorder(),
+                    onPressed: () {
+                      // Aksi Next 
+                    },
+                    child: const Icon(Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                  ),
                 ],
               ),
             ]
