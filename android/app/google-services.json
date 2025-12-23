@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "851657076418",
+    "project_id": "manajemen-kegiatan",
+    "storage_bucket": "manajemen-kegiatan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851657076418:android:6e7e765191833b563b555b",
+        "android_client_info": {
+          "package_name": "com.company.act"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoduwrrXUW67dlH3oZ9fPB9smPC8c3vn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
