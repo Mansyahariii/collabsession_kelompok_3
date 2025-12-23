@@ -18,21 +18,35 @@ class SplashScreen extends StatelessWidget {
               Center(
                 child: Image.asset(
                   'assets/images/megaphone-voice-being-heard.png',
-                  width: 200,
-                  height: 200,
+                  width: 300,
+                  height: 300,
                   fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: 25),
               // tambahkan teks //
               const Text(
-                'Find your dream job\nnow Here',
+                'Dapatkan informasi\nkegiatan terbaru.',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
+              const SizedBox(height: 16),
+              // tambahkan Indikator //
+              Row(
+                children: 
+                  const [
+                    Icon(Icons.circle, size: 12, color: Colors.blue),
+                    SizedBox(width: 8),
+                    Icon(Icons.circle, size: 12, color: Colors.grey),
+                    SizedBox(width: 8),
+                    Icon(Icons.circle, size: 12, color: Colors.grey),
+                  ],
+              ),
+
+              const Spacer(),
             ],
           )
         )
