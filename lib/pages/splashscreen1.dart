@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
               Row(
                 children: 
                   const [
-                    Icon(Icons.circle, size: 12, color: Colors.blue),
+                    Icon(Icons.circle, size: 12, color: Colors.black),
                     SizedBox(width: 8),
                     Icon(Icons.circle, size: 12, color: Colors.grey),
                     SizedBox(width: 8),
@@ -55,6 +55,10 @@ class SplashScreen extends StatelessWidget {
                     onPressed: () {
                       // Aksi Skip 
                     },
+                    style: TextButton.styleFrom(
+                      foregroundColor: const Color.fromARGB(0, 255, 255, 255),
+                      
+                    ),
                     child : const Text(
                       'Skip',
                       style: TextStyle(
@@ -66,6 +70,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                   FloatingActionButton(
                     backgroundColor: Colors.black,
+                    shape: const CircleBorder(),
                     onPressed: () {
                       // Next 
                     },
