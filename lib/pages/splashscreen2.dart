@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/splashscreen3.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen2 extends StatelessWidget {
@@ -67,7 +68,10 @@ class SplashScreen2 extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => Splashscreen3())
+                      );},
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(25),
