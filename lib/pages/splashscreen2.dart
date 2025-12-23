@@ -29,6 +29,15 @@ class SplashScreen2 extends StatelessWidget {
                   ),
                 ),
               ),
+              const Text(
+                'Join your favorite \ncampus activities',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                  height: 1.2,
+                ),
+              ),
             ],
           ),
         ),
