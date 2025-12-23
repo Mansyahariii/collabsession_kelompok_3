@@ -13,6 +13,7 @@ class SplashScreen2 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 30),
               Center(
                 child: SizedBox(
                   width: 500,
@@ -42,11 +43,11 @@ class SplashScreen2 extends StatelessWidget {
               Row(
                 children: [
                   _dot(),
-                  const SizedBox(width: 6),
+                  const SizedBox(width: 5),
                   _dot(isActive: true),
-                  const SizedBox(width: 6),
+                  const SizedBox(width: 5),
                   _dot(),
-                  const SizedBox(width: 6),
+                  const SizedBox(width: 5),
                   _dot(),
                 ],
               ),
@@ -76,6 +77,7 @@ class SplashScreen2 extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
