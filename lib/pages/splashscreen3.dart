@@ -5,7 +5,7 @@ class Splashscreen3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body : SafeArea(
         child: Padding(
@@ -14,7 +14,12 @@ class Splashscreen3 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // tambahkan illustration splash screen//
-              Center()
+              Center(
+                child: Image.asset('assets/images/megaphone-voice-being-heard.png',
+                  width: 300,
+                  height : 300,
+                  fit: BoxFit.cover,)
+              )
             ],
 
           )
