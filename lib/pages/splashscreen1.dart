@@ -26,9 +26,9 @@ class SplashScreen extends StatelessWidget {
               const SizedBox(height: 25),
               // tambahkan teks //
               const Text(
-                'Dapatkan informasi\nkegiatan terbaru.',
+                'Find seminars\nworkshops, and more',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -38,11 +38,13 @@ class SplashScreen extends StatelessWidget {
               Row(
                 children: 
                   const [
-                    Icon(Icons.circle, size: 12, color: Colors.black),
-                    SizedBox(width: 8),
-                    Icon(Icons.circle, size: 12, color: Colors.grey),
-                    SizedBox(width: 8),
-                    Icon(Icons.circle, size: 12, color: Colors.grey),
+                    Icon(Icons.circle, size: 5, color: Colors.black),
+                    SizedBox(width: 5),
+                    Icon(Icons.circle, size: 5, color: Colors.grey),
+                    SizedBox(width: 5),
+                    Icon(Icons.circle, size: 5, color: Colors.grey),
+                    SizedBox(width: 5),
+                    Icon(Icons.circle, size: 5, color: Colors.grey),
                   ],
               ),
 
@@ -69,6 +71,7 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                   FloatingActionButton(
+                    mini: true,
                     backgroundColor: Colors.black,
                     shape: const CircleBorder(),
                     onPressed: () {
