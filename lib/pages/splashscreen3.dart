@@ -18,9 +18,20 @@ class Splashscreen3 extends StatelessWidget {
                 child: Image.asset('assets/images/digital-nomad-working-in-airport.png',
                   width: 300,
                   height : 300,
-                  fit: BoxFit.cover,)
+                  fit: BoxFit.cover,
+                  ),
+                 ),
+              const SizedBox(height: 25),
+              // tambahkan teks //
+              const Text(
+                'Get reminders and stay updated',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               )
-            ],
+            ]
 
           )
       ),
