@@ -6,7 +6,7 @@ class UserDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: Text('USER DASHBOARD')),
+      body: Center(child: Text('Dashboard User')),
     );
   }
 }
