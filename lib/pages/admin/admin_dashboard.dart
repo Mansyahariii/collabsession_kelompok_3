@@ -30,6 +30,7 @@ class AdminDashboard extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.black,
+        shape: const CircleBorder(),
         child: const HeroIcon(
           HeroIcons.plus,
           style: HeroIconStyle.solid,
