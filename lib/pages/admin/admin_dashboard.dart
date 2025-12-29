@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
-class AdminDashboard extends StatelessWidget {
+class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
+
+  @override
+  State<AdminDashboard> createState() => _AdminDashboardState();
+}
+
+class _AdminDashboardState extends State<AdminDashboard> {
+  int _currentIndex = 0;
+
+  final List<Widget> _pages = [
+    const Center(child: Text('Dashboard Admin')),
+    const Center(child: Text('Events Page')),
+    const Center(child: Text('Profile Page')),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +38,12 @@ class AdminDashboard extends StatelessWidget {
         ],
       ),
 
-      body: const Center(child: Text('Dashboard Admin')),
-
+      body: _pages[_currentIndex],
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.black,
         shape: const CircleBorder(),
-        child: const HeroIcon(
-          HeroIcons.plus,
-          style: HeroIconStyle.solid,
-          color: Colors.white,
-        ),
+        child: const Icon(Icons.add, color: Colors.white, size: 30),
       ),
 
       bottomNavigationBar: Container(
@@ -45,6 +53,11 @@ class AdminDashboard extends StatelessWidget {
           ),
         ),
         child: BottomNavigationBar(
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
           backgroundColor: Colors.white,
           showSelectedLabels: false,
           showUnselectedLabels: false,
