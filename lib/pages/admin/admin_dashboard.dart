@@ -26,7 +26,7 @@ class AdminDashboard extends StatelessWidget {
       ),
 
       body: const Center(child: Text('Dashboard Admin')),
-      
+
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           border: Border(
@@ -35,6 +35,8 @@ class AdminDashboard extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black,
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
