@@ -27,6 +27,16 @@ class AdminDashboard extends StatelessWidget {
 
       body: const Center(child: Text('Dashboard Admin')),
 
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.black,
+        child: const HeroIcon(
+          HeroIcons.plus,
+          style: HeroIconStyle.solid,
+          color: Colors.white,
+        ),
+      ),
+
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           border: Border(
