@@ -40,6 +40,10 @@ class AdminDashboard extends StatelessWidget {
               icon: HeroIcon(HeroIcons.rectangleStack),
               label: '',
             ),
+            BottomNavigationBarItem(
+              icon: HeroIcon(HeroIcons.newspaper),
+              label: '',
+            ),
           ],
         ),
       ),
