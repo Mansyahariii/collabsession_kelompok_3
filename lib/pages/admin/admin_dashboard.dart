@@ -33,6 +33,15 @@ class AdminDashboard extends StatelessWidget {
             top: BorderSide(color: Colors.grey.shade300, width: 0.5),
           ),
         ),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          items: const [
+            BottomNavigationBarItem(
+              icon: HeroIcon(HeroIcons.rectangleStack),
+              label: '',
+            ),
+          ],
+        ),
       ),
     );
   }
