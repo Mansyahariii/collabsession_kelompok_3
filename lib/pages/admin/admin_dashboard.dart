@@ -35,6 +35,8 @@ class AdminDashboard extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           backgroundColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.black,
           type: BottomNavigationBarType.fixed,
