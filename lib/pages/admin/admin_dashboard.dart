@@ -26,6 +26,14 @@ class AdminDashboard extends StatelessWidget {
       ),
 
       body: const Center(child: Text('Dashboard Admin')),
+      
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Colors.grey.shade300, width: 0.5),
+          ),
+        ),
+      ),
     );
   }
 }
