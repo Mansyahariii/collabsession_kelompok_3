@@ -35,6 +35,7 @@ class AdminDashboard extends StatelessWidget {
         ),
         child: BottomNavigationBar(
           backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
               icon: HeroIcon(HeroIcons.rectangleStack),
