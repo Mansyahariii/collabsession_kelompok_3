@@ -21,6 +21,7 @@ class AdminDashboard extends StatelessWidget {
             style: HeroIconStyle.outline,
             color: Colors.black,
           ),
+          SizedBox(width: 16),
         ],
       ),
 
