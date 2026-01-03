@@ -34,7 +34,7 @@ class UserHomepage extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.grey.shade100,
+              color: Colors.black,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
@@ -42,13 +42,13 @@ class UserHomepage extends StatelessWidget {
               children: [
                 const Text(
                   'Event Terdekat',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 const Text(
                   'Seminar Nasional',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -56,18 +56,18 @@ class UserHomepage extends StatelessWidget {
                 const SizedBox(height: 4),
                 const Text(
                   '12 Okt 2026, Aula Kampus',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 12),
                 Row(
                   children: [
                     HeroIcon(
                       HeroIcons.playCircle,
-                      color: Colors.black,
+                      color: Colors.white,
                       size: 20,
                     ),
                     const SizedBox(width: 8),
-                    Text('Lihat Detail', style: TextStyle(color: Colors.black)),
+                    Text('Lihat Detail', style: TextStyle(color: Colors.white)),
                   ],
                 ),
               ],
