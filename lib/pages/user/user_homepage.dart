@@ -77,4 +77,20 @@ class UserHomepage extends StatelessWidget {
       ),
     );
   }
+
+  static Widget _chip(String label, bool active) {
+    return Container(
+      margin: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 14),
+      decoration: BoxDecoration(
+        color: active ? Colors.black : Colors.grey.shade200,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      alignment: Alignment.center,
+      child: Text(
+        label,
+        style: TextStyle(color: active ? Colors.white : Colors.black),
+      ),
+    );
+  }
 }
