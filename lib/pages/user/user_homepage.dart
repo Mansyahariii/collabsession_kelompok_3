@@ -7,7 +7,13 @@ class UserHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: ListView(
-        children: [],
+        children: [
+          Text("Selamat Datang!",
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
+          ),
+        ],
       ),
     );
   }
