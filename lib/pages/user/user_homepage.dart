@@ -24,6 +24,10 @@ class UserHomepage extends StatelessWidget {
               prefixIcon: const HeroIcon(HeroIcons.magnifyingGlass, size: 20),
               filled: true,
               fillColor: Colors.grey.shade100,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide.none,
+              ),
             ),
           ),
         ],
