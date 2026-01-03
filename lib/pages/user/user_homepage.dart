@@ -39,6 +39,10 @@ class UserHomepage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          const Text(
+            '12 Okt 2026, Aula Kampus',
+            style: TextStyle(color: Colors.black),
+          ),
         ],
       ),
     );
