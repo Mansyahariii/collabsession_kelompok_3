@@ -73,6 +73,19 @@ class UserHomepage extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 36,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                _chip('Recommended', true),
+                _chip('Hari Ini', false),
+                _chip('Minggu Ini', false),
+                _chip('Semua', false),
+              ],
+            ),
+          ),
         ],
       ),
     );
