@@ -43,8 +43,12 @@ class UserHomepage extends StatelessWidget {
             '12 Okt 2026, Aula Kampus',
             style: TextStyle(color: Colors.black),
           ),
-          HeroIcon(HeroIcons.playCircle, color: Colors.black, size: 20),
-          Text('Lihat Detail', style: TextStyle(color: Colors.black)),
+          Row(
+            children: [
+              HeroIcon(HeroIcons.playCircle, color: Colors.black, size: 20),
+              Text('Lihat Detail', style: TextStyle(color: Colors.black)),
+            ],
+          ),
         ],
       ),
     );
