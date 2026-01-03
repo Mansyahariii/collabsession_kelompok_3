@@ -30,6 +30,7 @@ class UserHomepage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
