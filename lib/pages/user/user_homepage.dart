@@ -17,7 +17,7 @@ class UserHomepage extends StatelessWidget {
               HeroIcon(HeroIcons.moon, size: 24.0),
             ],
           ),
-
+          const SizedBox(height: 16),
           TextField(
             decoration: InputDecoration(
               hintText: 'Cari Event, Seminar...',
