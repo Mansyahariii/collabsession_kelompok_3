@@ -5,6 +5,10 @@ class UserHomepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SafeArea(
+      child: ListView(
+        children: [],
+      ),
+    );
   }
 }
