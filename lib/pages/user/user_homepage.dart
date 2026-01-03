@@ -86,6 +86,27 @@ class UserHomepage extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 20),
+          const Text(
+            'Event Mendatang',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 12),
+          _eventTile(
+            title: 'Workshop Flutter',
+            date: '15 Okt 2026',
+            location: 'Lab B',
+          ),
+          _eventTile(
+            title: 'Lomba UI/UX',
+            date: '20 Okt 2026',
+            location: 'Aula Kampus',
+          ),
+          _eventTile(
+            title: 'Webinar Startup',
+            date: '25 Okt 2026',
+            location: 'Online',
+          ),
         ],
       ),
     );
@@ -121,7 +142,7 @@ class UserHomepage extends StatelessWidget {
       ),
       child: ListTile(
         title: Text(title),
-        subtitle: Text('$date • $location'),
+        subtitle: Text('$date, $location'),
         trailing: const HeroIcon(HeroIcons.chevronRight, size: 18),
       ),
     );
