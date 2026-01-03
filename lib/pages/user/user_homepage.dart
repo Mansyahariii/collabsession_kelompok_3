@@ -30,36 +30,43 @@ class UserHomepage extends StatelessWidget {
               ),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Event Terdekat',
-                style: TextStyle(color: Colors.black),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Seminar Nasional',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+          Container(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Event Terdekat',
+                  style: TextStyle(color: Colors.black),
                 ),
-              ),
-              const SizedBox(height: 4),
-              const Text(
-                '12 Okt 2026, Aula Kampus',
-                style: TextStyle(color: Colors.black),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  HeroIcon(HeroIcons.playCircle, color: Colors.black, size: 20),
-                  const SizedBox(width: 8),
-                  Text('Lihat Detail', style: TextStyle(color: Colors.black)),
-                ],
-              ),
-            ],
+                const SizedBox(height: 8),
+                const Text(
+                  'Seminar Nasional',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                const Text(
+                  '12 Okt 2026, Aula Kampus',
+                  style: TextStyle(color: Colors.black),
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    HeroIcon(
+                      HeroIcons.playCircle,
+                      color: Colors.black,
+                      size: 20,
+                    ),
+                    const SizedBox(width: 8),
+                    Text('Lihat Detail', style: TextStyle(color: Colors.black)),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
