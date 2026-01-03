@@ -17,6 +17,15 @@ class UserHomepage extends StatelessWidget {
               HeroIcon(HeroIcons.moon, size: 24.0),
             ],
           ),
+
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Cari Event, Seminar...',
+              prefixIcon: const HeroIcon(HeroIcons.magnifyingGlass, size: 20),
+              filled: true,
+              fillColor: Colors.grey.shade100,
+            ),
+          ),
         ],
       ),
     );
