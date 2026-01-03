@@ -31,6 +31,7 @@ class UserHomepage extends StatelessWidget {
             ),
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'Event Terdekat',
