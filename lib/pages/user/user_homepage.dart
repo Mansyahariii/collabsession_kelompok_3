@@ -30,6 +30,7 @@ class UserHomepage extends StatelessWidget {
               ),
             ),
           ),
+          const Text('Event Terdekat', style: TextStyle(color: Colors.black)),
         ],
       ),
     );
