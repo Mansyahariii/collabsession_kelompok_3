@@ -31,6 +31,14 @@ class UserHomepage extends StatelessWidget {
             ),
           ),
           const Text('Event Terdekat', style: TextStyle(color: Colors.black)),
+          const Text(
+            'Seminar Nasional',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );
