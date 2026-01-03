@@ -8,8 +8,10 @@ class UserHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: ListView(
+        padding: const EdgeInsets.all(16),
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Selamat Datang!", style: TextStyle(fontSize: 20.0)),
               HeroIcon(HeroIcons.moon, size: 24.0),
