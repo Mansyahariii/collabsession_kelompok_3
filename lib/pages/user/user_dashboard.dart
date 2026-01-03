@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/user/user_homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -12,7 +13,7 @@ class _UserDashboardState extends State<UserDashboard> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    const Center(child: Text('Dashboard User')),
+    UserHomepage(),
     const Center(child: Text('Events Page')),
     const Center(child: Text('Profile Page')),
   ];
