@@ -14,8 +14,8 @@ class Detailprofile3 extends StatelessWidget {
               Card(
                 elevation: 8,
                 shadowColor: Colors.red,
-                 clipBehavior: Clip.antiAlias,
-                 child: Container(
+                clipBehavior: Clip.antiAlias,
+                child: Container(
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -24,14 +24,29 @@ class Detailprofile3 extends StatelessWidget {
                       end: Alignment.bottomCenter,
                     ),
                   ),
-
-                 )
-              )
-            ]
-        )
-      )
-      )
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.white, width: 4.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.2),
+                              blurRadius: 10,
+                              offset: Offset(0, 5),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
-  
 }
