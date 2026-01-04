@@ -16,12 +16,20 @@ class Detailprofile3 extends StatelessWidget {
                 shadowColor: Colors.red,
                  clipBehavior: Clip.antiAlias,
                  child: Container(
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Colors.red, Colors.orange],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
 
                  )
               )
-            ],
-          )
+            ]
         )
+      )
       )
     );
   }
