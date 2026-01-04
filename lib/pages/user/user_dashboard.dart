@@ -14,11 +14,7 @@ class UserDashboard extends StatefulWidget {
 class _UserDashboardState extends State<UserDashboard> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    UserHomepage(),
-    EventPage(),
-    ProfilePage()
-  ];
+  final List<Widget> _pages = [UserHomepage(), EventPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +61,7 @@ class _UserDashboardState extends State<UserDashboard> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: HeroIcon(HeroIcons.userCircle),
+            icon: HeroIcon(HeroIcons.cog6Tooth),
             label: '',
           ),
         ],

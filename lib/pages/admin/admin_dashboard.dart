@@ -74,7 +74,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: HeroIcon(HeroIcons.userCircle),
+              icon: HeroIcon(HeroIcons.cog6Tooth),
               label: '',
             ),
           ],
