@@ -1,5 +1,5 @@
 import 'package:collabsession/pages/shared/event_page.dart';
-import 'package:collabsession/pages/shared/profile_page.dart';
+import 'package:collabsession/pages/shared/setting_page.dart';
 import 'package:collabsession/pages/user/user_homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
