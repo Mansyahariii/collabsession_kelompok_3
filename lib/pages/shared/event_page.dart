@@ -18,7 +18,11 @@ class EventPage extends StatelessWidget {
 }
 
 class _EventTile extends StatelessWidget {
-  const _EventTile({super.key});
+  final String title;
+  final String date;
+  final String location;
+
+  const _EventTile({required this.title, required this.date, required this.location});
 
   @override
   Widget build(BuildContext context) {
