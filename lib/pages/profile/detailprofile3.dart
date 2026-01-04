@@ -38,6 +38,27 @@ class Detailprofile3 extends StatelessWidget {
                             ),
                           ],
                         ),
+                        child: CircleAvatar(
+                          radius: 60,
+                          backgroundImage: AssetImage(
+                            'assets/images/fotosaya.jpeg',
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Rizky Adekatuasa",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0,
+                          vertical: 6.0,
+                        ),
                       ),
                     ],
                   ),
