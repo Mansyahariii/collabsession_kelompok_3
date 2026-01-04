@@ -14,28 +14,34 @@ class UserDashboard extends StatefulWidget {
 class _UserDashboardState extends State<UserDashboard> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [UserHomepage(), EventPage(), Settingpage()];
+  final List<Widget> _pages = [UserHomepage(), EventPage(), SettingPage()];
+
+  PreferredSizeWidget? _buildAppBar() {
+    if (_currentIndex == 2) return null;
+
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: const HeroIcon(
+        HeroIcons.squares2x2,
+        style: HeroIconStyle.outline,
+        color: Colors.black,
+      ),
+      actions: const [
+        HeroIcon(
+          HeroIcons.megaphone,
+          style: HeroIconStyle.outline,
+          color: Colors.black,
+        ),
+        SizedBox(width: 16),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: const HeroIcon(
-          HeroIcons.squares2x2,
-          style: HeroIconStyle.outline,
-          color: Colors.black,
-        ),
-        actions: const [
-          HeroIcon(
-            HeroIcons.megaphone,
-            style: HeroIconStyle.outline,
-            color: Colors.black,
-          ),
-          SizedBox(width: 16),
-        ],
-      ),
+      appBar: _buildAppBar(),
       body: _pages[_currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
