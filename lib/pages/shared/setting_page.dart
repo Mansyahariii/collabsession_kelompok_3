@@ -97,7 +97,6 @@ class Settingpage extends StatelessWidget {
                         title,
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
-                      const SizedBox(height: 4),
                       Text(
                         subtitle,
                         maxLines: 1,
