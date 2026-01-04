@@ -14,7 +14,7 @@ class UserDashboard extends StatefulWidget {
 class _UserDashboardState extends State<UserDashboard> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [UserHomepage(), EventPage(), ProfilePage()];
+  final List<Widget> _pages = [UserHomepage(), EventPage(), Settingpage()];
 
   @override
   Widget build(BuildContext context) {
