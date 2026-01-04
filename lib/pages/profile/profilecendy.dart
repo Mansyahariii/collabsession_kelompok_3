@@ -18,7 +18,7 @@ class ProfilePage extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
-                  ),   
+                  ),
                   child: Stack(
                     children: [
                       ClipRRect(
@@ -76,6 +76,23 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Positioned(
+                  bottom: -25,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: CircleAvatar(
+                      radius: 53,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: const AssetImage(
+                          "assets/images/profile-cendy.jpg",
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
