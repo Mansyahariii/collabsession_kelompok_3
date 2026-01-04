@@ -19,6 +19,16 @@ class EventPage extends StatelessWidget {
           date: '12 Okt 2026',
           location: 'Aula Kampus',
         ),
+        _EventTile(
+          title: 'Workshop Flutter',
+          date: '20 Nov 2026',
+          location: 'Lab Komputer',
+        ),
+        _EventTile(
+          title: 'Konferensi AI',
+          date: '5 Des 2026',
+          location: 'Gedung Serbaguna',
+        ),
       ],
     );
   }
