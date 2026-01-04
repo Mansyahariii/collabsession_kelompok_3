@@ -77,7 +77,7 @@ class Detailprofile3 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -89,14 +89,14 @@ class Detailprofile3 extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Column(
                             children: [
                               Text(
-                                "Project",
+                                "Followers",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w700,
@@ -104,7 +104,35 @@ class Detailprofile3 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "123",
+                                "564",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  //fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 30,
+                            child: VerticalDivider(
+                              thickness: 1.0,
+                              color: Colors.black,
+                              width: 15.0,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                "Years",
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                "23 Old",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   //fontWeight: FontWeight.w700,
@@ -132,35 +160,7 @@ class Detailprofile3 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "123",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  //fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30,
-                            child: VerticalDivider(
-                              thickness: 1.0,
-                              color: Colors.black,
-                              width: 15.0,
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Project",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                "123",
+                                "26",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   //fontWeight: FontWeight.w700,
