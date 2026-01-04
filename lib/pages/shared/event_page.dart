@@ -7,7 +7,12 @@ class EventPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.all(16),
-      children: const [Center(child: Text('INI PAGE EVENT.'))],
+      children: const [
+        Text(
+          "Semua Event",
+          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 }
