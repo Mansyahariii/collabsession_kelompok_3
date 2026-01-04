@@ -164,6 +164,56 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    "Contact",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/instagram.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": @cendyalvianto_",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/github.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": github.com/cendyal-hub",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/email.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": sendyaja17@gmail.com",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
