@@ -25,6 +25,16 @@ class EventPage extends StatelessWidget {
           location: 'Lab Komputer',
         ),
         _EventTile(
+          title: 'Lomba UI/UX',
+          date: '20 Okt 2026',
+          location: 'Aula Kampus',
+        ),
+        _EventTile(
+          title: 'Webinar Startup',
+          date: '25 Okt 2026',
+          location: 'Online',
+        ),
+        _EventTile(
           title: 'Konferensi AI',
           date: '5 Des 2026',
           location: 'Gedung Serbaguna',
