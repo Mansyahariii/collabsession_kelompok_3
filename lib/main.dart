@@ -1,5 +1,6 @@
 import 'package:collabsession/firebase_options.dart';
-import 'package:collabsession/pages/login.dart';
+// import 'package:collabsession/pages/login.dart';
+import 'package:collabsession/pages/profile/detailprofile3.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Firebase Login",
-      home: MyLogin(),
+      home: Detailprofile3(),
       debugShowCheckedModeBanner: false,
     );
   }
