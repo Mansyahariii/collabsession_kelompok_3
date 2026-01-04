@@ -13,6 +13,12 @@ class EventPage extends StatelessWidget {
           "Semua Event",
           style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
         ),
+        SizedBox(height: 16),
+        _EventTile(
+          title: 'Seminar Nasional',
+          date: '12 Okt 2026',
+          location: 'Aula Kampus',
+        ),
       ],
     );
   }
@@ -32,7 +38,12 @@ class _EventTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.only(bottom: 12),
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: Colors.grey.shade200),
+      ),
       child: ListTile(
         title: Text(title),
         subtitle: Text('$date, $location'),
