@@ -15,10 +15,41 @@ class Settingpage extends StatelessWidget {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ),
+        const SizedBox(height: 16),
+        _settingCard(
+          icon: HeroIcons.user,
+          title: 'Akun Saya',
+          subtitle: 'Informasi akun dan profil',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.lockClosed,
+          title: 'Keamanan',
+          subtitle: 'Ubah password & keamanan akun',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.questionMarkCircle,
+          title: 'Bantuan & Dukungan',
+          subtitle: 'FAQ dan pusat bantuan',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.informationCircle,
+          title: 'Tentang Aplikasi',
+          subtitle: 'Versi dan informasi aplikasi',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.users,
+          title: 'Tim Pengembang',
+          subtitle: 'Profil tim pengembang',
+          onTap: () {},
+        ),
       ],
     );
   }
-  
+
   static Widget _settingCard({
     required HeroIcons icon,
     required String title,
