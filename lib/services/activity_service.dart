@@ -1,24 +1,15 @@
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/activity.dart';
 
 class ActivityService {
-  Future<List<Activity>> fetchActivities() async {
-    await Future.delayed(const Duration(seconds: 1));
+  final SupabaseClient _client = Supabase.instance.client;
 
-    return [
-      Activity(
-        id: '1',
-        title: 'Seminar Teknologi',
-        description: 'Seminar seputar teknologi terbaru',
-        date: DateTime.now(),
-        location: 'Aula Kampus',
-      ),
-      Activity(
-        id: '2',
-        title: 'Lomba UI/UX',
-        description: 'Kompetisi desain UI/UX',
-        date: DateTime.now().add(const Duration(days: 3)),
-        location: 'Lab Multimedia',
-      ),
-    ];
+  Future<List<Activity>> fetchActivities() async {
+    final response = await _client
+        .from('activities')
+        .select()
+        .order('date', ascending: true);
+
+    return response.map<Activity>((item) => Activity.fromMap(item)).toList();
   }
 }
