@@ -5,6 +5,25 @@ class Detailprofile3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Card(
+                elevation: 8,
+                shadowColor: Colors.red,
+                 clipBehavior: Clip.antiAlias,
+                 child: Container(
+
+                 )
+              )
+            ],
+          )
+        )
+      )
+    );
   }
+  
 }
