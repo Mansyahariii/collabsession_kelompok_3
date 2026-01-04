@@ -131,6 +131,16 @@ class ProfilePage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    "About",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    "Halo, nama gue Cendy. Gue hobi travelling dan hiking karena suka jalan-jalan dan menikmati alam. Gue juga punya minat buat terus berkembang, belajar hal baru, dan ningkatin kemampuan diri, terutama di bidang teknologi dan pengembangan aplikasi.",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),
