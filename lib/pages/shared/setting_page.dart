@@ -46,21 +46,20 @@ class Settingpage extends StatelessWidget {
           subtitle: 'Profil tim pengembang',
           onTap: () {},
         ),
-        Card(
-          elevation: 0,
-          margin: EdgeInsets.all(0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Colors.red.shade200),
-          ),
-          child: ListTile(
-            leading: const HeroIcon(
-              HeroIcons.arrowRightOnRectangle,
-              color: Colors.red,
+        OutlinedButton.icon(
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size.fromHeight(52),
+            side: BorderSide(color: Colors.red.shade300),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(14),
             ),
-            title: const Text('Logout', style: TextStyle(color: Colors.red)),
-            onTap: () {},
           ),
+          onPressed: () {},
+          icon: const HeroIcon(
+            HeroIcons.arrowRightOnRectangle,
+            color: Colors.red,
+          ),
+          label: const Text('Logout', style: TextStyle(color: Colors.red)),
         ),
       ],
     );
