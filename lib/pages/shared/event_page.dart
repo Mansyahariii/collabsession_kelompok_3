@@ -16,3 +16,12 @@ class EventPage extends StatelessWidget {
     );
   }
 }
+
+class _EventTile extends StatelessWidget {
+  const _EventTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
