@@ -42,7 +42,7 @@ class UserHomepage extends StatelessWidget {
               children: [
                 const Text(
                   'Event Terdekat',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
                 const SizedBox(height: 8),
                 const Text(
@@ -56,7 +56,7 @@ class UserHomepage extends StatelessWidget {
                 const SizedBox(height: 4),
                 const Text(
                   '12 Okt 2026, Aula Kampus',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
                 const SizedBox(height: 12),
                 Row(
@@ -67,7 +67,10 @@ class UserHomepage extends StatelessWidget {
                       size: 20,
                     ),
                     const SizedBox(width: 8),
-                    Text('Lihat Detail', style: TextStyle(color: Colors.white)),
+                    Text(
+                      'Lihat Detail',
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
                   ],
                 ),
               ],
@@ -133,17 +136,47 @@ class UserHomepage extends StatelessWidget {
     required String date,
     required String location,
   }) {
-    return Card(
+    return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(color: Colors.grey.shade200),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: Colors.grey.shade200),
       ),
-      child: ListTile(
-        title: Text(title),
-        subtitle: Text('$date, $location'),
-        trailing: const HeroIcon(HeroIcons.chevronRight, size: 18),
+      child: Material(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "$date, $location",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const HeroIcon(HeroIcons.chevronRight, size: 18),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

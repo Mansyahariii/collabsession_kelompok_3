@@ -48,18 +48,19 @@ class Settingpage extends StatelessWidget {
         ),
         OutlinedButton.icon(
           style: OutlinedButton.styleFrom(
+            backgroundColor: Colors.red,
             minimumSize: const Size.fromHeight(52),
-            side: BorderSide(color: Colors.red.shade300),
+            side: BorderSide(color: Colors.transparent),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
           onPressed: () {},
           icon: const HeroIcon(
             HeroIcons.arrowRightOnRectangle,
-            color: Colors.red,
+            color: Colors.white,
           ),
-          label: const Text('Logout', style: TextStyle(color: Colors.red)),
+          label: const Text('Logout', style: TextStyle(color: Colors.white)),
         ),
       ],
     );
@@ -78,7 +79,7 @@ class Settingpage extends StatelessWidget {
         border: Border.all(color: Colors.grey.shade200),
       ),
       child: Material(
-        color: Colors.transparent,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(14),
         child: InkWell(
           borderRadius: BorderRadius.circular(14),
