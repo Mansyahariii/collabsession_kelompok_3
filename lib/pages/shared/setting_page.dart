@@ -5,6 +5,13 @@ class Settingpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Center(child: Text('INI PAGE SETTING.')));
+    return ListView(
+      children: [
+        const Text(
+          'Pengaturan',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
   }
 }
