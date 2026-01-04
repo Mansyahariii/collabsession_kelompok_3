@@ -141,6 +141,29 @@ class ProfilePage extends StatelessWidget {
                     "Halo, nama gue Cendy. Gue hobi travelling dan hiking karena suka jalan-jalan dan menikmati alam. Gue juga punya minat buat terus berkembang, belajar hal baru, dan ningkatin kemampuan diri, terutama di bidang teknologi dan pengembangan aplikasi.",
                     style: TextStyle(color: Colors.grey),
                   ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    "Skills",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Image.asset(
+                          "assets/images/canva_logo.png",
+                          width: 28,
+                          height: 28,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
