@@ -18,54 +18,14 @@ class EventPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: const [
-        Text(
-          "Semua Event",
-          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 16),
-        _EventTile(
-          title: 'Seminar Nasional',
-          date: '12 Okt 2026',
-          location: 'Aula Kampus',
-        ),
-        _EventTile(
-          title: 'Workshop Flutter',
-          date: '20 Nov 2026',
-          location: 'Lab Komputer',
-        ),
-        _EventTile(
-          title: 'Lomba UI/UX',
-          date: '20 Okt 2026',
-          location: 'Aula Kampus',
-        ),
-        _EventTile(
-          title: 'Webinar Startup',
-          date: '25 Okt 2026',
-          location: 'Online',
-        ),
-        _EventTile(
-          title: 'Konferensi AI',
-          date: '5 Des 2026',
-          location: 'Gedung Serbaguna',
-        ),
-      ],
-    );
+    return ListView();
   }
 }
 
 class _EventTile extends StatelessWidget {
-  final String title;
-  final String date;
-  final String location;
+  final Activity activity;
 
-  const _EventTile({
-    required this.title,
-    required this.date,
-    required this.location,
-  });
+  const _EventTile({required this.activity});
 
   @override
   Widget build(BuildContext context) {
