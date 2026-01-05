@@ -21,6 +21,22 @@ class Detileprofile2 extends StatelessWidget {
                     ),
                   ),
                 ),
+                 Positioned(
+                  bottom: -55,
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
+                  ),
+                 )
               ]
 
       )
