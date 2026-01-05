@@ -159,6 +159,10 @@ class Detileprofile2 extends StatelessWidget {
                         icon: Icons.location_on,
                         color: Colors.blue,
                       ),
+                       _buildContactIcon(
+                        icon: Icons.language,
+                        color: Colors.purple,
+                      ),
 
                     ],
                     ),
