@@ -81,6 +81,11 @@ class Detileprofile2 extends StatelessWidget {
                     value:
                         'Global Institute | Institut Teknologi dan Bisnis Bina Sarana Global',
                   ),
+                   _buildInfoTile(
+                    icon: Icons.computer,
+                    title: 'Jurusan',
+                    value: 'Teknik Informatika',
+                  ),
               ],
             ),
            ),
