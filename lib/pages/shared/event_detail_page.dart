@@ -7,9 +7,8 @@ class EventDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('Detail Event Page'),
-      ),
+      backgroundColor: Colors.white,
+      body: Row(children: [Text('Detail Event Page')]),
     );
   }
 }
