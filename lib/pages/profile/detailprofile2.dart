@@ -192,7 +192,15 @@ class Detileprofile2 extends StatelessWidget {
             blurRadius: 6,
           ),
         ],
-      )
+      ),
+      child: ListTile(
+        leading: Icon(icon, color: Colors.blue),
+        title: Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(value),
+      ),
        );
        
     }
