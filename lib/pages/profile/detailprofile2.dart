@@ -105,6 +105,17 @@ class Detileprofile2 extends StatelessWidget {
             ),
            ),
           const SizedBox(height: 30),
+
+          Padding(
+            padding: const EdgeInsets.all(20),
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+          )
+          )
+          )
            
           ],
         ),
