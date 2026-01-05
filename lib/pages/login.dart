@@ -113,7 +113,10 @@ class _MyLoginState extends State<MyLogin> {
     
     return Scaffold(
        backgroundColor: Colors.grey[50],
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
     );
   }
 
