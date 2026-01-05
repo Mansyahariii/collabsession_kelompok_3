@@ -180,6 +180,19 @@ class _EventTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Material());
+    return Container(
+      child: Material(
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => EventDetailPage(activity: activity),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
