@@ -79,6 +79,13 @@ class EventDetailPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const Text(
+                      'Deskripsi',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                      ),
+                    ),
                   ],
                 ),
               ),
