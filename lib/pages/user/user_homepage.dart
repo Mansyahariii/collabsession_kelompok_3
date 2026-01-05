@@ -36,12 +36,9 @@ class UserHomepage extends StatelessWidget {
         return ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Selamat Datang!", style: TextStyle(fontSize: 20.0)),
-                HeroIcon(HeroIcons.moon, size: 24.0),
-              ],
+            const Text(
+              "Selamat Datang!",
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             TextField(
