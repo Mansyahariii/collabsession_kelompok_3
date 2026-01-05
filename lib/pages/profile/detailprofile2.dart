@@ -7,8 +7,11 @@ class Detileprofile2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
-      body: SingleChildScrollView(child: Column(children: [Stack(
-         clipBehavior: Clip.none,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              clipBehavior: Clip.none,
               alignment: Alignment.center,
               children: [
                 Container(
@@ -21,7 +24,7 @@ class Detileprofile2 extends StatelessWidget {
                     ),
                   ),
                 ),
-                 Positioned(
+                Positioned(
                   bottom: -55,
                   child: Container(
                     padding: const EdgeInsets.all(6),
@@ -29,23 +32,30 @@ class Detileprofile2 extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: Colors.white,
                       boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 10,
-                        ),
+                        BoxShadow(color: Colors.black26, blurRadius: 10),
                       ],
                     ),
                     child: const CircleAvatar(
                       radius: 55,
-                      backgroundImage: AssetImage('assets/images/profile.jpg'),
+                      backgroundImage: AssetImage(
+                        'assets/images/WhatsApp Image 2026-01-05 at 13.50.29.jpeg',
+                      ),
                     ),
                   ),
-                 )
-              ]
-
-      )
-      ]
-      )
+                ),
+              ],
+            ),
+            const SizedBox(height: 70),
+            
+            const Text(
+              'Mison Wenda',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
