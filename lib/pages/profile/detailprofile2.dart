@@ -186,6 +186,12 @@ class Detileprofile2 extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
+          boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 6,
+          ),
+        ],
       )
        );
        
