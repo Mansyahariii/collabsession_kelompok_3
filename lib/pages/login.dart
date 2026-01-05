@@ -165,6 +165,10 @@ class _MyLoginState extends State<MyLogin> {
                   horizontal: 18,
                   vertical: 18,
                 ),
+                 decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(18),
+                ),
               ),
 
               ]
