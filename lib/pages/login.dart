@@ -18,16 +18,16 @@ class _MyLoginState extends State<MyLogin> {
 
   bool _isLoading = false;
 
-
   @override
   void dispose() {
     emailCtrl.dispose();
     passCtrl.dispose();
     super.dispose();
   }
-    Future<void> _login() async {
+
+  Future<void> _login() async {
     setState(() => _isLoading = true);
-     try {
+    try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailCtrl.text.trim(),
         password: passCtrl.text.trim(),
@@ -92,7 +92,8 @@ class _MyLoginState extends State<MyLogin> {
       if (mounted) setState(() => _isLoading = false);
     }
   }
-   void _showError(String message) {
+
+  void _showError(String message) {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
@@ -107,16 +108,15 @@ class _MyLoginState extends State<MyLogin> {
       ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-       backgroundColor: Colors.grey[50],
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
@@ -134,13 +134,13 @@ class _MyLoginState extends State<MyLogin> {
                 style: TextStyle(color: Colors.grey[500], fontSize: 12),
               ),
             ),
-            )
+          ),
         ],
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Column(
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 6),
@@ -152,7 +152,7 @@ class _MyLoginState extends State<MyLogin> {
                 ),
                 child: Center(
                   child: Image.network(
-                    'https://i.imgur.com/TkIrScD.png',
+                    'assets/images/megaphone-voice-being-heard.png',
                     fit: BoxFit.contain,
                     height: 200,
                   ),
@@ -165,13 +165,13 @@ class _MyLoginState extends State<MyLogin> {
                   horizontal: 18,
                   vertical: 18,
                 ),
-                 decoration: BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
                 ),
-                 child: Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                   children: [
+                  children: [
                     const Text(
                       'Email Address',
                       style: TextStyle(
@@ -185,7 +185,7 @@ class _MyLoginState extends State<MyLogin> {
                       controller: emailCtrl,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                         hintText: 'Masukkan Email',
+                        hintText: 'Masukkan Email',
                         hintStyle: TextStyle(color: Colors.grey[500]),
                         contentPadding: const EdgeInsets.symmetric(
                           horizontal: 16,
@@ -212,7 +212,7 @@ class _MyLoginState extends State<MyLogin> {
                     ),
                     const SizedBox(height: 8),
 
-                     TextField(
+                    TextField(
                       controller: passCtrl,
                       obscureText: _isLoading ? false : true,
                       decoration: InputDecoration(
@@ -234,8 +234,8 @@ class _MyLoginState extends State<MyLogin> {
                           margin: const EdgeInsets.only(right: 8),
                           padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                            color: Colors.grey[100],
-                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(12),
                           ),
                           child: IconButton(
                             icon: Icon(
@@ -250,7 +250,7 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                         ),
                       ),
-                     ),
+                    ),
                     const SizedBox(height: 12),
 
                     Row(
@@ -319,24 +319,13 @@ class _MyLoginState extends State<MyLogin> {
                         ],
                       ),
                     ),
-
-                   ],
+                  ],
+                ),
               ),
-              ),
-
-
-              ]
-            )
-          )
+            ],
+          ),
         ),
+      ),
     );
   }
-
-
 }
-
-  
-
-   
-
-  
