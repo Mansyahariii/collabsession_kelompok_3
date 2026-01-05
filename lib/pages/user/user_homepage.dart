@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/shared/event_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -54,50 +55,15 @@ class UserHomepage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Event Terdekat',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => EventDetailPage(activity: eventTerdekat),
                   ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Seminar Nasional',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    '12 Okt 2026, Aula Kampus',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    children: [
-                      HeroIcon(
-                        HeroIcons.playCircle,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        'Lihat Detail',
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                );
+              },
             ),
             const SizedBox(height: 16),
             SizedBox(
