@@ -96,6 +96,11 @@ class Detileprofile2 extends StatelessWidget {
                     title: 'Semester',
                     value: '5',
                   ),
+                   _buildInfoTile(
+                    icon: Icons.calendar_today,
+                    title: 'Angkatan',
+                    value: '2023',
+                  ),
               ],
             ),
            ),
