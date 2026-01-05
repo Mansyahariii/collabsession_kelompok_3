@@ -121,7 +121,9 @@ class _MyLoginState extends State<MyLogin> {
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         actions: [
-          
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0, top: 8.0),
+            )
         ],
         ),
     );
