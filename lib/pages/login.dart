@@ -180,8 +180,12 @@ class _MyLoginState extends State<MyLogin> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    
-                    TextField(),
+
+                    TextField(
+                      controller: emailCtrl,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(),
+                    ),
                    ],
               ),
               ),
