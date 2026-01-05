@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
 class EventDetailPage extends StatelessWidget {
-  const EventDetailPage({super.key, required Activity activity});
+  final Activity activity;
+  const EventDetailPage({super.key, required this.activity});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,23 @@ class EventDetailPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ],
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Text(
+                      activity.title,
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 12.0),
+                    Text(activity.description),
+                  ],
+                ),
               ),
             ),
           ],
