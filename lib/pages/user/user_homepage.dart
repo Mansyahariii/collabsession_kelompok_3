@@ -105,10 +105,7 @@ class UserHomepage extends StatelessWidget {
                         SizedBox(width: 8),
                         Text(
                           'Lihat Detail',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 12),
                         ),
                       ],
                     ),
@@ -135,10 +132,7 @@ class UserHomepage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
-            ...eventLainnya.map(
-              (activity) => _EventTile(activity: activity),
-            ),
-
+            ...eventLainnya.map((activity) => _EventTile(activity: activity)),
           ],
         );
       },
@@ -147,8 +141,18 @@ class UserHomepage extends StatelessWidget {
 
   static String _formatDate(DateTime date) {
     final months = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
-      'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Mei',
+      'Jun',
+      'Jul',
+      'Agu',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Des',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -165,56 +169,6 @@ class UserHomepage extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(color: active ? Colors.white : Colors.black),
-      ),
-    );
-  }
-
-  static Widget _eventTile({
-    required String title,
-    required String date,
-    required String location,
-  }) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.grey.shade200),
-      ),
-      child: Material(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(14),
-          onTap: () {},
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        "$date, $location",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const HeroIcon(HeroIcons.chevronRight, size: 18),
-              ],
-            ),
-          ),
-        ),
       ),
     );
   }
