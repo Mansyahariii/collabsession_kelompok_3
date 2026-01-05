@@ -39,7 +39,9 @@ class EventDetailPage extends StatelessWidget {
             ),
             Expanded(
               child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       activity.title,
