@@ -46,7 +46,7 @@ class Detileprofile2 extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 70),
-            
+
             const Text(
               'Mison Wenda',
               style: TextStyle(
@@ -54,6 +54,14 @@ class Detileprofile2 extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(height: 6),
+           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(20),
+           )
+           )
           ],
         ),
       ),
