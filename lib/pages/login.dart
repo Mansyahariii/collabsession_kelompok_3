@@ -169,6 +169,9 @@ class _MyLoginState extends State<MyLogin> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
                 ),
+                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+              ),
               ),
 
               ]
