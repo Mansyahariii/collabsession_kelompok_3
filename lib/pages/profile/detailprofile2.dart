@@ -38,7 +38,7 @@ class Detileprofile2 extends StatelessWidget {
                     child: const CircleAvatar(
                       radius: 55,
                       backgroundImage: AssetImage(
-                        'assets/images/WhatsApp Image 2026-01-05 at 13.50.29.jpeg',
+                        'assets/images/mison.jpeg',
                       ),
                     ),
                   ),
@@ -143,7 +143,18 @@ class Detileprofile2 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                ]
+
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                       _buildContactIcon(
+                        icon: Icons.email,
+                        color: Colors.red,
+                      ),
+
+                    ],
+                    ),
+                ],
               ),
              ),
            
@@ -154,4 +165,6 @@ class Detileprofile2 extends StatelessWidget {
   }
   
   _buildInfoTile({required IconData icon, required String title, required String value}) {}
+  
+  _buildContactIcon({required IconData icon, required MaterialColor color}) {}
 }
