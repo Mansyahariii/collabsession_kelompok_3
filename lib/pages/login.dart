@@ -17,10 +17,21 @@ class _MyLoginState extends State<MyLogin> {
   final passCtrl = TextEditingController();
 
   bool _isLoading = false;
+
+
+  @override
+  void dispose() {
+    emailCtrl.dispose();
+    passCtrl.dispose();
+    super.dispose();
+  }
   
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+    );
   }
+
+   
 }
+  
