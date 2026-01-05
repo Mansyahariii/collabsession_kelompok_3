@@ -173,3 +173,13 @@ class UserHomepage extends StatelessWidget {
     );
   }
 }
+
+class _EventTile extends StatelessWidget {
+  final Activity activity;
+  const _EventTile({required this.activity});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
