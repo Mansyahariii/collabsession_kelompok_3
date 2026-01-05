@@ -191,6 +191,25 @@ class _EventTile extends StatelessWidget {
               ),
             );
           },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        activity.title,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+                const HeroIcon(HeroIcons.chevronRight, size: 18),
+              ],
+            ),
+          ),
         ),
       ),
     );
