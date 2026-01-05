@@ -195,6 +195,10 @@ class _MyLoginState extends State<MyLogin> {
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(color: Colors.grey[300]!),
                         ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(color: Colors.grey[400]!),
+                        ),
                       ),
                     ),
                    ],
