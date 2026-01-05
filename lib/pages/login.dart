@@ -261,6 +261,14 @@ class _MyLoginState extends State<MyLogin> {
                             style: TextStyle(color: Colors.grey[800]),
                           ),
                         ),
+                        Checkbox(
+                          value: false,
+                          onChanged: (v) {},
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4.0),
+                          ),
+                          activeColor: Colors.black,
+                        ),
                       ],
                     ),
 
