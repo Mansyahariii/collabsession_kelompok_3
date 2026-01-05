@@ -60,8 +60,16 @@ class Detileprofile2 extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue.shade50,
                 borderRadius: BorderRadius.circular(20),
-           )
-           )
+           ),
+           child: const Text(
+                'Mahasiswa Teknik Informatika',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+           ),
+           
           ],
         ),
       ),
