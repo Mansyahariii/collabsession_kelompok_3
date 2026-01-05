@@ -126,9 +126,17 @@ class Detileprofile2 extends StatelessWidget {
                   textAlign: TextAlign.justify,
                   style: TextStyle(fontSize: 14, height: 1.6),
                 ),
-          )
+          ),
           
-          )
+          ),
+            const SizedBox(height: 20),
+             Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                
+              ),
+             ),
            
           ],
         ),
