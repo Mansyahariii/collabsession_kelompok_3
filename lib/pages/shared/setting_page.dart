@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../login.dart';
 
 class Settingpage extends StatelessWidget {
   const Settingpage({super.key});
@@ -55,7 +58,17 @@ class Settingpage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          onPressed: () {},
+          onPressed: () async {
+            await Supabase.instance.client.auth.signOut();
+
+            if (context.mounted) {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (_) => const MyLogin()),
+                (route) => false,
+              );
+            }
+          },
           icon: const HeroIcon(
             HeroIcons.arrowRightOnRectangle,
             color: Colors.white,
