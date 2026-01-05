@@ -35,6 +35,10 @@ class Detileprofile2 extends StatelessWidget {
                         ),
                       ],
                     ),
+                    child: const CircleAvatar(
+                      radius: 55,
+                      backgroundImage: AssetImage('assets/images/profile.jpg'),
+                    ),
                   ),
                  )
               ]
