@@ -79,6 +79,7 @@ class EventDetailPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 24),
                     const Text(
                       'Deskripsi',
                       style: TextStyle(
@@ -86,6 +87,7 @@ class EventDetailPage extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
+                    const SizedBox(height: 8),
                     Text(
                       activity.description,
                       style: const TextStyle(fontSize: 14, height: 1.5),
