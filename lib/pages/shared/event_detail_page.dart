@@ -86,6 +86,10 @@ class EventDetailPage extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
+                    Text(
+                      activity.description,
+                      style: const TextStyle(fontSize: 14, height: 1.5),
+                    ),
                   ],
                 ),
               ),
