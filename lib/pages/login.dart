@@ -144,6 +144,13 @@ class _MyLoginState extends State<MyLogin> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 6),
+              Container(
+                height: 240,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(18),
+                ),
+              ),
               ]
             )
           )
