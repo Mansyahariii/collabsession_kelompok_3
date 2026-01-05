@@ -212,7 +212,18 @@ class _MyLoginState extends State<MyLogin> {
                     ),
                     const SizedBox(height: 8),
 
-                     TextField(),
+                     TextField(
+                      controller: passCtrl,
+                      obscureText: _isLoading ? false : true,
+                      decoration: InputDecoration(
+                        hintText: '**********',
+                        hintStyle: TextStyle(color: Colors.grey[500]),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 16,
+                        ),
+                      )
+                     ),
 
                    ],
               ),
