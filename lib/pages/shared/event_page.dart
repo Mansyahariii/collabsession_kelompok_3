@@ -19,7 +19,33 @@ class EventPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return FutureBuilder<List<Activity>>(
+      future: _fetchEvents(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        final events = snapshot.data!;
+
+        if (events.isEmpty) {
+          return const Center(child: Text('Belum ada event'));
+        }
+
+        return ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            const Text(
+              'Semua Event',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+
+            ...events.map((activity) => _EventTile(activity: activity)),
+          ],
+        );
+      },
+    );
   }
 }
 
