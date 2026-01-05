@@ -7,7 +7,9 @@ class Detileprofile2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(child: Column(children: [Stack(
+        
+      )])),
     );
   }
 }
