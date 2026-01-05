@@ -207,5 +207,18 @@ class Detileprofile2 extends StatelessWidget {
   
   _buildContactIcon({
     required IconData icon, 
-    required MaterialColor color}) {}
+    required MaterialColor color}) {
+      return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(),
+      ),
+      child: Icon(
+        icon,
+        color: color,
+        size: 24,
+      ),
+      );
+    }
 }
