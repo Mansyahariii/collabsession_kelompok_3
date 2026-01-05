@@ -201,6 +201,16 @@ class _MyLoginState extends State<MyLogin> {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 14),
+
+                    const Text(
+                      'Password',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13,
+                      ),
+                    ),
+                    
                    ],
               ),
               ),
