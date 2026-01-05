@@ -23,7 +23,15 @@ class UserHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<List<Activity>>(
       future: _fetchActivities(),
-      builder: (context, asyncSnapshot) {
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return const Center(child: Text('Belum ada event'));
+        }
+
         return SafeArea(
           child: ListView(
             padding: const EdgeInsets.all(16),
