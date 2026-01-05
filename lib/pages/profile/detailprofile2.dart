@@ -169,6 +169,7 @@ class Detileprofile2 extends StatelessWidget {
                 ],
               ),
              ),
+             const SizedBox(height: 30),
            
           ],
         ),
@@ -176,7 +177,21 @@ class Detileprofile2 extends StatelessWidget {
     );
   }
   
-  _buildInfoTile({required IconData icon, required String title, required String value}) {}
+  _buildInfoTile({
+    required IconData icon, 
+    required String title, 
+    required String value}) {
+       return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
+      )
+       );
+       
+    }
   
-  _buildContactIcon({required IconData icon, required MaterialColor color}) {}
+  _buildContactIcon({
+    required IconData icon, 
+    required MaterialColor color}) {}
 }
