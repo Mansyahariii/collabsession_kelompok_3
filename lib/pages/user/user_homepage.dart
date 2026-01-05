@@ -203,6 +203,14 @@ class _EventTile extends StatelessWidget {
                         activity.title,
                         style: const TextStyle(fontWeight: FontWeight.w600),
                       ),
+                      const SizedBox(height: 4),
+                      Text(
+                        '${UserHomepage._formatDate(activity.date)}, ${activity.location}',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
                     ],
                   ),
                 ),
