@@ -104,6 +104,7 @@ class Detileprofile2 extends StatelessWidget {
               ],
             ),
            ),
+          const SizedBox(height: 30),
            
           ],
         ),
