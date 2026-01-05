@@ -111,7 +111,9 @@ class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
     
-    return Scaffold();
+    return Scaffold(
+       backgroundColor: Colors.grey[50],
+    );
   }
 
 
