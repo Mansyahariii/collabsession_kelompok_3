@@ -137,6 +137,7 @@ class _MyLoginState extends State<MyLogin> {
             )
         ],
         ),
+        body: SingleChildScrollView(),
     );
   }
 
