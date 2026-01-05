@@ -255,7 +255,12 @@ class _MyLoginState extends State<MyLogin> {
 
                     Row(
                       children: [
-                        
+                        Expanded(
+                          child: Text(
+                            'Remember me next time',
+                            style: TextStyle(color: Colors.grey[800]),
+                          ),
+                        ),
                       ],
                     ),
 
