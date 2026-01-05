@@ -135,21 +135,10 @@ class UserHomepage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
-            _eventTile(
-              title: 'Workshop Flutter',
-              date: '15 Okt 2026',
-              location: 'Lab B',
+            ...eventLainnya.map(
+              (activity) => _EventTile(activity: activity),
             ),
-            _eventTile(
-              title: 'Lomba UI/UX',
-              date: '20 Okt 2026',
-              location: 'Aula Kampus',
-            ),
-            _eventTile(
-              title: 'Webinar Startup',
-              date: '25 Okt 2026',
-              location: 'Online',
-            ),
+
           ],
         );
       },
