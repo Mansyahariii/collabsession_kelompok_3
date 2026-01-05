@@ -190,6 +190,7 @@ class _EventTile extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
         child: InkWell(
+          borderRadius: BorderRadius.circular(14),
           onTap: () {
             Navigator.push(
               context,
