@@ -48,8 +48,35 @@ class EventDetailPage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 12.0),
-                    Text(activity.description),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        const HeroIcon(
+                          HeroIcons.calendar,
+                          size: 16,
+                          color: Colors.grey,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          _formatDate(activity.date),
+                          style: TextStyle(color: Colors.grey.shade600),
+                        ),
+                        const SizedBox(width: 12),
+                        const HeroIcon(
+                          HeroIcons.mapPin,
+                          size: 16,
+                          color: Colors.grey,
+                        ),
+                        const SizedBox(width: 6),
+                        Expanded(
+                          child: Text(
+                            activity.location,
+                            style: TextStyle(color: Colors.grey.shade600),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -58,5 +85,23 @@ class EventDetailPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  static String _formatDate(DateTime date) {
+    final months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Mei',
+      'Jun',
+      'Jul',
+      'Agu',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Des',
+    ];
+    return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
 }
