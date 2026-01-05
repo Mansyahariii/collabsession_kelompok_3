@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../../models/activity.dart';
 
 class UserHomepage extends StatelessWidget {
   const UserHomepage({super.key});
+
+  Future<List<Activity>> _fetchActivities() async {
+    final response = await Supabase.instance.client
+        .from('activities')
+        .select()
+        .order('date', ascending: true);
+
+    return (response as List)
+        .map((e) => Activity.fromMap(e))
+        .toList();
+  }
+
 
   @override
   Widget build(BuildContext context) {
