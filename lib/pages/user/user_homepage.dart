@@ -12,7 +12,8 @@ class UserHomepage extends StatelessWidget {
     final response = await Supabase.instance.client
         .from('activities')
         .select()
-        .order('date', ascending: true);
+        .order('date', ascending: true)
+        .limit(5);
 
     return (response as List).map((e) => Activity.fromMap(e)).toList();
   }
