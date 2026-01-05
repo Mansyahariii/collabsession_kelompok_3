@@ -249,8 +249,13 @@ class _MyLoginState extends State<MyLogin> {
                                 setState(() => _isLoading = !_isLoading),
                           ),
                         ),
-                      )
+                      ),
                      ),
+                    const SizedBox(height: 12),
+
+                    Row(
+                      
+                    ),
 
                    ],
               ),
