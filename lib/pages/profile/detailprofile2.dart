@@ -134,7 +134,16 @@ class Detileprofile2 extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                
+                children: [
+                  const Text(
+                    'Kontak',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                ]
               ),
              ),
            
