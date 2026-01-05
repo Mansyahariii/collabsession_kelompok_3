@@ -230,6 +230,25 @@ class _MyLoginState extends State<MyLogin> {
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(color: Colors.grey[400]!),
                         ),
+                        suffixIcon: Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          padding: const EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[100],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: IconButton(
+                            icon: Icon(
+                              _isLoading
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              size: 20,
+                              color: Colors.grey[600],
+                            ),
+                            onPressed: () =>
+                                setState(() => _isLoading = !_isLoading),
+                          ),
+                        ),
                       )
                      ),
 
