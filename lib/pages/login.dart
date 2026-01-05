@@ -158,6 +158,15 @@ class _MyLoginState extends State<MyLogin> {
                   ),
                 ),
               ),
+              const SizedBox(height: 24),
+
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 18,
+                  vertical: 18,
+                ),
+              ),
+
               ]
             )
           )
