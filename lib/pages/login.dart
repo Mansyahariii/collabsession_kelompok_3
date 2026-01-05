@@ -137,7 +137,11 @@ class _MyLoginState extends State<MyLogin> {
             )
         ],
         ),
-        body: SingleChildScrollView(),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          )
+        ),
     );
   }
 
