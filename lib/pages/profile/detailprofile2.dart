@@ -91,6 +91,11 @@ class Detileprofile2 extends StatelessWidget {
                     title: 'Konsentrasi',
                     value: 'Software Engineering',
                   ),
+                   _buildInfoTile(
+                    icon: Icons.timeline,
+                    title: 'Semester',
+                    value: '5',
+                  ),
               ],
             ),
            ),
