@@ -150,6 +150,13 @@ class _MyLoginState extends State<MyLogin> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
                 ),
+                child: Center(
+                  child: Image.network(
+                    'https://i.imgur.com/TkIrScD.png',
+                    fit: BoxFit.contain,
+                    height: 200,
+                  ),
+                ),
               ),
               ]
             )
