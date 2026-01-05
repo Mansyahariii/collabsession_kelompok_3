@@ -23,7 +23,11 @@ class EventDetailPage extends StatelessWidget {
               child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
             ),
           ),
-          Text('Detail Event Page'),
+          const SizedBox(width: 12),
+          const Text(
+            'Detail Kegiatan',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
         ],
       ),
     );
