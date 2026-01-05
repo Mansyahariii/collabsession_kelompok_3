@@ -123,6 +123,17 @@ class _MyLoginState extends State<MyLogin> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12.0, top: 8.0),
+            child: TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero,
+                minimumSize: const Size(60, 24),
+              ),
+              child: Text(
+                'Forgot Password?',
+                style: TextStyle(color: Colors.grey[500], fontSize: 12),
+              ),
+            ),
             )
         ],
         ),
