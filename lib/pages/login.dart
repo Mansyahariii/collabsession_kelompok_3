@@ -27,14 +27,98 @@ class _MyLoginState extends State<MyLogin> {
   }
     Future<void> _login() async {
     setState(() => _isLoading = true);
-    }
+     try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailCtrl.text.trim(),
+        password: passCtrl.text.trim(),
+      );
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+      final user = credential.user;
+      if (user == null) {
+        throw Exception('Login gagal');
+      }
+
+      final uid = user.uid;
+      final supabase = Supabase.instance.client;
+
+      final profile = await supabase
+          .from('profiles')
+          .select()
+          .eq('firebase_uid', uid)
+          .maybeSingle();
+
+      if (profile == null) {
+        await supabase.from('profiles').insert({
+          'firebase_uid': uid,
+          'name': user.email ?? 'Mahasiswa',
+          'role': 'user',
+        });
+      }
+
+      final fcmToken = await FirebaseMessaging.instance.getToken();
+      if (fcmToken != null) {
+        await supabase
+            .from('profiles')
+            .update({'fcm_token': fcmToken})
+            .eq('firebase_uid', uid);
+      }
+
+      final updatedProfile = await supabase
+          .from('profiles')
+          .select()
+          .eq('firebase_uid', uid)
+          .single();
+
+      final role = updatedProfile['role'];
+
+      if (!mounted) return;
+
+      if (role == 'admin') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const AdminDashboard()),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const UserDashboard()),
+        );
+      }
+    } on FirebaseAuthException catch (e) {
+      _showError(e.message ?? 'Login gagal');
+    } catch (e) {
+      _showError(e.toString());
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+   void _showError(String message) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Error'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
     );
   }
+  
+  @override
+  Widget build(BuildContext context) {
+    
+    throw UnimplementedError();
+  }
+
+
+}
+
+  
 
    
-}
+
   
