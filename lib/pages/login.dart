@@ -141,7 +141,11 @@ class _MyLoginState extends State<MyLogin> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,)
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 6),
+              ]
+            )
           )
         ),
     );
