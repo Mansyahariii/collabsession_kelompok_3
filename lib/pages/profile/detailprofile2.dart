@@ -75,7 +75,12 @@ class Detileprofile2 extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                
+                  _buildInfoTile(
+                    icon: Icons.school,
+                    title: 'Kampus',
+                    value:
+                        'Global Institute | Institut Teknologi dan Bisnis Bina Sarana Global',
+                  ),
               ],
             ),
            ),
@@ -85,4 +90,6 @@ class Detileprofile2 extends StatelessWidget {
       ),
     );
   }
+  
+  _buildInfoTile({required IconData icon, required String title, required String value}) {}
 }
