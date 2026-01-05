@@ -171,6 +171,15 @@ class _MyLoginState extends State<MyLogin> {
                 ),
                  child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
+                   children: [
+                    const Text(
+                      'Email Address',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13,
+                      ),
+                    ),
+                   ],
               ),
               ),
 
