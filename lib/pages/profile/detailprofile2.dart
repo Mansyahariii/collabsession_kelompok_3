@@ -118,9 +118,16 @@ class Detileprofile2 extends StatelessWidget {
                       color: Colors.black12,
                       blurRadius: 8,
                     ),
+                    
                   ],
+          ),
+          child: const Text(
+                  "Mahasiswa Teknik Informatika dengan konsentrasi Software Engineering yang memiliki minat dalam pengembangan aplikasi dan teknologi digital. Fokus pada pembuatan sistem yang efisien, terstruktur, dan mudah digunakan.",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 14, height: 1.6),
+                ),
           )
-          )
+          
           )
            
           ],
