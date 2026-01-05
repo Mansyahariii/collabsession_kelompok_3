@@ -184,7 +184,14 @@ class _MyLoginState extends State<MyLogin> {
                     TextField(
                       controller: emailCtrl,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(),
+                      decoration: InputDecoration(
+                         hintText: 'Masukkan Email',
+                        hintStyle: TextStyle(color: Colors.grey[500]),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 16,
+                        ),
+                      ),
                     ),
                    ],
               ),
