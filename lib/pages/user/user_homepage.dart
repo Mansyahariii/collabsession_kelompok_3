@@ -21,112 +21,117 @@ class UserHomepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Selamat Datang!", style: TextStyle(fontSize: 20.0)),
-              HeroIcon(HeroIcons.moon, size: 24.0),
-            ],
-          ),
-          const SizedBox(height: 16),
-          TextField(
-            decoration: InputDecoration(
-              hintText: 'Cari Event, Seminar...',
-              prefixIcon: const HeroIcon(HeroIcons.magnifyingGlass, size: 20),
-              filled: true,
-              fillColor: Colors.grey.shade100,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Container(
+    return FutureBuilder<List<Activity>>(
+      future: _fetchActivities(),
+      builder: (context, asyncSnapshot) {
+        return SafeArea(
+          child: ListView(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Event Terdekat',
-                  style: TextStyle(color: Colors.white, fontSize: 12),
-                ),
-                const SizedBox(height: 8),
-                const Text(
-                  'Seminar Nasional',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Selamat Datang!", style: TextStyle(fontSize: 20.0)),
+                  HeroIcon(HeroIcons.moon, size: 24.0),
+                ],
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Cari Event, Seminar...',
+                  prefixIcon: const HeroIcon(HeroIcons.magnifyingGlass, size: 20),
+                  filled: true,
+                  fillColor: Colors.grey.shade100,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide.none,
                   ),
                 ),
-                const SizedBox(height: 4),
-                const Text(
-                  '12 Okt 2026, Aula Kampus',
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(16),
                 ),
-                const SizedBox(height: 12),
-                Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HeroIcon(
-                      HeroIcons.playCircle,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Lihat Detail',
+                    const Text(
+                      'Event Terdekat',
                       style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'Seminar Nasional',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    const Text(
+                      '12 Okt 2026, Aula Kampus',
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        HeroIcon(
+                          HeroIcons.playCircle,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          'Lihat Detail',
+                          style: TextStyle(color: Colors.white, fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 16),
+              SizedBox(
+                height: 36,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    _chip('Recommended', true),
+                    _chip('Hari Ini', false),
+                    _chip('Minggu Ini', false),
+                    _chip('Semua', false),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Event Mendatang',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 12),
+              _eventTile(
+                title: 'Workshop Flutter',
+                date: '15 Okt 2026',
+                location: 'Lab B',
+              ),
+              _eventTile(
+                title: 'Lomba UI/UX',
+                date: '20 Okt 2026',
+                location: 'Aula Kampus',
+              ),
+              _eventTile(
+                title: 'Webinar Startup',
+                date: '25 Okt 2026',
+                location: 'Online',
+              ),
+            ],
           ),
-          const SizedBox(height: 16),
-          SizedBox(
-            height: 36,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                _chip('Recommended', true),
-                _chip('Hari Ini', false),
-                _chip('Minggu Ini', false),
-                _chip('Semua', false),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            'Event Mendatang',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 12),
-          _eventTile(
-            title: 'Workshop Flutter',
-            date: '15 Okt 2026',
-            location: 'Lab B',
-          ),
-          _eventTile(
-            title: 'Lomba UI/UX',
-            date: '20 Okt 2026',
-            location: 'Aula Kampus',
-          ),
-          _eventTile(
-            title: 'Webinar Startup',
-            date: '25 Okt 2026',
-            location: 'Online',
-          ),
-        ],
-      ),
+        );
+      }
     );
   }
 
