@@ -254,7 +254,9 @@ class _MyLoginState extends State<MyLogin> {
                     const SizedBox(height: 12),
 
                     Row(
-                      
+                      children: [
+                        
+                      ],
                     ),
 
                    ],
