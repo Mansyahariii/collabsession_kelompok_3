@@ -86,6 +86,11 @@ class Detileprofile2 extends StatelessWidget {
                     title: 'Jurusan',
                     value: 'Teknik Informatika',
                   ),
+                   _buildInfoTile(
+                    icon: Icons.code,
+                    title: 'Konsentrasi',
+                    value: 'Software Engineering',
+                  ),
               ],
             ),
            ),
