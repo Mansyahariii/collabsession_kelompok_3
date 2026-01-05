@@ -3,6 +3,7 @@ import 'package:heroicons/heroicons.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../login.dart';
+import 'team_page.dart';
 
 class Settingpage extends StatelessWidget {
   const Settingpage({super.key});
@@ -47,7 +48,12 @@ class Settingpage extends StatelessWidget {
           icon: HeroIcons.users,
           title: 'Tim Pengembang',
           subtitle: 'Profil tim pengembang',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const TeamPage()),
+            );
+          },
         ),
         OutlinedButton.icon(
           style: OutlinedButton.styleFrom(
