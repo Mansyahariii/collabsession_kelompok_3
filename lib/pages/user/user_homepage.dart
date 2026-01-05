@@ -32,6 +32,10 @@ class UserHomepage extends StatelessWidget {
           return const Center(child: Text('Belum ada event'));
         }
 
+        final activities = snapshot.data!;
+        final eventTerdekat = activities.first;
+        final eventLainnya = activities.skip(1).toList();
+
         return SafeArea(
           child: ListView(
             padding: const EdgeInsets.all(16),
