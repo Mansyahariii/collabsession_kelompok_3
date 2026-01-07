@@ -152,7 +152,7 @@ class Detailprofile3 extends StatelessWidget {
                           Column(
                             children: [
                               Text(
-                                "Project",
+                                "KEAHLIAN",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w700,
@@ -160,7 +160,7 @@ class Detailprofile3 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "26",
+                                "Software Engineering",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   //fontWeight: FontWeight.w700,
