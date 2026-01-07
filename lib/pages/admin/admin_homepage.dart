@@ -77,7 +77,10 @@ class _AdminHomePageState extends State<AdminHomePage> {
               ),
               onPressed: () {},
               icon: const HeroIcon(HeroIcons.plus, color: Colors.white),
-              label: const Text('Tambah Event'),
+              label: const Text(
+                'Tambah Event',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
 
             const SizedBox(height: 24),
