@@ -4,7 +4,13 @@ import 'package:heroicons/heroicons.dart';
 
 class EventDetailPage extends StatelessWidget {
   final Activity activity;
-  const EventDetailPage({super.key, required this.activity});
+  final bool isAdmin;
+  
+  const EventDetailPage({
+    super.key,
+    required this.activity,
+    required this.isAdmin,
+  });
 
   @override
   Widget build(BuildContext context) {
