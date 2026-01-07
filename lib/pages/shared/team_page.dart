@@ -24,12 +24,12 @@ class TeamPage extends StatelessWidget {
                   child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
                 ),
               ),
+              const SizedBox(width: 12),
+              const Text(
+                'Tim Pengembang',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              ),
             ],
-          ),
-          const SizedBox(width: 12),
-          const Text(
-            'Detail Kegiatan',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
         ],
       ),
@@ -41,10 +41,7 @@ class _TeamCard extends StatelessWidget {
   final String name;
   final VoidCallback onTap;
 
-  const _TeamCard({
-    required this.name,
-    required this.onTap,
-  });
+  const _TeamCard({required this.name, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
