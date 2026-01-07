@@ -158,6 +158,50 @@ class EventDetailPage extends StatelessWidget {
     );
   }
 
+  Widget _adminButtons(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          width: double.infinity,
+          height: 48,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+            ),
+            onPressed: () {
+              // next step: EditEventPage
+            },
+            child: const Text(
+              'Edit Event',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+        SizedBox(
+          width: double.infinity,
+          height: 48,
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(color: Colors.red.shade400),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+            ),
+            onPressed: () => _deleteEvent(context),
+            child: const Text(
+              'Hapus Event',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   static String _formatDate(DateTime date) {
     final months = [
       'Jan',
