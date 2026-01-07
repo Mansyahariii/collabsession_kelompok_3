@@ -6,7 +6,8 @@ import '../../models/activity.dart';
 import 'event_detail_page.dart';
 
 class EventPage extends StatelessWidget {
-  const EventPage({super.key});
+  final bool isAdmin;
+  const EventPage({super.key, required this.isAdmin});
 
   Future<List<Activity>> _fetchEvents() async {
     final data = await Supabase.instance.client
@@ -71,7 +72,8 @@ class _EventTile extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => EventDetailPage(activity: activity),
+                builder: (_) =>
+                    EventDetailPage(activity: activity, isAdmin: true),
               ),
             );
           },

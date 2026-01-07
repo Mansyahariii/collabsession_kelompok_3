@@ -14,7 +14,11 @@ class UserDashboard extends StatefulWidget {
 class _UserDashboardState extends State<UserDashboard> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [UserHomepage(), EventPage(), Settingpage()];
+  final List<Widget> _pages = [
+    UserHomepage(),
+    EventPage(isAdmin: false),
+    Settingpage(),
+  ];
 
   PreferredSizeWidget? _buildAppBar() {
     if (_currentIndex == 2) return null;

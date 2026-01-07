@@ -176,7 +176,8 @@ class _AdminHomePageState extends State<AdminHomePage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => EventDetailPage(activity: activity),
+                builder: (_) =>
+                    EventDetailPage(activity: activity, isAdmin: true),
               ),
             );
           },

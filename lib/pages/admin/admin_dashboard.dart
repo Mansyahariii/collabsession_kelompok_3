@@ -16,7 +16,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
 
   final List<Widget> _pages = [
     AdminHomePage(),
-    EventPage(),
+    EventPage(isAdmin: true),
     Settingpage(),
   ];
 

@@ -61,7 +61,10 @@ class UserHomepage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => EventDetailPage(activity: eventTerdekat),
+                    builder: (_) => EventDetailPage(
+                      activity: eventTerdekat,
+                      isAdmin: false,
+                    ),
                   ),
                 );
               },
@@ -196,7 +199,8 @@ class _EventTile extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => EventDetailPage(activity: activity),
+                builder: (_) =>
+                    EventDetailPage(activity: activity, isAdmin: false),
               ),
             );
           },

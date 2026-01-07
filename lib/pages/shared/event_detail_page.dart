@@ -1,7 +1,6 @@
 import 'package:collabsession/models/activity.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class EventDetailPage extends StatelessWidget {
   final Activity activity;
@@ -12,15 +11,6 @@ class EventDetailPage extends StatelessWidget {
     required this.activity,
     required this.isAdmin,
   });
-
-  Future<void> _deleteEvent(BuildContext context) async {
-    await Supabase.instance.client
-        .from('activities')
-        .delete()
-        .eq('id', activity.id);
-
-    Navigator.pop(context, true);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +43,7 @@ class EventDetailPage extends StatelessWidget {
                 ],
               ),
             ),
+
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -61,8 +52,8 @@ class EventDetailPage extends StatelessWidget {
                   children: [
                     Text(
                       activity.title,
-                      style: TextStyle(
-                        fontSize: 22.0,
+                      style: const TextStyle(
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -112,9 +103,10 @@ class EventDetailPage extends StatelessWidget {
                 ),
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.all(16),
-              child: isAdmin ? _adminButtons(context) : _userButton(),
+              child: isAdmin ? _adminActions(context) : _userAction(),
             ),
           ],
         ),
@@ -122,7 +114,55 @@ class EventDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _userButton() {
+  Widget _adminActions(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          width: double.infinity,
+          height: 48,
+          child: ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+            ),
+            onPressed: () {},
+            icon: const HeroIcon(
+              HeroIcons.pencil,
+              color: Colors.white,
+              size: 18,
+            ),
+            label: const Text(
+              'Edit Event',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+        SizedBox(
+          width: double.infinity,
+          height: 48,
+          child: OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.red,
+              side: const BorderSide(color: Colors.red),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+              ),
+            ),
+            onPressed: () {
+              _confirmDelete(context);
+            },
+            icon: const HeroIcon(HeroIcons.trash, size: 18),
+            label: const Text('Hapus Event'),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _userAction() {
     return SizedBox(
       width: double.infinity,
       height: 48,
@@ -142,47 +182,26 @@ class EventDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _adminButtons(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          height: 48,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14),
-              ),
-            ),
+  void _confirmDelete(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Hapus Event'),
+        content: const Text('Event ini akan dihapus permanen. Lanjutkan?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Batal'),
+          ),
+          TextButton(
             onPressed: () {
-              // next step: EditEventPage
+              Navigator.pop(context); // dialog
+              Navigator.pop(context); // detail page
             },
-            child: const Text(
-              'Edit Event',
-              style: TextStyle(color: Colors.white),
-            ),
+            child: const Text('Hapus', style: TextStyle(color: Colors.red)),
           ),
-        ),
-        const SizedBox(height: 12),
-        SizedBox(
-          width: double.infinity,
-          height: 48,
-          child: OutlinedButton(
-            style: OutlinedButton.styleFrom(
-              side: BorderSide(color: Colors.red.shade400),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14),
-              ),
-            ),
-            onPressed: () => _deleteEvent(context),
-            child: const Text(
-              'Hapus Event',
-              style: TextStyle(color: Colors.red),
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
