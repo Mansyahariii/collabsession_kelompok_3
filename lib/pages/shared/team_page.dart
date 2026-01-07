@@ -31,6 +31,11 @@ class TeamPage extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 16),
+          _TeamCard(name: 'Ari Firmansyah', onTap: () {}),
+          _TeamCard(name: 'Rizky Adekatuasa', onTap: () {}),
+          _TeamCard(name: 'Cendy Alvianto', onTap: () {}),
+          _TeamCard(name: 'Mison Wenda', onTap: () {}),
         ],
       ),
     );
