@@ -9,17 +9,21 @@ class TeamPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          InkWell(
-            borderRadius: BorderRadius.circular(12),
-            onTap: () => Navigator.pop(context),
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
+          Row(
+            children: [
+              InkWell(
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey.shade300),
+                onTap: () => Navigator.pop(context),
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
+                ),
               ),
-              child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
-            ),
+            ],
           ),
           const SizedBox(width: 12),
           const Text(
