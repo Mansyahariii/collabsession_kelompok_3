@@ -1,16 +1,26 @@
 import 'package:collabsession/models/activity.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class EventDetailPage extends StatelessWidget {
   final Activity activity;
   final bool isAdmin;
-  
+
   const EventDetailPage({
     super.key,
     required this.activity,
     required this.isAdmin,
   });
+
+  Future<void> _deleteEvent(BuildContext context) async {
+    await Supabase.instance.client
+        .from('activities')
+        .delete()
+        .eq('id', activity.id);
+
+    Navigator.pop(context, true);
+  }
 
   @override
   Widget build(BuildContext context) {
