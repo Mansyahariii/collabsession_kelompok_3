@@ -96,7 +96,7 @@ class Detailprofile3 extends StatelessWidget {
                           Column(
                             children: [
                               Text(
-                                "Followers",
+                                "NIM",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w700,
@@ -104,7 +104,7 @@ class Detailprofile3 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "564",
+                                "1123150137",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   //fontWeight: FontWeight.w700,
