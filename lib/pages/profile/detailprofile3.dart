@@ -68,7 +68,7 @@ class Detailprofile3 extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "Flutter Developer",
+                            "Aplikasi Mobile Developer",
                             style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.white,
