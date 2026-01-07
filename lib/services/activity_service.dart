@@ -13,6 +13,7 @@ class ActivityService {
 
     return response.map<Activity>((item) => Activity.fromMap(item)).toList();
   }
+
   Future<void> addActivity(Map<String, dynamic> data) async {
     await _client.from('activities').insert(data);
   }
@@ -25,5 +26,9 @@ class ActivityService {
         .select();
 
     debugPrint('UPDATE RESULT: $response');
+  }
+
+  Future<void> deleteActivity(int id) async {
+    await _client.from('activities').delete().eq('id', id);
   }
 }
