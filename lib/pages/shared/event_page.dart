@@ -3,47 +3,30 @@ import 'package:heroicons/heroicons.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../models/activity.dart';
+import '../../services/activity_service.dart';
 import 'event_detail_page.dart';
 
 class EventPage extends StatelessWidget {
   final bool isAdmin;
+
   const EventPage({super.key, required this.isAdmin});
-
-  Future<List<Activity>> _fetchEvents() async {
-    final data = await Supabase.instance.client
-        .from('activities')
-        .select()
-        .order('date', ascending: true);
-
-    return (data as List).map((e) => Activity.fromMap(e)).toList();
-  }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Activity>>(
-      future: _fetchEvents(),
+      future: ActivityService().fetchActivities(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         }
 
-        final events = snapshot.data!;
-
-        if (events.isEmpty) {
-          return const Center(child: Text('Belum ada event'));
-        }
+        final activities = snapshot.data!;
 
         return ListView(
           padding: const EdgeInsets.all(16),
-          children: [
-            const Text(
-              'Semua Event',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-
-            ...events.map((activity) => _EventTile(activity: activity)),
-          ],
+          children: activities.map((activity) {
+            return _EventTile(activity: activity, isAdmin: isAdmin);
+          }).toList(),
         );
       },
     );
@@ -52,8 +35,9 @@ class EventPage extends StatelessWidget {
 
 class _EventTile extends StatelessWidget {
   final Activity activity;
+  final bool isAdmin;
 
-  const _EventTile({required this.activity});
+  const _EventTile({required this.activity, required this.isAdmin});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +57,7 @@ class _EventTile extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (_) =>
-                    EventDetailPage(activity: activity, isAdmin: true),
+                    EventDetailPage(activity: activity, isAdmin: isAdmin),
               ),
             );
           },
@@ -91,7 +75,7 @@ class _EventTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        '${_formatDate(activity.date)}, ${activity.location}',
+                        '${activity.location}',
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey.shade600,
@@ -107,23 +91,5 @@ class _EventTile extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  static String _formatDate(DateTime date) {
-    final months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mei',
-      'Jun',
-      'Jul',
-      'Agu',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Des',
-    ];
-    return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
 }

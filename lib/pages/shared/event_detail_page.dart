@@ -19,6 +19,7 @@ class EventDetailPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            // ===== HEADER =====
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
@@ -127,12 +128,9 @@ class EventDetailPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
               ),
             ),
-            onPressed: () {},
-            icon: const HeroIcon(
-              HeroIcons.pencil,
-              color: Colors.white,
-              size: 18,
-            ),
+            onPressed: () {
+            },
+            icon: const HeroIcon(HeroIcons.pencil, color: Colors.white, size: 18),
             label: const Text(
               'Edit Event',
               style: TextStyle(color: Colors.white),
@@ -173,7 +171,8 @@ class EventDetailPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(14),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+        },
         child: const Text(
           'Ikuti Kegiatan',
           style: TextStyle(color: Colors.white),
@@ -198,7 +197,10 @@ class EventDetailPage extends StatelessWidget {
               Navigator.pop(context); // dialog
               Navigator.pop(context); // detail page
             },
-            child: const Text('Hapus', style: TextStyle(color: Colors.red)),
+            child: const Text(
+              'Hapus',
+              style: TextStyle(color: Colors.red),
+            ),
           ),
         ],
       ),
@@ -207,18 +209,8 @@ class EventDetailPage extends StatelessWidget {
 
   static String _formatDate(DateTime date) {
     final months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mei',
-      'Jun',
-      'Jul',
-      'Agu',
-      'Sep',
-      'Okt',
-      'Nov',
-      'Des',
+      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+      'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
