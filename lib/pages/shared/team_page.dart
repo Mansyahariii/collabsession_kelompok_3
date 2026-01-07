@@ -8,6 +8,7 @@ class TeamPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        padding: const EdgeInsets.all(16),
         children: [
           Row(
             children: [
