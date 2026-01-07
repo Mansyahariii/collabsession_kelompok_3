@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import '../../models/activity.dart';
-import '../../services/activity_service.dart';
 import '../shared/event_page.dart';
 import '../shared/setting_page.dart';
 import 'admin_homepage.dart';

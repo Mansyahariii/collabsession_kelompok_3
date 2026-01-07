@@ -3,6 +3,7 @@ import 'package:heroicons/heroicons.dart';
 import '../../models/activity.dart';
 import '../../services/activity_service.dart';
 import '../shared/event_detail_page.dart';
+import 'add_event_page.dart';
 
 class AdminHomePage extends StatefulWidget {
   const AdminHomePage({super.key});
@@ -76,7 +77,19 @@ class _AdminHomePageState extends State<AdminHomePage> {
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const AddEventPage()),
+                );
+
+                if (result == true) {
+                  setState(() {
+                    _activitiesFuture = _activityService.fetchActivities();
+                  });
+                }
+              },
+
               icon: const HeroIcon(HeroIcons.plus, color: Colors.white),
               label: const Text(
                 'Tambah Event',
