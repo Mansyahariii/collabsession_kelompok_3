@@ -138,6 +138,26 @@ class EventDetailPage extends StatelessWidget {
     );
   }
 
+  Widget _userButton() {
+    return SizedBox(
+      width: double.infinity,
+      height: 48,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(14),
+          ),
+        ),
+        onPressed: () {},
+        child: const Text(
+          'Ikuti Kegiatan',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   static String _formatDate(DateTime date) {
     final months = [
       'Jan',
