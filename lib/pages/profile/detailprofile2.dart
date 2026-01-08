@@ -1,4 +1,3 @@
-import 'package:collabsession/pages/shared/team_page.dart';
 import 'package:flutter/material.dart';
 
 class Detileprofile2 extends StatelessWidget {
@@ -33,10 +32,7 @@ class Detileprofile2 extends StatelessWidget {
                   left: 16,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const TeamPage()),
-                      );
+                      Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),

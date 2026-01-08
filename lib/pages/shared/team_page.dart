@@ -2,7 +2,6 @@ import 'package:collabsession/pages/profile/detailprofile1.dart';
 import 'package:collabsession/pages/profile/detailprofile2.dart';
 import 'package:collabsession/pages/profile/detailprofile3.dart';
 import 'package:collabsession/pages/profile/profilecendy.dart';
-import 'package:collabsession/pages/shared/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -20,10 +19,7 @@ class TeamPage extends StatelessWidget {
               InkWell(
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const Settingpage()),
-              );
+              Navigator.pop(context);
             },
                 child: Container(
                   padding: const EdgeInsets.all(8),
