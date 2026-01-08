@@ -83,4 +83,18 @@ class ProfilePage1 extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildInfo(String label, String value) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: TextStyle(color: Colors.grey[500], fontSize: 13)),
+        const SizedBox(height: 4),
+        Text(
+          value,
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
+  }
 }
