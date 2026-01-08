@@ -16,7 +16,12 @@ class Settingpage extends StatelessWidget {
         Center(
           child: Text(
             'Pengaturan',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black, decoration: TextDecoration.none),
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              decoration: TextDecoration.none,
+            ),
           ),
         ),
         const SizedBox(height: 16),
@@ -59,12 +64,39 @@ class Settingpage extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             backgroundColor: Colors.red,
             minimumSize: const Size.fromHeight(52),
-            side: BorderSide(color: Colors.transparent),
+            side: const BorderSide(color: Colors.transparent),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
           onPressed: () async {
+            final bool? confirm = await showDialog<bool>(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: const Text('Konfirmasi Logout'),
+                  content: const Text(
+                    'Apakah kamu yakin ingin keluar dari akun ini?',
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      child: const Text('Batal', style: TextStyle(color: Colors.black),),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      ),
+                      onPressed: () => Navigator.pop(context, true),
+                      child: const Text('Logout', style: TextStyle(color: Colors.white),),
+                    ),
+                  ],
+                );
+              },
+            );
+
+            if (confirm != true) return;
+
             await Supabase.instance.client.auth.signOut();
 
             if (context.mounted) {
