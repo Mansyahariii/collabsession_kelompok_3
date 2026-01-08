@@ -10,6 +10,7 @@ class Detailprofile3 extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            
             children: [
               Card(
                 elevation: 8,
@@ -18,6 +19,14 @@ class Detailprofile3 extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/fotoade.jpeg'),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.3),
+                        BlendMode.darken,
+                      ),
+                    ),
                     gradient: LinearGradient(
                       colors: [Colors.red, Colors.orange],
                       begin: Alignment.topCenter,
