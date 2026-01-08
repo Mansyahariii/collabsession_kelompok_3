@@ -1,0 +1,225 @@
+import 'package:flutter/material.dart';
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF5F5F5),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  height: 230,
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32),
+                  ),
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(32),
+                        child: Image.asset(
+                          "assets/images/background2.jpg",
+                          width: double.infinity,
+                          height: 230,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 24,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                //
+                              },
+                              style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: const Icon(
+                                Icons.arrow_back_ios_new,
+                                color: Colors.black,
+                              ),
+                            ),
+                            const Text(
+                              "Profile",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                //
+                              },
+                              style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: const Icon(
+                                Icons.edit,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  bottom: -25,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: CircleAvatar(
+                      radius: 53,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: const AssetImage(
+                          "assets/images/profile-cendy.jpg",
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 14),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          "Cendy Alvianto",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "(1123150136)",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(height: 2),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.location_on, color: Colors.grey),
+                            Text(
+                              "Tangerang, Banten",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    "About",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    "Halo, nama gue Cendy. Gue hobi travelling dan hiking karena suka jalan-jalan dan menikmati alam. Gue juga punya minat buat terus berkembang, belajar hal baru, dan ningkatin kemampuan diri, terutama di bidang teknologi dan pengembangan aplikasi.",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    "Skills",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Image.asset(
+                          "assets/images/canva_logo.png",
+                          width: 28,
+                          height: 28,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 24),
+                  const Text(
+                    "Contact",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/instagram.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": @cendyalvianto_",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/github.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": github.com/cendyal-hub",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/email.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": sendyaja17@gmail.com",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
