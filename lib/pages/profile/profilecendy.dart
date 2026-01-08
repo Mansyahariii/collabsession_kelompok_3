@@ -11,6 +11,7 @@ class ProfilePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(height: 20),
             Stack(
               clipBehavior: Clip.none,
               children: [
