@@ -10,8 +10,10 @@ class ProfilePage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               clipBehavior: Clip.none,
@@ -77,6 +79,47 @@ class ProfilePage1 extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(height: 70),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Ari Firmansyah",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: -0.5,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  // Row Statistik yang lebih rapi
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _buildInfo("Nim", "1123150127"),
+                      _buildInfo("Kelas", "TI SE 23 P"),
+                      _buildInfo("Keahlian", "UI/UX Design"),
+                    ],
+                  ),
+                  const SizedBox(height: 25),
+                  const Text(
+                    "About Me",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    "Ini adalah deskripsi tentang saya. Saya seorang mahasiswa yang sedang belajar Flutter di semester 5. Saya sangat senang belajar Flutter karena Flutter sangat menyenangkan dan mudah untuk dipelajari.",
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 15,
+                      height: 1.5,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
