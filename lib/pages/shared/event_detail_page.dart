@@ -2,6 +2,8 @@ import 'package:collabsession/models/activity.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
+import '../admin/edit_event_page.dart';
+
 class EventDetailPage extends StatelessWidget {
   final Activity activity;
   final bool isAdmin;
@@ -19,7 +21,6 @@ class EventDetailPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // ===== HEADER =====
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
@@ -128,9 +129,24 @@ class EventDetailPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
               ),
             ),
-            onPressed: () {
+            onPressed: () async {
+              final updated = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => EditEventPage(activity: activity),
+                ),
+              );
+
+              if (updated == true && context.mounted) {
+                Navigator.pop(context, true); // trigger refresh list
+              }
             },
-            icon: const HeroIcon(HeroIcons.pencil, color: Colors.white, size: 18),
+
+            icon: const HeroIcon(
+              HeroIcons.pencil,
+              color: Colors.white,
+              size: 18,
+            ),
             label: const Text(
               'Edit Event',
               style: TextStyle(color: Colors.white),
@@ -171,8 +187,7 @@ class EventDetailPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(14),
           ),
         ),
-        onPressed: () {
-        },
+        onPressed: () {},
         child: const Text(
           'Ikuti Kegiatan',
           style: TextStyle(color: Colors.white),
@@ -197,10 +212,7 @@ class EventDetailPage extends StatelessWidget {
               Navigator.pop(context); // dialog
               Navigator.pop(context); // detail page
             },
-            child: const Text(
-              'Hapus',
-              style: TextStyle(color: Colors.red),
-            ),
+            child: const Text('Hapus', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),
@@ -209,8 +221,18 @@ class EventDetailPage extends StatelessWidget {
 
   static String _formatDate(DateTime date) {
     final months = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
-      'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des',
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Mei',
+      'Jun',
+      'Jul',
+      'Agu',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Des',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }

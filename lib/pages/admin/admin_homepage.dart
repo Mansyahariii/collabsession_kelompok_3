@@ -179,8 +179,15 @@ class _AdminHomePageState extends State<AdminHomePage> {
                 builder: (_) =>
                     EventDetailPage(activity: activity, isAdmin: true),
               ),
-            );
+            ).then((value) {
+              if (value == true) {
+                setState(() {
+                  _activitiesFuture = _activityService.fetchActivities();
+                });
+              }
+            });
           },
+
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Row(

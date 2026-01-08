@@ -6,12 +6,19 @@ class ActivityService {
   final SupabaseClient _client = Supabase.instance.client;
 
   Future<List<Activity>> fetchActivities() async {
-    final response = await _client
-        .from('activities')
-        .select()
-        .order('date', ascending: true);
+    try {
+      final response = await _client
+          .from('activities')
+          .select()
+          .order('date', ascending: true);
 
-    return response.map<Activity>((item) => Activity.fromMap(item)).toList();
+      if (response == null) return [];
+
+      return (response as List).map((item) => Activity.fromMap(item)).toList();
+    } catch (e) {
+      debugPrint('FETCH ACTIVITIES ERROR: $e');
+      return [];
+    }
   }
 
   Future<void> addActivity(Map<String, dynamic> data) async {
@@ -28,7 +35,11 @@ class ActivityService {
     debugPrint('UPDATE RESULT: $response');
   }
 
-  Future<void> deleteActivity(int id) async {
-    await _client.from('activities').delete().eq('id', id);
+  Future<void> deleteActivity(String id) async {
+    final response = await _client.from('activities').delete().eq('id', id);
+
+    if (response.isEmpty) {
+      throw Exception('Delete failed');
+    }
   }
 }

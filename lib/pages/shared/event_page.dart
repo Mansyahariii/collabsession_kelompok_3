@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../models/activity.dart';
 import '../../services/activity_service.dart';

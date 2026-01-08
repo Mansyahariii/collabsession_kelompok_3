@@ -1,5 +1,5 @@
 class Activity {
-  final int id;
+  final String id;
   final String title;
   final String description;
   final DateTime date;
@@ -15,7 +15,7 @@ class Activity {
 
   factory Activity.fromMap(Map<String, dynamic> map) {
     return Activity(
-      id: map['id'],
+      id: map['id'].toString(),
       title: map['title'],
       description: map['description'],
       date: DateTime.parse(map['date']),
