@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/login.dart';
 import 'package:collabsession/pages/splashscreen2.dart';
 import 'package:flutter/material.dart';
 
@@ -51,6 +52,10 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
+                      Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => MyLogin())
+                      );
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),

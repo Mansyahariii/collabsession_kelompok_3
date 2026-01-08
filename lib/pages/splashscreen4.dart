@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class Splashscreen4 extends StatelessWidget {
@@ -49,7 +50,12 @@ class Splashscreen4 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => MyLogin())
+                      );
+                    },
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -60,7 +66,12 @@ class Splashscreen4 extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => MyLogin())
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(24),
