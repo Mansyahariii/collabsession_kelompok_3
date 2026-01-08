@@ -14,9 +14,9 @@ class Settingpage extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       children: [
         Center(
-          child: const Text(
+          child: Text(
             'Pengaturan',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black, decoration: TextDecoration.none),
           ),
         ),
         const SizedBox(height: 16),
