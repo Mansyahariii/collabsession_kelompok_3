@@ -17,6 +17,7 @@ class _MyLoginState extends State<MyLogin> {
   final passCtrl = TextEditingController();
 
   bool _isLoading = false;
+  bool _obscurePassword = true;
 
   @override
   void dispose() {
@@ -214,7 +215,7 @@ class _MyLoginState extends State<MyLogin> {
 
                     TextField(
                       controller: passCtrl,
-                      obscureText: _isLoading ? false : true,
+                      obscureText: _obscurePassword,
                       decoration: InputDecoration(
                         hintText: '**********',
                         hintStyle: TextStyle(color: Colors.grey[500]),
@@ -240,13 +241,16 @@ class _MyLoginState extends State<MyLogin> {
                           child: IconButton(
                             icon: Icon(
                               _isLoading
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
                               size: 20,
                               color: Colors.grey[600],
                             ),
-                            onPressed: () =>
-                                setState(() => _isLoading = !_isLoading),
+                            onPressed: () {
+                              setState(() {
+                                _obscurePassword = !_obscurePassword;
+                              });
+                            },
                           ),
                         ),
                       ),
