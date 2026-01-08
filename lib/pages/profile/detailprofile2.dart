@@ -124,13 +124,13 @@ class Detileprofile2 extends StatelessWidget {
                   ),
                   _buildInfoTile(
                     icon: Icons.computer,
-                    title: 'Jurusan',
-                    value: 'Teknik Informatika',
+                    title: 'Kelas',
+                    value: 'TI 23 SE P2',
                   ),
                   _buildInfoTile(
                     icon: Icons.code,
-                    title: 'Konsentrasi',
-                    value: 'Software Engineering',
+                    title: 'NIM',
+                    value: '1123150103',
                   ),
                   _buildInfoTile(
                     icon: Icons.timeline,
