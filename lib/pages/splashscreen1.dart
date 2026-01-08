@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
@@ -35,16 +35,15 @@ class SplashScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Row(
-                children: 
-                  const [
-                    Icon(Icons.circle, size: 6, color: Colors.black),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                    SizedBox(width: 4),
-                    Icon(Icons.circle, size: 6, color: Colors.grey),
-                  ],
+                children: const [
+                  Icon(Icons.circle, size: 6, color: Colors.black),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                ],
               ),
               const Spacer(),
               Row(
@@ -53,28 +52,33 @@ class SplashScreen extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => MyLogin())
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MyLogin(),
+                        ),
                       );
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),
-                      
                     ),
-                    child : const Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.black,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => SplashScreen2())
-                      ); },
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SplashScreen2(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(24),
@@ -86,9 +90,9 @@ class SplashScreen extends StatelessWidget {
               ),
               const SizedBox(height: 25),
             ],
-          )
-        )
-      )
+          ),
+        ),
+      ),
     );
   }
 }

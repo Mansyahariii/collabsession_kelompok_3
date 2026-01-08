@@ -1,5 +1,6 @@
 import 'package:collabsession/pages/login.dart';
 import 'package:flutter/material.dart';
+import 'package:collabsession/pages/login.dart';
 
 class Splashscreen4 extends StatelessWidget {
   const Splashscreen4({super.key});
@@ -15,15 +16,15 @@ class Splashscreen4 extends StatelessWidget {
             children: [
               SizedBox(height: 50),
               SizedBox(
-                  width: 500,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/digital-nomad-working-near-beach.png',
-                      width: 325,
-                      height: 325,
-                    ),
+                width: 500,
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/digital-nomad-working-near-beach.png',
+                    width: 325,
+                    height: 325,
                   ),
                 ),
+              ),
               const SizedBox(height: 10),
               Text(
                 "Share Event \nWith Friends",
@@ -52,8 +53,8 @@ class Splashscreen4 extends StatelessWidget {
                   TextButton(
                     onPressed: () {
                       Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => MyLogin())
+                        context,
+                        MaterialPageRoute(builder: (context) => MyLogin()),
                       );
                     },
                     child: Text(
@@ -68,8 +69,8 @@ class Splashscreen4 extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => MyLogin())
+                        context,
+                        MaterialPageRoute(builder: (context) => MyLogin()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
