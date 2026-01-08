@@ -13,6 +13,7 @@ class Settingpage extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        SizedBox(height: 40),
         Center(
           child: Text(
             'Pengaturan',
