@@ -1,40 +1,21 @@
 {
   "project_info": {
-    "project_number": "791442713148",
-    "project_id": "project-uas-appmobile",
-    "storage_bucket": "project-uas-appmobile.firebasestorage.app"
+    "project_number": "851657076418",
+    "project_id": "manajemen-kegiatan",
+    "storage_bucket": "manajemen-kegiatan.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:791442713148:android:938703ee306da47cdeb139",
+        "mobilesdk_app_id": "1:851657076418:android:6e7e765191833b563b555b",
         "android_client_info": {
-          "package_name": "com.example.collabsession"
+          "package_name": "com.company.act"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDdt2KxPYITmDSZ8rAWPHbsvg8FdL-4wbo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:791442713148:android:6d1558403db54303deb139",
-        "android_client_info": {
-          "package_name": "com.kelompok3.appmobile"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDdt2KxPYITmDSZ8rAWPHbsvg8FdL-4wbo"
+          "current_key": "AIzaSyAoduwrrXUW67dlH3oZ9fPB9smPC8c3vn8"
         }
       ],
       "services": {

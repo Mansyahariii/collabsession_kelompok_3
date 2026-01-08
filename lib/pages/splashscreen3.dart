@@ -1,9 +1,9 @@
 import 'package:collabsession/pages/login.dart';
-import 'package:collabsession/pages/splashscreen2.dart';
+import 'package:collabsession/pages/splashscreen4.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class Splashscreen3 extends StatelessWidget {
+  const Splashscreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,21 +12,24 @@ class SplashScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // tambahkan illustration splash screen//
               const SizedBox(height: 50),
               Center(
                 child: Image.asset(
-                  'assets/images/logo global.png',
+                  'assets/images/digital-nomad-working-in-airport.png',
                   width: 325,
                   height: 325,
                   fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: 10),
+              // tambahkan teks //
               const Text(
-                'Find seminars\nworkshops, and more',
+                'Get reminders and stay updated',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -34,18 +37,24 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
+              // tambahkan Indikator //
               Row(
                 children: const [
-                  Icon(Icons.circle, size: 6, color: Colors.black),
-                  SizedBox(width: 4),
                   Icon(Icons.circle, size: 6, color: Colors.grey),
                   SizedBox(width: 4),
                   Icon(Icons.circle, size: 6, color: Colors.grey),
+                  SizedBox(width: 4),
+                  Icon(
+                    Icons.circle,
+                    size: 6,
+                    color: Color.fromARGB(255, 12, 0, 0),
+                  ),
                   SizedBox(width: 4),
                   Icon(Icons.circle, size: 6, color: Colors.grey),
                 ],
               ),
               const Spacer(),
+              // tambahkan Bottom buttons//
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -53,20 +62,19 @@ class SplashScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => MyLogin(),
-                        ),
+                        MaterialPageRoute(builder: (context) => MyLogin()),
                       );
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),
                     ),
+
                     child: const Text(
                       'Skip',
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.black,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -75,7 +83,7 @@ class SplashScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SplashScreen2(),
+                          builder: (context) => Splashscreen4(),
                         ),
                       );
                     },

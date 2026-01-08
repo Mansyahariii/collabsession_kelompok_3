@@ -1,4 +1,4 @@
-package com.example.collabsession
+package com.company.act
 
 import io.flutter.embedding.android.FlutterActivity
 

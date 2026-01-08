@@ -1,9 +1,9 @@
 import 'package:collabsession/pages/login.dart';
-import 'package:collabsession/pages/splashscreen2.dart';
+import 'package:collabsession/pages/splashscreen3.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+class SplashScreen2 extends StatelessWidget {
+  const SplashScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,32 +17,34 @@ class SplashScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 50),
               Center(
-                child: Image.asset(
-                  'assets/images/logo global.png',
+                child: SizedBox(
                   width: 325,
                   height: 325,
-                  fit: BoxFit.cover,
+                  child: Image.asset(
+                    "assets/images/smart-people.png",
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
               const Text(
-                'Find seminars\nworkshops, and more',
+                'Join your favorite \ncampus activities',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.black87,
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 32),
               Row(
-                children: const [
-                  Icon(Icons.circle, size: 6, color: Colors.black),
-                  SizedBox(width: 4),
-                  Icon(Icons.circle, size: 6, color: Colors.grey),
-                  SizedBox(width: 4),
-                  Icon(Icons.circle, size: 6, color: Colors.grey),
-                  SizedBox(width: 4),
-                  Icon(Icons.circle, size: 6, color: Colors.grey),
+                children: [
+                  _dot(),
+                  const SizedBox(width: 5),
+                  _dot(isActive: true),
+                  const SizedBox(width: 5),
+                  _dot(),
+                  const SizedBox(width: 5),
+                  _dot(),
                 ],
               ),
               const Spacer(),
@@ -53,19 +55,14 @@ class SplashScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => MyLogin(),
-                        ),
+                        MaterialPageRoute(builder: (context) => MyLogin()),
                       );
                     },
-                    style: TextButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(0, 255, 255, 255),
-                    ),
                     child: const Text(
                       'Skip',
                       style: TextStyle(
-                        fontSize: 14,
                         color: Colors.black,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -75,7 +72,7 @@ class SplashScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SplashScreen2(),
+                          builder: (context) => Splashscreen3(),
                         ),
                       );
                     },
@@ -92,6 +89,17 @@ class SplashScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _dot({bool isActive = false}) {
+    return Container(
+      height: 5,
+      width: 5,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isActive ? Colors.black : Colors.grey,
       ),
     );
   }
