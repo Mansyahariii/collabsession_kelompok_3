@@ -10,6 +10,7 @@ class Detailprofile3 extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            
             children: [
               Card(
                 elevation: 8,
@@ -18,6 +19,14 @@ class Detailprofile3 extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/fotoade.jpeg'),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.3),
+                        BlendMode.darken,
+                      ),
+                    ),
                     gradient: LinearGradient(
                       colors: [Colors.red, Colors.orange],
                       begin: Alignment.topCenter,
@@ -192,7 +201,7 @@ class Detailprofile3 extends StatelessWidget {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        'Saya adalah seseorang yang selalu berusaha berkembang dan belajar hal-hal baru setiap hari. Dalam keseharian, saya berusaha menjaga sikap positif, menghargai proses, dan fokus pada tujuan yang ingin saya capai. Saya senang mengeksplorasi hal-hal yang menarik minat saya, baik dalam bidang kreativitas, teknologi, maupun aktivitas yang membantu saya memahami diri sendiri dengan lebih baik. Dengan tekad dan rasa ingin tahu yang tinggi, saya berharap dapat terus melangkah maju, membangun pengalaman baru, serta memberikan kontribusi yang bermanfaat bagi lingkungan sekitar',
+                        'Saya adalah seseorang yang sedang mempelajari dan mengembangkan kemampuan di bidang pengembangan aplikasi mobile. Saat ini, saya fokus mempelajari teknologi pemrograman, khususnya dalam pembuatan aplikasi mobile yang fungsional, menarik, dan mudah digunakan.',
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.grey[700],
@@ -200,6 +209,24 @@ class Detailprofile3 extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+              ),
+              SizedBox(height: 20),
+
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pop(context); // kembali ke halaman sebelumnya
+                },
+                icon: Icon(Icons.arrow_back),
+                label: Text("Kembali", style: TextStyle(fontSize: 16)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  elevation: 6,
                 ),
               ),
             ],
