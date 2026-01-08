@@ -14,13 +14,14 @@ class TeamPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          const SizedBox(height: 40),
           Row(
             children: [
               InkWell(
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
-              Navigator.pop(context);
-            },
+                  Navigator.pop(context);
+                },
                 child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
