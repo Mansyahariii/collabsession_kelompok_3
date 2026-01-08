@@ -1,6 +1,5 @@
 import 'package:collabsession/pages/login.dart';
 import 'package:collabsession/pages/splashscreen3.dart';
-import 'package:collabsession/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen2 extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:collabsession/pages/login.dart';
 import 'package:flutter/material.dart';
-import 'package:collabsession/pages/login.dart';
 
 class Splashscreen4 extends StatelessWidget {
   const Splashscreen4({super.key});
