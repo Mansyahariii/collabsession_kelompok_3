@@ -1,3 +1,7 @@
+import 'package:collabsession/pages/profile/detailprofile1.dart';
+import 'package:collabsession/pages/profile/detailprofile2.dart';
+import 'package:collabsession/pages/profile/detailprofile3.dart';
+import 'package:collabsession/pages/profile/profilecendy.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -32,10 +36,42 @@ class TeamPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          _TeamCard(name: 'Ari Firmansyah', onTap: () {}),
-          _TeamCard(name: 'Rizky Adekatuasa', onTap: () {}),
-          _TeamCard(name: 'Cendy Alvianto', onTap: () {}),
-          _TeamCard(name: 'Mison Wenda', onTap: () {}),
+          _TeamCard(
+            name: 'Ari Firmansyah',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ProfilePage1()),
+              );
+            },
+          ),
+          _TeamCard(
+            name: 'Rizky Adekatuasa',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const Detailprofile3()),
+              );
+            },
+          ),
+          _TeamCard(
+            name: 'Cendy Alvianto',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ProfilePage()),
+              );
+            },
+          ),
+          _TeamCard(
+            name: 'Mison Wenda',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const Detileprofile2()),
+              );
+            },
+          ),
         ],
       ),
     );
