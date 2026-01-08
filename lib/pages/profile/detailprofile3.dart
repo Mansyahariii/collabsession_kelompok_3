@@ -202,6 +202,24 @@ class Detailprofile3 extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pop(context); // kembali ke halaman sebelumnya
+                },
+                icon: Icon(Icons.arrow_back),
+                label: Text("Kembali", style: TextStyle(fontSize: 16)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  elevation: 6,
+                ),
+              ),
             ],
           ),
         ),
