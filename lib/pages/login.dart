@@ -114,48 +114,40 @@ class _MyLoginState extends State<MyLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).maybePop(),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12.0, top: 8.0),
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-                minimumSize: const Size(60, 24),
-              ),
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(color: Colors.grey[500], fontSize: 12),
-              ),
-            ),
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18.0),
+          padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 40),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 6),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      //
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
               Container(
+                margin: const EdgeInsets.only(left: 28, right: 28),
                 height: 240,
                 decoration: BoxDecoration(
-                  color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Center(
                   child: Image.network(
-                    'assets/images/megaphone-voice-being-heard.png',
-                    fit: BoxFit.contain,
-                    height: 200,
+                    'assets/images/imagelogin.png',
+                    fit: BoxFit.fill,
+                    height: 220,
                   ),
                 ),
               ),
