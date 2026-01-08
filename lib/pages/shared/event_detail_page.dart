@@ -1,4 +1,5 @@
 import 'package:collabsession/models/activity.dart';
+import 'package:collabsession/services/activity_service.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -8,11 +9,12 @@ class EventDetailPage extends StatelessWidget {
   final Activity activity;
   final bool isAdmin;
 
-  const EventDetailPage({
+  EventDetailPage({
     super.key,
     required this.activity,
     required this.isAdmin,
   });
+  final ActivityService _activityService = ActivityService();
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +140,7 @@ class EventDetailPage extends StatelessWidget {
               );
 
               if (updated == true && context.mounted) {
-                Navigator.pop(context, true); // trigger refresh list
+                Navigator.pop(context, true); 
               }
             },
 
@@ -197,27 +199,40 @@ class EventDetailPage extends StatelessWidget {
   }
 
   void _confirmDelete(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Hapus Event'),
-        content: const Text('Event ini akan dihapus permanen. Lanjutkan?'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Batal'),
+  showDialog(
+    context: context,
+    builder: (_) => AlertDialog(
+      title: const Text('Hapus Event'),
+      content: const Text('Event ini akan dihapus permanen. Lanjutkan?'),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Batal'),
+        ),
+        TextButton(
+          onPressed: () async {
+            Navigator.pop(context); 
+
+            await _activityService.deleteActivity(activity.id);
+
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Event berhasil dihapus')),
+              );
+
+              Navigator.pop(context, true);
+            }
+          },
+          child: const Text(
+            'Hapus',
+            style: TextStyle(color: Colors.red),
           ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context); // dialog
-              Navigator.pop(context); // detail page
-            },
-            child: const Text('Hapus', style: TextStyle(color: Colors.red)),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 
   static String _formatDate(DateTime date) {
     final months = [
