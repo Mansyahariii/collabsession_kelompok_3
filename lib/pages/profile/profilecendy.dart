@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/shared/team_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -40,7 +41,12 @@ class ProfilePage extends StatelessWidget {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                //
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const TeamPage(),
+                                  ),
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
