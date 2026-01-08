@@ -19,7 +19,7 @@ class ProfilePage1 extends StatelessWidget {
               clipBehavior: Clip.none,
               children: [
                 Container(
-                  height: 200,
+                  height: 220,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -29,7 +29,7 @@ class ProfilePage1 extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 16,
+                  top: 40,
                   left: 20,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),

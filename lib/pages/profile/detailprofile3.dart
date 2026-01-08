@@ -9,6 +9,7 @@ class Detailprofile3 extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20.0),
+          margin: const EdgeInsets.only(top: 40.0),
           child: Column(
             
             children: [
@@ -55,19 +56,44 @@ class Detailprofile3 extends StatelessWidget {
                         ),
                       ),
 
-                      Text(
-                        "Rizky Adekatuasa",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                      Column(
+                        children: [
+                          Text(
+                            "Rizky Adekatuasa",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "(1123150137)",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 6),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.location_on, color: Colors.white),
+                          SizedBox(width: 4),
+                          Text(
+                            "Lampung, Indonesia",
+                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20,),
                       Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12.0,
-                          vertical: 5.0,
+                          horizontal: 3.0,
+                          vertical: 1.0,
                         ),
                         decoration: BoxDecoration(
                           color: Colors.blue,
@@ -86,50 +112,10 @@ class Detailprofile3 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.location_on, color: Colors.white),
-                          SizedBox(width: 4),
-                          Text(
-                            "Lampung, Indonesia",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ],
-                      ),
                       SizedBox(height: 20),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Column(
-                            children: [
-                              Text(
-                                "NIM",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                "1123150137",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  //fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 30,
-                            child: VerticalDivider(
-                              thickness: 1.0,
-                              color: Colors.black,
-                              width: 15.0,
-                            ),
-                          ),
                           Column(
                             children: [
                               Text(
@@ -151,10 +137,10 @@ class Detailprofile3 extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 40,
                             child: VerticalDivider(
-                              thickness: 1.0,
-                              color: Colors.black,
+                              thickness: 3.0,
+                              color: Colors.white,
                               width: 15.0,
                             ),
                           ),
@@ -184,7 +170,7 @@ class Detailprofile3 extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 10),
               Card(
                 elevation: 8,
                 child: Padding(
