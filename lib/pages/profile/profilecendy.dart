@@ -115,7 +115,7 @@ class ProfilePage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "(1123150136)",
+                          "(1123150136) - TI 23 SE P2",
                           style: TextStyle(color: Colors.grey),
                         ),
                         SizedBox(height: 2),
