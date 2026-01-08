@@ -6,7 +6,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // buat scaffold untuk splash screen //
     return Scaffold(
     backgroundColor: Colors.white,
       body: SafeArea(
@@ -15,18 +14,16 @@ class SplashScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // tambahkan illustration splash screen //
               const SizedBox(height: 50),
               Center(
                 child: Image.asset(
-                  'assets/images/megaphone-voice-being-heard.png',
+                  'assets/images/logo global.png',
                   width: 325,
                   height: 325,
                   fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: 10),
-              // tambahkan teks //
               const Text(
                 'Find seminars\nworkshops, and more',
                 style: TextStyle(
@@ -36,7 +33,6 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              // tambahkan Indikator //
               Row(
                 children: 
                   const [
@@ -50,13 +46,11 @@ class SplashScreen extends StatelessWidget {
                   ],
               ),
               const Spacer(),
-              // tambahkan Bottom buttons//
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
                     onPressed: () {
-                      // Aksi Skip 
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: const Color.fromARGB(0, 255, 255, 255),
