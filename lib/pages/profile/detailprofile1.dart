@@ -95,7 +95,6 @@ class ProfilePage1 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // Row Statistik yang lebih rapi
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
