@@ -220,6 +220,21 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/images/linkedin.png",
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        ": Cendy Alvianto",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
