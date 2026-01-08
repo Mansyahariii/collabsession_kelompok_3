@@ -1,6 +1,7 @@
 import 'package:collabsession/pages/shared/event_page.dart';
 import 'package:collabsession/pages/shared/setting_page.dart';
 import 'package:collabsession/pages/user/user_homepage.dart';
+import 'package:collabsession/services/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -13,12 +14,29 @@ class UserDashboard extends StatefulWidget {
 
 class _UserDashboardState extends State<UserDashboard> {
   int _currentIndex = 0;
+  final NotificationService _notificationService = NotificationService();
 
   final List<Widget> _pages = [
     UserHomepage(),
     EventPage(isAdmin: false),
     Settingpage(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize notification service and start listening for event changes
+    _notificationService.initialize().then((_) {
+      _notificationService.startListening();
+    });
+  }
+
+  @override
+  void dispose() {
+    // Stop listening when user leaves dashboard
+    _notificationService.stopListening();
+    super.dispose();
+  }
 
   PreferredSizeWidget? _buildAppBar() {
     if (_currentIndex == 2) return null;
