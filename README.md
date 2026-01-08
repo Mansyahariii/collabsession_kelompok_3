@@ -221,7 +221,7 @@ CREATE TABLE activities (
 | **Ari Firmansyah** | 1123150127 | Project Lead & UI/UX Designer | - Splash screen design<br>- UI/UX Design<br>- Profile page implementation<br>- Project structure |
 | **Rizky Adekatuasa** | 1123150137 | Mobile Developer | - Login & Registration screen<br>- Firebase Authentication<br>- Push notification (FCM)<br>- Local notifications |
 | **Cendy Alvianto** | 1123150136 | Full Stack Developer | - Admin dashboard<br>- Event management (CRUD)<br>- Supabase integration<br>- Activity service |
-| **Mison Wenda** | - | Backend Developer | - User dashboard<br>- Event detail page<br>- Team page<br>- Settings page |
+| **Mison Wenda** | 1123150103 | Backend Developer | - User dashboard<br>- Event detail page<br>- Team page<br>- Settings page |
 
 ## 📄 License
 
