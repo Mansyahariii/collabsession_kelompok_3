@@ -169,7 +169,7 @@ class Detailprofile3 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Software Engineering",
+                                "UI/UX Designer",
                                 style: TextStyle(
                                   fontSize: 18.0,
                                   //fontWeight: FontWeight.w700,
