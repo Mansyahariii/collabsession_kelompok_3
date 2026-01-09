@@ -62,6 +62,15 @@ class TeamPage extends StatelessWidget {
                       );
                     },
                   ),
+                  _TeamCard(
+                    name: 'Cendy Alvianto',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const ProfilePage()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
