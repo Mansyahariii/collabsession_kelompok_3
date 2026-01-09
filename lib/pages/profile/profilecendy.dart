@@ -80,17 +80,22 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: -25,
+                  bottom: -35,
                   left: 0,
                   right: 0,
                   child: Center(
-                    child: CircleAvatar(
-                      radius: 53,
-                      backgroundColor: Colors.white,
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundImage: const AssetImage(
+                    child: Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      padding: const EdgeInsets.all(3),
+                      child: ClipOval(
+                        child: Image.asset(
                           "assets/images/profile-cendy.jpg",
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
