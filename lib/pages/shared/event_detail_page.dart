@@ -161,8 +161,8 @@ class EventDetailPage extends StatelessWidget {
           height: 48,
           child: OutlinedButton.icon(
             style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.red,
-              side: const BorderSide(color: Colors.red),
+              backgroundColor: Colors.red,
+              side: BorderSide.none,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(14),
               ),
