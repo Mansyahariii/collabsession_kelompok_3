@@ -135,6 +135,25 @@ class _EditEventPageState extends State<EditEventPage> {
                       label: 'Deskripsi',
                       maxLines: 4,
                     ),
+
+                    InkWell(
+                      onTap: _pickDate,
+                      borderRadius: BorderRadius.circular(14),
+                      child: Container(
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          border: Border.all(color: Colors.grey.shade300),
+                        ),
+                        child: Row(
+                          children: [
+                            const HeroIcon(HeroIcons.calendar),
+                            const SizedBox(width: 8),
+                            Text(_formatDate(_selectedDate)),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
