@@ -1,3 +1,4 @@
+import 'package:collabsession/services/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 import '../shared/event_page.dart';
@@ -13,6 +14,7 @@ class AdminDashboard extends StatefulWidget {
 
 class _AdminDashboardState extends State<AdminDashboard> {
   int _currentIndex = 0;
+  final NotificationService _notificationService = NotificationService();
 
   final List<Widget> _pages = [
     AdminHomePage(),
