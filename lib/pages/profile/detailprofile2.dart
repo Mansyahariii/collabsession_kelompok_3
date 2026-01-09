@@ -135,7 +135,7 @@ class Detileprofile2 extends StatelessWidget {
                   _buildInfoTile(
                     icon: Icons.timeline,
                     title: 'Keahlian',
-                    value: 'back-end developer',
+                    value: 'UI/UX Designer',
                   ),
                   _buildInfoTile(
                     icon: Icons.calendar_today,
