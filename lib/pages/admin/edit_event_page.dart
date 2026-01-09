@@ -95,56 +95,12 @@ class _EditEventPageState extends State<EditEventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: const EdgeInsets.all(16),
+      body: SafeArea(
+        child: Column(
           children: [
-            _input(controller: _titleController, label: 'Judul Event'),
-            _input(controller: _locationController, label: 'Lokasi'),
-            _input(
-              controller: _descController,
-              label: 'Deskripsi',
-              maxLines: 4,
-            ),
-            const SizedBox(height: 12),
-            InkWell(
-              onTap: _pickDate,
-              borderRadius: BorderRadius.circular(14),
-              child: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: Colors.grey.shade300),
-                ),
-                child: Row(
-                  children: [
-                    const HeroIcon(HeroIcons.calendar),
-                    const SizedBox(width: 8),
-                    Text(_formatDate(_selectedDate)),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
-            SizedBox(
-              height: 48,
-              child: ElevatedButton(
-                onPressed: _loading ? null : _updateEvent,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                ),
-                child: _loading
-                    ? const CircularProgressIndicator(color: Colors.white)
-                    : const Text(
-                        'Simpan Perubahan',
-                        style: TextStyle(color: Colors.white),
-                      ),
-              ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(children: []),
             ),
           ],
         ),
