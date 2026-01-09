@@ -66,88 +66,15 @@ class _AddEventPageState extends State<AddEventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          Row(
-            children: [
-              InkWell(
-                borderRadius: BorderRadius.circular(12),
-                onTap: () => Navigator.pop(context),
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.grey.shade300),
-                  ),
-                  child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
-                ),
-              ),
-              const SizedBox(width: 12),
-              const Text(
-                'Tambah Event',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 12),
-
-          _inputField(controller: _titleController, label: 'Judul Event'),
-          const SizedBox(height: 12),
-
-          _inputField(controller: _locationController, label: 'Lokasi'),
-          const SizedBox(height: 12),
-
-          GestureDetector(
-            onTap: _pickDate,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black54),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                _selectedDate == null
-                    ? 'Pilih Tanggal'
-                    : '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}',
-                style: TextStyle(
-                  color: _selectedDate == null ? Colors.grey : Colors.black,
-                ),
-              ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(12),
+              child: Row(children: []),
             ),
-          ),
-
-          const SizedBox(height: 12),
-
-          _inputField(
-            controller: _descriptionController,
-            label: 'Deskripsi',
-            maxLines: 4,
-          ),
-
-          const SizedBox(height: 24),
-
-          SizedBox(
-            height: 48,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
-                minimumSize: const Size.fromHeight(48),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
-                ),
-              ),
-              onPressed: _isSubmitting ? null : _submit,
-              child: _isSubmitting
-                  ? const CircularProgressIndicator(color: Colors.white)
-                  : const Text(
-                      'Simpan Event',
-                      style: TextStyle(color: Colors.white),
-                    ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
