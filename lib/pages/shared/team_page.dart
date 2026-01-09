@@ -38,6 +38,22 @@ class TeamPage extends StatelessWidget {
                 ],
               ),
             ),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _TeamCard(
+                    name: 'Ari Firmansyah',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const ProfilePage1()),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
