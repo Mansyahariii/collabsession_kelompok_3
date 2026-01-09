@@ -97,7 +97,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                         child: ClipOval(
                           child: Image.asset(
-                            "assets/images/profile-cendy.jpg",
+                            "assets/images/image-cendy.jpg",
                             fit: BoxFit.cover,
                           ),
                         ),
