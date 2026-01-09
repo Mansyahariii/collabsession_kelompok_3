@@ -173,8 +173,8 @@ class Detailprofile3 extends StatelessWidget {
                     ),
 
                     Positioned(
-                      top: 12,
-                      left: 12,
+                      top: 10,
+                      left: 10,
                       child: InkWell(
                         borderRadius: BorderRadius.circular(12),
                         onTap: () => Navigator.pop(context),
