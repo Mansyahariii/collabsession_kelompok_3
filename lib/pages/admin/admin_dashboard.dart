@@ -21,6 +21,20 @@ class _AdminDashboardState extends State<AdminDashboard> {
     const EventPage(isAdmin: true),
     const Settingpage(),
   ];
+  
+  @override
+  void initState() {
+    super.initState();
+    _notificationService.initialize().then((_) {
+      _notificationService.startListening();
+    });
+  }
+
+  @override
+  void dispose() {
+    _notificationService.stopListening();
+    super.dispose();
+  }
 
   PreferredSizeWidget? _buildAppBar() {
     if (_currentIndex == 2) return null;
