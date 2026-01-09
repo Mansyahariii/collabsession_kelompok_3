@@ -142,6 +142,7 @@ class _MyLoginState extends State<MyLogin> {
                 height: 240,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
+                  color: Colors.grey[200],
                 ),
                 child: Center(
                   child: Image.network(
