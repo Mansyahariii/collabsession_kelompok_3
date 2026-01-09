@@ -59,9 +59,16 @@ class _AdminHomePageState extends State<AdminHomePage> {
                 const SizedBox(width: 12),
                 Expanded(
                   child: _statCard(
-                    title: 'Event Aktif',
-                    value: activities.length.toString(),
-                    icon: HeroIcons.playCircle,
+                    title: 'Event Mendatang',
+                    value: activities
+                        .where(
+                          (e) => e.date.isAfter(
+                            DateTime.now().subtract(const Duration(days: 1)),
+                          ),
+                        )
+                        .length
+                        .toString(),
+                    icon: HeroIcons.clock,
                   ),
                 ),
               ],
