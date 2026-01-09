@@ -113,7 +113,7 @@ class _AddEventPageState extends State<AddEventPage> {
                       padding: const EdgeInsets.all(14),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(color: Colors.grey.shade300),
+                        border: Border.all(color: Colors.black54),
                       ),
                       child: Row(
                         children: [
