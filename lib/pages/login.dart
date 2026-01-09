@@ -145,7 +145,7 @@ class _MyLoginState extends State<MyLogin> {
                   color: Colors.grey[200],
                 ),
                 child: Center(
-                  child: Image.network(
+                  child: Image.asset(
                     'assets/images/imagelogin.png',
                     fit: BoxFit.fill,
                     height: 220,
