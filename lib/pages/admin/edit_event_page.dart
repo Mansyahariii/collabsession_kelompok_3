@@ -95,6 +95,7 @@ class _EditEventPageState extends State<EditEventPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
