@@ -25,7 +25,7 @@ class ActivityService {
     await _client.from('activities').insert(data);
   }
 
-  Future<void> updateActivity(int id, Map<String, dynamic> data) async {
+  Future<void> updateActivity(String id, Map<String, dynamic> data) async {
     final response = await _client
         .from('activities')
         .update(data)
