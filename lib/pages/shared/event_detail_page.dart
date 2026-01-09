@@ -9,11 +9,7 @@ class EventDetailPage extends StatelessWidget {
   final Activity activity;
   final bool isAdmin;
 
-  EventDetailPage({
-    super.key,
-    required this.activity,
-    required this.isAdmin,
-  });
+  EventDetailPage({super.key, required this.activity, required this.isAdmin});
   final ActivityService _activityService = ActivityService();
 
   @override
@@ -140,7 +136,7 @@ class EventDetailPage extends StatelessWidget {
               );
 
               if (updated == true && context.mounted) {
-                Navigator.pop(context, true); 
+                Navigator.pop(context, true);
               }
             },
 
@@ -171,7 +167,10 @@ class EventDetailPage extends StatelessWidget {
               _confirmDelete(context);
             },
             icon: const HeroIcon(HeroIcons.trash, size: 18),
-            label: const Text('Hapus Event'),
+            label: const Text(
+              'Hapus Event',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ),
       ],
@@ -199,40 +198,36 @@ class EventDetailPage extends StatelessWidget {
   }
 
   void _confirmDelete(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (_) => AlertDialog(
-      title: const Text('Hapus Event'),
-      content: const Text('Event ini akan dihapus permanen. Lanjutkan?'),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('Batal'),
-        ),
-        TextButton(
-          onPressed: () async {
-            Navigator.pop(context); 
-
-            await _activityService.deleteActivity(activity.id);
-
-            if (context.mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Event berhasil dihapus')),
-              );
-
-              Navigator.pop(context, true);
-            }
-          },
-          child: const Text(
-            'Hapus',
-            style: TextStyle(color: Colors.red),
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Hapus Event'),
+        content: const Text('Event ini akan dihapus permanen. Lanjutkan?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Batal'),
           ),
-        ),
-      ],
-    ),
-  );
-}
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(context);
 
+              await _activityService.deleteActivity(activity.id);
+
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Event berhasil dihapus')),
+                );
+
+                Navigator.pop(context, true);
+              }
+            },
+            child: const Text('Hapus', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
 
   static String _formatDate(DateTime date) {
     final months = [
