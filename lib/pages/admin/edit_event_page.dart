@@ -96,15 +96,6 @@ class _EditEventPageState extends State<EditEventPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('Edit Event'),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const HeroIcon(HeroIcons.chevronLeft),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
       body: Form(
         key: _formKey,
         child: ListView(
