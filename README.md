@@ -37,17 +37,23 @@ Dengan Campus Event App, pengguna dapat dengan mudah melihat event kampus yang a
 ## Screenshots
 
 <div align="center">
-  <img src="screenshots/splash_screen.png" alt="Splash Screen" width="200"/>
-  <img src="screenshots/login_screen.png" alt="Login" width="200"/>
-  <img src="screenshots/home_screen.png" alt="Home" width="200"/>
-  <img src="screenshots/profile_screen.png" alt="Profile" width="200"/>
+  <img src="assets/screenshots/splash1.jpg" alt="Splash Screen" width="200"/>
+  <img src="assets/screenshots/splash2.jpg" alt="Splash Screen" width="200"/>
+  <img src="assets/screenshots/splash3.jpg" alt="Splash Screen" width="200"/>
+  <img src="assets/screenshots/splash4.jpg" alt="Splash Screen" width="200"/>
+  <img src="assets/screenshots/login.jpg" alt="Login" width="200"/>
+  <img src="assets/screenshots/homepage.jpg" alt="Home" width="200"/>
+  <img src="assets/screenshots/profile1.jpg" alt="Profile" width="200"/>
+  <img src="assets/screenshots/profile2.jpg" alt="Profile" width="200"/>
+  <img src="assets/screenshots/profile3.jpg" alt="Profile" width="200"/>
+  <img src="assets/screenshots/profile4.jpg" alt="Profile" width="200"/>
 </div>
 
 <div align="center">
-  <img src="screenshots/admin_dashboard.png" alt="Admin Dashboard" width="200"/>
-  <img src="screenshots/add_event.png" alt="Add Event" width="200"/>
-  <img src="screenshots/event_detail.png" alt="Event Detail" width="200"/>
-  <img src="screenshots/settings.png" alt="Settings" width="200"/>
+  <img src="assets/screenshots/dashboard.jpg" alt="Admin Dashboard" width="200"/>
+  <img src="assets/screenshots/add_event.jpg" alt="Add Event" width="200"/>
+  <img src="assets/screenshots/detail_event.jpg" alt="Event Detail" width="200"/>
+  <img src="assets/screenshots/setting.jpg" alt="Settings" width="200"/>
 </div>
 
 ## Demo Video
