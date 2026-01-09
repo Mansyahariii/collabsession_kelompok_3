@@ -2,7 +2,7 @@
     package="com.company.act">
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <application
-        android:label="collabsession"
+        android:label="Aktiva"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

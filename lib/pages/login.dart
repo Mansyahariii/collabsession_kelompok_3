@@ -140,9 +140,9 @@ class _MyLoginState extends State<MyLogin> {
               Container(
                 margin: const EdgeInsets.only(left: 28, right: 28),
                 height: 240,
+                width: 240,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  color: Colors.grey[200],
                 ),
                 child: Center(
                   child: Image.asset(
