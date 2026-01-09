@@ -141,6 +141,27 @@ class _AddEventPageState extends State<AddEventPage> {
                     label: 'Deskripsi',
                     maxLines: 4,
                   ),
+
+                  const SizedBox(height: 24),
+
+                  SizedBox(
+                    height: 48,
+                    child: ElevatedButton(
+                      onPressed: _isSubmitting ? null : _submit,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      child: _isSubmitting
+                          ? const CircularProgressIndicator(color: Colors.white)
+                          : const Text(
+                              'Simpan Event',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                    ),
+                  ),
                 ],
               ),
             ),
