@@ -48,7 +48,7 @@ class Detileprofile2 extends StatelessWidget {
                 ),
 
                 Positioned(
-                  top: 8,
+                  top: 60,
                   right: 16,
                   child: ElevatedButton(
                     onPressed: () {},
