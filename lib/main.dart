@@ -1,5 +1,5 @@
 import 'package:collabsession/firebase_options.dart';
-import 'package:collabsession/pages/splashscreen1.dart';
+import 'package:collabsession/pages/auth_checker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -70,8 +70,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: "Firebase Login",
-      home: SplashScreen(),
+      title: "Event Campus",
+      home: AuthChecker(),
       debugShowCheckedModeBanner: false,
     );
   }
