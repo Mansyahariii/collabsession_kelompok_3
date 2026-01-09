@@ -71,6 +71,17 @@ class TeamPage extends StatelessWidget {
                       );
                     },
                   ),
+                  _TeamCard(
+                    name: 'Mison Wenda',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Detileprofile2(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
