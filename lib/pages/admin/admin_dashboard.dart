@@ -21,7 +21,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
     const EventPage(isAdmin: true),
     const Settingpage(),
   ];
-  
+
   @override
   void initState() {
     super.initState();
@@ -61,6 +61,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: _buildAppBar(),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(

@@ -6,7 +6,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: Colors.white,
       body: SafeArea(
         top: false,
         child: SingleChildScrollView(
@@ -39,12 +39,10 @@ class ProfilePage extends StatelessWidget {
                             vertical: 20,
                           ),
                           child: Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
-                                onPressed: () =>
-                                    Navigator.pop(context),
+                                onPressed: () => Navigator.pop(context),
                                 style: ElevatedButton.styleFrom(
                                   shape: const CircleBorder(),
                                   backgroundColor: Colors.white,
@@ -133,16 +131,17 @@ class ProfilePage extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.location_on,
-                                  color: Colors.grey, size: 18),
+                              Icon(
+                                Icons.location_on,
+                                color: Colors.grey,
+                                size: 18,
+                              ),
                               SizedBox(width: 4),
                               Text(
                                 "Tangerang, Banten",
-                                style:
-                                    TextStyle(color: Colors.grey),
+                                style: TextStyle(color: Colors.grey),
                               ),
                             ],
                           ),
@@ -154,33 +153,31 @@ class ProfilePage extends StatelessWidget {
 
                     const Text(
                       "About",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     const Text(
                       "Halo, nama gue Cendy. Gue hobi travelling dan hiking karena suka jalan-jalan dan menikmati alam. Gue juga punya minat buat terus berkembang, belajar hal baru, dan ningkatin kemampuan diri, terutama di bidang teknologi dan pengembangan aplikasi.",
-                      style:
-                          TextStyle(color: Colors.grey, height: 1.5),
+                      style: TextStyle(color: Colors.grey, height: 1.5),
                     ),
 
                     const SizedBox(height: 24),
 
                     const Text(
                       "Skills",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 12),
                     Row(
                       children: [
                         Container(
                           padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
-                            borderRadius:
-                                BorderRadius.circular(14),
-                          ),
                           child: Image.asset(
                             "assets/images/canva_logo.png",
                             width: 28,
@@ -194,23 +191,26 @@ class ProfilePage extends StatelessWidget {
 
                     const Text(
                       "Contact",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 12),
 
                     _contactRow(
-                        "assets/images/instagram.png",
-                        "@cendyalvianto_"),
+                      "assets/images/instagram.png",
+                      "@cendyalvianto_",
+                    ),
                     _contactRow(
-                        "assets/images/github.png",
-                        "github.com/cendyal-hub"),
+                      "assets/images/github.png",
+                      "github.com/cendyal-hub",
+                    ),
                     _contactRow(
-                        "assets/images/email.png",
-                        "sendyaja17@gmail.com"),
-                    _contactRow(
-                        "assets/images/linkedin.png",
-                        "Cendy Alvianto"),
+                      "assets/images/email.png",
+                      "sendyaja17@gmail.com",
+                    ),
+                    _contactRow("assets/images/linkedin.png", "Cendy Alvianto"),
 
                     const SizedBox(height: 24),
                   ],
