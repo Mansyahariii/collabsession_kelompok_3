@@ -6,201 +6,221 @@ class Detileprofile2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Container(
-                  height: 220,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40),
-                    ),
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/mison.jpeg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-                Positioned(
-                  top: 60,
-                  left: 16,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: const CircleBorder(),
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.all(10),
-                    ),
-                    child: const Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Colors.black,
-                      size: 18,
-                    ),
-                  ),
-                ),
-
-                Positioned(
-                  top: 60,
-                  right: 16,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const CircleBorder(),
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.all(10),
-                    ),
-                    child: const Icon(
-                      Icons.edit,
-                      color: Colors.black,
-                      size: 18,
-                    ),
-                  ),
-                ),
-
-                Positioned(
-                  bottom: -55,
-                  left: 0,
-                  right: 0,
-                  child: Center(
-                    child: Container(
-                      padding: const EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(color: Colors.black26, blurRadius: 10),
-                        ],
-                      ),
-                      child: const CircleAvatar(
-                        radius: 55,
-                        backgroundImage: AssetImage('assets/images/mison.jpeg'),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 70),
-
-            const Text(
-              'Mison Wenda',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 6),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade50,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: const Text(
-                'Mahasiswa Teknik Informatika',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                clipBehavior: Clip.none,
                 children: [
-                  _buildInfoTile(
-                    icon: Icons.school,
-                    title: 'Kampus',
-                    value:
-                        'Global Institute | Institut Teknologi dan Bisnis Bina Sarana Global',
+                  Container(
+                    height: 220,
+                    width: double.infinity,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/mison.jpeg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                  _buildInfoTile(
-                    icon: Icons.computer,
-                    title: 'Kelas',
-                    value: 'TI 23 SE P2',
+
+                  // ===== BACK BUTTON =====
+                  Positioned(
+                    top: 16,
+                    left: 16,
+                    child: _circleButton(
+                      icon: Icons.arrow_back_ios_new,
+                      onTap: () => Navigator.pop(context),
+                    ),
                   ),
-                  _buildInfoTile(
-                    icon: Icons.code,
-                    title: 'NIM',
-                    value: '1123150103',
+
+                  // ===== EDIT BUTTON =====
+                  Positioned(
+                    top: 16,
+                    right: 16,
+                    child: _circleButton(icon: Icons.edit, onTap: () {}),
                   ),
-                  _buildInfoTile(
-                    icon: Icons.timeline,
-                    title: 'Keahlian',
-                    value: 'UI/UX Designer',
-                  ),
-                  _buildInfoTile(
-                    icon: Icons.calendar_today,
-                    title: 'Angkatan',
-                    value: '2023',
+
+                  // ===== PROFILE IMAGE =====
+                  Positioned(
+                    bottom: -56,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          boxShadow: const [
+                            BoxShadow(color: Colors.black26, blurRadius: 10),
+                          ],
+                        ),
+                        child: const CircleAvatar(
+                          radius: 55,
+                          backgroundImage: AssetImage(
+                            'assets/images/mison.jpeg',
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
-            ),
-            const SizedBox(height: 30),
 
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                padding: const EdgeInsets.all(20),
+              const SizedBox(height: 64),
+
+              const Text(
+                'Mison Wenda',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+
+              const SizedBox(height: 6),
+
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
-                  "Mahasiswa Teknik Informatika dengan konsentrasi Software Engineering yang memiliki minat dalam pengembangan aplikasi dan teknologi digital. Fokus pada pembuatan sistem yang efisien, terstruktur, dan mudah digunakan.",
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(fontSize: 14, height: 1.6),
+                  'Mahasiswa Teknik Informatika',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Kontak',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 12),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _buildContactIcon(icon: Icons.email, color: Colors.red),
-                      _buildContactIcon(icon: Icons.phone, color: Colors.green),
-                      _buildContactIcon(
-                        icon: Icons.location_on,
-                        color: Colors.blue,
-                      ),
-                      _buildContactIcon(
-                        icon: Icons.language,
-                        color: Colors.purple,
-                      ),
+              const SizedBox(height: 20),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  children: [
+                    _buildInfoTile(
+                      icon: Icons.school,
+                      title: 'Kampus',
+                      value:
+                          'Global Institute | Institut Teknologi dan Bisnis Bina Sarana Global',
+                    ),
+                    _buildInfoTile(
+                      icon: Icons.computer,
+                      title: 'Kelas',
+                      value: 'TI 23 SE P2',
+                    ),
+                    _buildInfoTile(
+                      icon: Icons.code,
+                      title: 'NIM',
+                      value: '1123150103',
+                    ),
+                    _buildInfoTile(
+                      icon: Icons.timeline,
+                      title: 'Keahlian',
+                      value: 'UI/UX Designer',
+                    ),
+                    _buildInfoTile(
+                      icon: Icons.calendar_today,
+                      title: 'Angkatan',
+                      value: '2023',
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: const [
+                      BoxShadow(color: Colors.black12, blurRadius: 8),
                     ],
                   ),
-                ],
+                  child: const Text(
+                    "Mahasiswa Teknik Informatika dengan konsentrasi Software Engineering yang memiliki minat dalam pengembangan aplikasi dan teknologi digital. Fokus pada pembuatan sistem yang efisien, terstruktur, dan mudah digunakan.",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 14, height: 1.6),
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(height: 30),
-          ],
+
+              const SizedBox(height: 24),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Kontak',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        _buildContactIcon(icon: Icons.email, color: Colors.red),
+                        _buildContactIcon(
+                          icon: Icons.phone,
+                          color: Colors.green,
+                        ),
+                        _buildContactIcon(
+                          icon: Icons.location_on,
+                          color: Colors.blue,
+                        ),
+                        _buildContactIcon(
+                          icon: Icons.language,
+                          color: Colors.purple,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 32),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  _buildInfoTile({
+  // ===== SMALL WIDGETS =====
+
+  Widget _circleButton({required IconData icon, required VoidCallback onTap}) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(14),
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: Icon(icon, size: 18, color: Colors.black),
+      ),
+    );
+  }
+
+  Widget _buildInfoTile({
     required IconData icon,
     required String title,
     required String value,
@@ -220,10 +240,13 @@ class Detileprofile2 extends StatelessWidget {
     );
   }
 
-  _buildContactIcon({required IconData icon, required MaterialColor color}) {
+  Widget _buildContactIcon({required IconData icon, required Color color}) {
     return Container(
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all()),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.grey.shade300),
+      ),
       child: Icon(icon, color: color, size: 24),
     );
   }
