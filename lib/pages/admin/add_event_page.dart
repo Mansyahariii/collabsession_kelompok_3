@@ -85,6 +85,11 @@ class _AddEventPageState extends State<AddEventPage> {
                       child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
                     ),
                   ),
+                  const SizedBox(width: 12),
+                  const Text(
+                    'Tambah Event',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
             ),
