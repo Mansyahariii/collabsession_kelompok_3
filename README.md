@@ -216,12 +216,12 @@ CREATE TABLE activities (
 
 ### Development Team
 
-| Name | NIM | Role | Contributions |
-|------|-----|------|---------------|
-| **Ari Firmansyah** | 1123150127 | Project Lead & UI/UX Designer | - Splash screen design<br>- UI/UX Design<br>- Profile page implementation<br>- Project structure |
-| **Rizky Adekatuasa** | 1123150137 | Mobile Developer | - Login & Registration screen<br>- Firebase Authentication<br>- Push notification (FCM)<br>- Local notifications |
-| **Cendy Alvianto** | 1123150136 | Full Stack Developer | - Admin dashboard<br>- Event management (CRUD)<br>- Supabase integration<br>- Activity service |
-| **Mison Wenda** | 1123150103 | Backend Developer | - User dashboard<br>- Event detail page<br>- Team page<br>- Settings page |
+| Name | NIM | Role | LinkedIn | Contributions |
+|------|-----|------|----------|---------------|
+| **Ari Firmansyah** | 1123150127 | Project Lead & UI/UX Designer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ari-firmansyah-7ab3693a5/) | - Splash screen design<br>- UI/UX Design<br>- Profile page implementation<br>- Project structure |
+| **Rizky Adekatuasa** | 1123150137 | Mobile Developer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rizky-adekatuasa-23336a3a5/) | - Login & Registration screen<br>- Firebase Authentication<br>- Push notification (FCM)<br>- Local notifications |
+| **Cendy Alvianto** | 1123150136 | Full Stack Developer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cendy-alvianto-609b5432b/) | - Admin dashboard<br>- Event management (CRUD)<br>- Supabase integration<br>- Activity service |
+| **Mison Wenda** | 1123150103 | Backend Developer | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mison-wenda-76ba7438b/) | - User dashboard<br>- Event detail page<br>- Team page<br>- Settings page |
 
 ## 📄 License
 
