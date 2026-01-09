@@ -10,126 +10,117 @@ class Settingpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
-              child: Center(
-                child: Text(
-                  'Pengaturan',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        SizedBox(height: 40),
+        Center(
+          child: Text(
+            'Pengaturan',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              decoration: TextDecoration.none,
             ),
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.all(16),
-                children: [
-                  _settingCard(
-                    icon: HeroIcons.user,
-                    title: 'Akun Saya',
-                    subtitle: 'Informasi akun dan profil',
-                    onTap: () {},
+          ),
+        ),
+        const SizedBox(height: 16),
+        _settingCard(
+          icon: HeroIcons.user,
+          title: 'Akun Saya',
+          subtitle: 'Informasi akun dan profil',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.lockClosed,
+          title: 'Keamanan',
+          subtitle: 'Ubah password & keamanan akun',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.questionMarkCircle,
+          title: 'Bantuan & Dukungan',
+          subtitle: 'FAQ dan pusat bantuan',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.informationCircle,
+          title: 'Tentang Aplikasi',
+          subtitle: 'Versi dan informasi aplikasi',
+          onTap: () {},
+        ),
+        _settingCard(
+          icon: HeroIcons.users,
+          title: 'Tim Pengembang',
+          subtitle: 'Profil tim pengembang',
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const TeamPage()),
+            );
+          },
+        ),
+        OutlinedButton.icon(
+          style: OutlinedButton.styleFrom(
+            backgroundColor: Colors.red,
+            minimumSize: const Size.fromHeight(52),
+            side: const BorderSide(color: Colors.transparent),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          onPressed: () async {
+            final bool? confirm = await showDialog<bool>(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: const Text('Konfirmasi Logout'),
+                  content: const Text(
+                    'Apakah kamu yakin ingin keluar dari akun ini?',
                   ),
-                  _settingCard(
-                    icon: HeroIcons.lockClosed,
-                    title: 'Keamanan',
-                    subtitle: 'Ubah password & keamanan akun',
-                    onTap: () {},
-                  ),
-                  _settingCard(
-                    icon: HeroIcons.questionMarkCircle,
-                    title: 'Bantuan & Dukungan',
-                    subtitle: 'FAQ dan pusat bantuan',
-                    onTap: () {},
-                  ),
-                  _settingCard(
-                    icon: HeroIcons.informationCircle,
-                    title: 'Tentang Aplikasi',
-                    subtitle: 'Versi dan informasi aplikasi',
-                    onTap: () {},
-                  ),
-                  _settingCard(
-                    icon: HeroIcons.users,
-                    title: 'Tim Pengembang',
-                    subtitle: 'Profil tim pengembang',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const TeamPage()),
-                      );
-                    },
-                  ),
-
-                  const SizedBox(height: 24),
-
-                  SizedBox(
-                    height: 52,
-                    child: OutlinedButton.icon(
-                      style: OutlinedButton.styleFrom(
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      child: const Text(
+                        'Batal',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red,
-                        side: BorderSide.none,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
                       ),
-                      onPressed: () async {
-                        final confirm = await showDialog<bool>(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: const Text('Konfirmasi Logout'),
-                            content: const Text(
-                              'Apakah kamu yakin ingin keluar dari akun ini?',
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.pop(context, false),
-                                child: const Text('Batal'),
-                              ),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.red,
-                                ),
-                                onPressed: () => Navigator.pop(context, true),
-                                child: const Text(
-                                  'Logout',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-
-                        if (confirm != true) return;
-
-                        await Supabase.instance.client.auth.signOut();
-
-                        if (context.mounted) {
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(builder: (_) => const MyLogin()),
-                            (route) => false,
-                          );
-                        }
-                      },
-                      icon: const HeroIcon(
-                        HeroIcons.arrowRightOnRectangle,
-                        color: Colors.white,
-                      ),
-                      label: const Text(
+                      onPressed: () => Navigator.pop(context, true),
+                      child: const Text(
                         'Logout',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+                  ],
+                );
+              },
+            );
+
+            if (confirm != true) return;
+
+            await Supabase.instance.client.auth.signOut();
+
+            if (context.mounted) {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (_) => const MyLogin()),
+                (route) => false,
+              );
+            }
+          },
+          icon: const HeroIcon(
+            HeroIcons.arrowRightOnRectangle,
+            color: Colors.white,
+          ),
+          label: const Text('Logout', style: TextStyle(color: Colors.white)),
         ),
-      ),
+      ],
     );
   }
 
