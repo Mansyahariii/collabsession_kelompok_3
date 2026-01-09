@@ -5,29 +5,130 @@ import '../../models/activity.dart';
 import '../../services/activity_service.dart';
 import 'event_detail_page.dart';
 
-class EventPage extends StatelessWidget {
+class EventPage extends StatefulWidget {
   final bool isAdmin;
 
   const EventPage({super.key, required this.isAdmin});
 
   @override
+  State<EventPage> createState() => _EventPageState();
+}
+
+class _EventPageState extends State<EventPage> {
+  final ActivityService _activityService = ActivityService();
+  List<Activity> _activities = [];
+  bool _isLoading = true;
+  String? _errorMessage;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadActivities();
+  }
+
+  Future<void> _loadActivities() async {
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
+
+    try {
+      final activities = await _activityService.fetchActivities();
+      if (mounted) {
+        setState(() {
+          _activities = activities;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _errorMessage = 'Gagal memuat data. Tarik untuk refresh.';
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Activity>>(
-      future: ActivityService().fetchActivities(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return const Center(child: CircularProgressIndicator());
-        }
+    if (_isLoading) {
+      return const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircularProgressIndicator(),
+            SizedBox(height: 16),
+            Text('Memuat kegiatan...'),
+          ],
+        ),
+      );
+    }
 
-        final activities = snapshot.data!;
+    if (_errorMessage != null) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const HeroIcon(
+              HeroIcons.exclamationCircle,
+              size: 48,
+              color: Colors.grey,
+            ),
+            const SizedBox(height: 16),
+            Text(_errorMessage!, style: const TextStyle(color: Colors.grey)),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _loadActivities,
+              child: const Text('Coba Lagi'),
+            ),
+          ],
+        ),
+      );
+    }
 
-        return ListView(
-          padding: const EdgeInsets.all(16),
-          children: activities.map((activity) {
-            return _EventTile(activity: activity, isAdmin: isAdmin);
-          }).toList(),
-        );
-      },
+    if (_activities.isEmpty) {
+      return RefreshIndicator(
+        onRefresh: _loadActivities,
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          children: const [
+            SizedBox(height: 200),
+            Center(
+              child: Column(
+                children: [
+                  HeroIcon(HeroIcons.calendar, size: 48, color: Colors.grey),
+                  SizedBox(height: 16),
+                  Text(
+                    'Belum ada kegiatan',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return RefreshIndicator(
+      onRefresh: _loadActivities,
+      child: ListView.builder(
+        padding: const EdgeInsets.all(16),
+        physics: const AlwaysScrollableScrollPhysics(),
+        itemCount: _activities.length,
+        itemBuilder: (context, index) {
+          return _EventTile(
+            activity: _activities[index],
+            isAdmin: widget.isAdmin,
+            onReturn: (shouldRefresh) {
+              if (shouldRefresh == true) {
+                _loadActivities();
+              }
+            },
+          );
+        },
+      ),
     );
   }
 }
@@ -35,8 +136,13 @@ class EventPage extends StatelessWidget {
 class _EventTile extends StatelessWidget {
   final Activity activity;
   final bool isAdmin;
+  final Function(bool?) onReturn;
 
-  const _EventTile({required this.activity, required this.isAdmin});
+  const _EventTile({
+    required this.activity,
+    required this.isAdmin,
+    required this.onReturn,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +157,15 @@ class _EventTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         child: InkWell(
           borderRadius: BorderRadius.circular(14),
-          onTap: () {
-            Navigator.push(
+          onTap: () async {
+            final result = await Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) =>
                     EventDetailPage(activity: activity, isAdmin: isAdmin),
               ),
             );
+            onReturn(result);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -74,7 +181,7 @@ class _EventTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        '${activity.location}',
+                        activity.location,
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey.shade600,
