@@ -10,7 +10,7 @@ class Detailprofile3 extends StatelessWidget {
         top: false,
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.fromLTRB(16, 40, 16, 16),
             child: Column(
               children: [
                 Stack(
@@ -22,8 +22,7 @@ class Detailprofile3 extends StatelessWidget {
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image:
-                                AssetImage('assets/images/fotoade.jpeg'),
+                            image: AssetImage('assets/images/fotoade.jpeg'),
                             fit: BoxFit.cover,
                             colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.35),
@@ -38,11 +37,12 @@ class Detailprofile3 extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 border: Border.all(
-                                    color: Colors.white, width: 4),
+                                  color: Colors.white,
+                                  width: 4,
+                                ),
                                 boxShadow: [
                                   BoxShadow(
-                                    color:
-                                        Colors.black.withOpacity(0.25),
+                                    color: Colors.black.withOpacity(0.25),
                                     blurRadius: 10,
                                     offset: const Offset(0, 5),
                                   ),
@@ -51,7 +51,8 @@ class Detailprofile3 extends StatelessWidget {
                               child: const CircleAvatar(
                                 radius: 60,
                                 backgroundImage: AssetImage(
-                                    'assets/images/fotosaya.jpeg'),
+                                  'assets/images/fotosaya.jpeg',
+                                ),
                               ),
                             ),
 
@@ -80,14 +81,18 @@ class Detailprofile3 extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
-                                Icon(Icons.location_on,
-                                    color: Colors.white, size: 18),
+                                Icon(
+                                  Icons.location_on,
+                                  color: Colors.white,
+                                  size: 18,
+                                ),
                                 SizedBox(width: 4),
                                 Text(
                                   "Lampung, Indonesia",
                                   style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.white),
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ],
                             ),
@@ -96,11 +101,12 @@ class Detailprofile3 extends StatelessWidget {
 
                             Container(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 8),
+                                horizontal: 16,
+                                vertical: 8,
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.blue,
-                                borderRadius:
-                                    BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(20),
                               ),
                               child: const Text(
                                 "Aplikasi Mobile Developer",
@@ -115,8 +121,7 @@ class Detailprofile3 extends StatelessWidget {
                             const SizedBox(height: 20),
 
                             Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceAround,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Column(
                                   children: const [
@@ -184,8 +189,7 @@ class Detailprofile3 extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Icon(Icons.arrow_back,
-                              size: 18),
+                          child: const Icon(Icons.arrow_back, size: 18),
                         ),
                       ),
                     ),
@@ -199,8 +203,7 @@ class Detailprofile3 extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
                           "Tentang Saya",

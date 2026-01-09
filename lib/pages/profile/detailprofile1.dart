@@ -17,6 +17,7 @@ class ProfilePage1 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 40),
               Stack(
                 clipBehavior: Clip.none,
                 children: [
