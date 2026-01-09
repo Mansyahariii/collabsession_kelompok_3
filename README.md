@@ -182,12 +182,25 @@ lib/
 ### Activities Table (Supabase)
 ```sql
 CREATE TABLE activities (
-  id SERIAL PRIMARY KEY,
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,
   description TEXT,
-  date TIMESTAMP NOT NULL,
+  date TIMESTAMPTZ NOT NULL,
   location TEXT NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW()
+  created_by UUID,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+### Profiles Table (Supabase)
+```sql
+CREATE TABLE profiles (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  firebase_uid TEXT NOT NULL,
+  name TEXT,
+  role TEXT DEFAULT 'user',
+  fcm_token TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );
 ```
 
