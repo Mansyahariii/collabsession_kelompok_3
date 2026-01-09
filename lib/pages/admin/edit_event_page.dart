@@ -114,6 +114,7 @@ class _EditEventPageState extends State<EditEventPage> {
                       child: const HeroIcon(HeroIcons.chevronLeft, size: 20),
                     ),
                   ),
+                  const SizedBox(width: 12),
                   const Text(
                     'Edit Event',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
