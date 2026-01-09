@@ -122,6 +122,23 @@ class _EditEventPageState extends State<EditEventPage> {
                 ],
               ),
             ),
+            Expanded(
+              child: Form(
+                key: _formKey,
+                child: ListView(
+                  padding: const EdgeInsets.all(16),
+                  children: [
+                    _input(controller: _titleController, label: 'Judul Event'),
+                    _input(controller: _locationController, label: 'Lokasi'),
+                    _input(
+                      controller: _descController,
+                      label: 'Deskripsi',
+                      maxLines: 4,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
