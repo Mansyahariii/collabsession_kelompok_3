@@ -30,7 +30,6 @@ class Detileprofile2 extends StatelessWidget {
                     ),
                   ),
 
-                  // ===== BACK BUTTON =====
                   Positioned(
                     top: 16,
                     left: 16,
@@ -40,14 +39,12 @@ class Detileprofile2 extends StatelessWidget {
                     ),
                   ),
 
-                  // ===== EDIT BUTTON =====
                   Positioned(
                     top: 16,
                     right: 16,
                     child: _circleButton(icon: Icons.edit, onTap: () {}),
                   ),
 
-                  // ===== PROFILE IMAGE =====
                   Positioned(
                     bottom: -56,
                     left: 0,
@@ -202,8 +199,6 @@ class Detileprofile2 extends StatelessWidget {
       ),
     );
   }
-
-  // ===== SMALL WIDGETS =====
 
   Widget _circleButton({required IconData icon, required VoidCallback onTap}) {
     return InkWell(

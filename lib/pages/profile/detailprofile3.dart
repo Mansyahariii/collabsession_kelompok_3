@@ -13,7 +13,6 @@ class Detailprofile3 extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                // ===== HEADER CARD =====
                 Stack(
                   children: [
                     Card(
@@ -35,8 +34,6 @@ class Detailprofile3 extends StatelessWidget {
                         child: Column(
                           children: [
                             const SizedBox(height: 24),
-
-                            // ===== AVATAR =====
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -175,7 +172,6 @@ class Detailprofile3 extends StatelessWidget {
                       ),
                     ),
 
-                    // ===== BACK BUTTON =====
                     Positioned(
                       top: 12,
                       left: 12,
@@ -198,7 +194,6 @@ class Detailprofile3 extends StatelessWidget {
 
                 const SizedBox(height: 16),
 
-                // ===== ABOUT CARD =====
                 Card(
                   elevation: 6,
                   child: Padding(
