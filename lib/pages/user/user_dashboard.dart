@@ -17,9 +17,9 @@ class _UserDashboardState extends State<UserDashboard> {
   final NotificationService _notificationService = NotificationService();
 
   final List<Widget> _pages = [
-    UserHomepage(),
-    EventPage(isAdmin: false),
-    Settingpage(),
+    const UserHomepage(),
+    const EventPage(isAdmin: false),
+    const Settingpage(),
   ];
 
   @override
