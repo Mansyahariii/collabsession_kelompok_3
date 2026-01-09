@@ -51,6 +51,17 @@ class TeamPage extends StatelessWidget {
                       );
                     },
                   ),
+                  _TeamCard(
+                    name: 'Rizky Adekatuasa',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Detailprofile3(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
