@@ -105,6 +105,42 @@ class _AddEventPageState extends State<AddEventPage> {
 
                   _inputField(controller: _locationController, label: 'Lokasi'),
                   const SizedBox(height: 12),
+
+                  InkWell(
+                    onTap: _pickDate,
+                    borderRadius: BorderRadius.circular(14),
+                    child: Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: Colors.grey.shade300),
+                      ),
+                      child: Row(
+                        children: [
+                          const HeroIcon(HeroIcons.calendar),
+                          const SizedBox(width: 8),
+                          Text(
+                            _selectedDate == null
+                                ? 'Pilih Tanggal'
+                                : _formatDate(_selectedDate!),
+                            style: TextStyle(
+                              color: _selectedDate == null
+                                  ? Colors.grey
+                                  : Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 12),
+
+                  _inputField(
+                    controller: _descriptionController,
+                    label: 'Deskripsi',
+                    maxLines: 4,
+                  ),
                 ],
               ),
             ),
