@@ -69,10 +69,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: "Event Campus",
-      home: AuthChecker(),
+      theme: ThemeData(
+        pageTransitionsTheme: PageTransitionsTheme(
+          builders: {TargetPlatform.android: const _NoTransitionBuilder()},
+        ),
+      ),
+      home: const AuthChecker(),
       debugShowCheckedModeBanner: false,
     );
+  }
+}
+
+class _NoTransitionBuilder extends PageTransitionsBuilder {
+  const _NoTransitionBuilder();
+
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    return child;
   }
 }
