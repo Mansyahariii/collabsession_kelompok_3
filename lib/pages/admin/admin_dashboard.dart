@@ -17,9 +17,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
   final NotificationService _notificationService = NotificationService();
 
   final List<Widget> _pages = [
-    AdminHomePage(),
-    EventPage(isAdmin: true),
-    Settingpage(),
+    const AdminHomePage(),
+    const EventPage(isAdmin: true),
+    const Settingpage(),
   ];
 
   PreferredSizeWidget? _buildAppBar() {
