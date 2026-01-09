@@ -93,6 +93,21 @@ class _AddEventPageState extends State<AddEventPage> {
                 ],
               ),
             ),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _inputField(
+                    controller: _titleController,
+                    label: 'Judul Event',
+                  ),
+                  const SizedBox(height: 12),
+
+                  _inputField(controller: _locationController, label: 'Lokasi'),
+                  const SizedBox(height: 12),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -112,5 +127,23 @@ class _AddEventPageState extends State<AddEventPage> {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
       ),
     );
+  }
+
+  String _formatDate(DateTime date) {
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Mei',
+      'Jun',
+      'Jul',
+      'Agu',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Des',
+    ];
+    return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
 }
