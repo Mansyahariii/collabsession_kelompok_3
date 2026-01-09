@@ -135,7 +135,7 @@ class _EditEventPageState extends State<EditEventPage> {
                       label: 'Deskripsi',
                       maxLines: 4,
                     ),
-
+                    SizedBox(height: 12),
                     InkWell(
                       onTap: _pickDate,
                       borderRadius: BorderRadius.circular(14),
@@ -143,7 +143,7 @@ class _EditEventPageState extends State<EditEventPage> {
                         padding: const EdgeInsets.all(14),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: Colors.grey.shade300),
+                          border: Border.all(color: Colors.black54),
                         ),
                         child: Row(
                           children: [
@@ -152,6 +152,29 @@ class _EditEventPageState extends State<EditEventPage> {
                             Text(_formatDate(_selectedDate)),
                           ],
                         ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 24),
+
+                    SizedBox(
+                      height: 48,
+                      child: ElevatedButton(
+                        onPressed: _loading ? null : _updateEvent,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                        ),
+                        child: _loading
+                            ? const CircularProgressIndicator(
+                                color: Colors.white,
+                              )
+                            : const Text(
+                                'Simpan Perubahan',
+                                style: TextStyle(color: Colors.white),
+                              ),
                       ),
                     ),
                   ],
