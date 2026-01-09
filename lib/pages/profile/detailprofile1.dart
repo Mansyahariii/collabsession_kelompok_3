@@ -29,7 +29,7 @@ class ProfilePage1 extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 40,
+                  top: 60,
                   left: 20,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),
