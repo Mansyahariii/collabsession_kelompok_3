@@ -166,7 +166,7 @@ class EventDetailPage extends StatelessWidget {
             onPressed: () {
               _confirmDelete(context);
             },
-            icon: const HeroIcon(HeroIcons.trash, size: 18),
+            icon: const HeroIcon(HeroIcons.trash, size: 18, color: Colors.white),
             label: const Text(
               'Hapus Event',
               style: TextStyle(color: Colors.white),
