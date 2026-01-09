@@ -36,12 +36,11 @@ class ActivityService {
   }
 
   Future<void> deleteActivity(String id) async {
-  try {
-    await _client.from('activities').delete().eq('id', id);
-  } catch (e) {
-    debugPrint('DELETE ERROR: $e');
-    rethrow;
+    try {
+      await _client.from('activities').delete().eq('id', id);
+    } catch (e) {
+      debugPrint('DELETE ERROR: $e');
+      rethrow;
+    }
   }
-}
-
 }
