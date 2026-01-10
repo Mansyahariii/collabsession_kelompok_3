@@ -9,6 +9,9 @@ class Splashfull extends StatefulWidget {
 }
 
 class _SplashfullState extends State<Splashfull> {
+  bool showLogo = false;
+  bool slideUp = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
