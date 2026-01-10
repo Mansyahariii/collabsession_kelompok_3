@@ -20,7 +20,7 @@ class _SplashfullState extends State<Splashfull> {
       setState(() => showLogo = true);
     });
 
-    Future.delayed(const Duration(milliseconds: 1400), () {
+    Future.delayed(const Duration(milliseconds: 2000), () {
       setState(() => slideUp = true);
     });
   }
