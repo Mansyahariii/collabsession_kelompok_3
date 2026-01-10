@@ -40,7 +40,7 @@ class _SplashfullState extends State<Splashfull> {
             right: 0,
             bottom: slideUp ? height : 0,
             child: Container(
-              decoration: const BoxDecoration(color: Colors.grey),
+              decoration: const BoxDecoration(color: Colors.white),
               child: Center(
                 child: AnimatedOpacity(
                   opacity: showLogo ? 1.0 : 0.0,
