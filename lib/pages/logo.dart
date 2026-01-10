@@ -14,7 +14,8 @@ class _SplashfullState extends State<Splashfull> {
     return Scaffold(
       body: Stack(
         children: [
-          const SplashScreen()
+          const SplashScreen(),
+          Container(color: Colors.grey),
         ]
         )
     );
