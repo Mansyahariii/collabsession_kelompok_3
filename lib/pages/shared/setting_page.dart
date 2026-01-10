@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -105,6 +106,7 @@ class Settingpage extends StatelessWidget {
 
                         if (confirm != true) return;
 
+                        await FirebaseAuth.instance.signOut();
                         await Supabase.instance.client.auth.signOut();
 
                         if (context.mounted) {
