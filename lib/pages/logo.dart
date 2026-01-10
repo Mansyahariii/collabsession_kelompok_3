@@ -46,8 +46,8 @@ class _SplashfullState extends State<Splashfull> {
                   opacity: showLogo ? 1.0 : 0.0,
                   duration: const Duration(milliseconds: 600),
                   child: SizedBox(
-                    width: 140,
-                    height: 140,
+                    width: 180,
+                    height: 180,
                     child: ClipOval(
                       child: Image.asset(
                         'assets/images/logo global.png',
