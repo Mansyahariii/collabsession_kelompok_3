@@ -50,7 +50,7 @@ class _SplashfullState extends State<Splashfull> {
                     height: 140,
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/images/logo_global.jpg',
+                        'assets/images/logo global.png',
                         fit: BoxFit.cover,
                       ),
                     ),
