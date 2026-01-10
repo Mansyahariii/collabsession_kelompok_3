@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget {
               const SizedBox(height: 50),
               Center(
                 child: Image.asset(
-                  'assets/images/logo global.png',
+                  'assets/images/student-studying.png',
                   width: 325,
                   height: 325,
                   fit: BoxFit.cover,
