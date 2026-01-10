@@ -35,7 +35,16 @@ class _SplashfullState extends State<Splashfull> {
           AnimatedOpacity(
             opacity: showLogo ? 1.0 : 0.0,
             duration: const Duration(milliseconds: 600),
-            child: Image.asset('assets/images/logo_global.jpg'),
+            child: SizedBox(
+              width: 140,
+              height: 140,
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/images/logo_global.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
           )
         ]
         )
