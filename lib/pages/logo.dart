@@ -32,6 +32,11 @@ class _SplashfullState extends State<Splashfull> {
         children: [
           const SplashScreen(),
           Container(color: Colors.grey),
+          AnimatedOpacity(
+            opacity: showLogo ? 1.0 : 0.0,
+            duration: const Duration(milliseconds: 600),
+            child: Image.asset('assets/images/logo_global.jpg'),
+          )
         ]
         )
     );
