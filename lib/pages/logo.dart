@@ -1,8 +1,8 @@
-import 'package:collabsession/pages/splashscreen1.dart';
 import 'package:flutter/material.dart';
 
 class Splashfull extends StatefulWidget {
-  const Splashfull({super.key});
+  final VoidCallback? onAnimationComplete;
+  const Splashfull({super.key, this.onAnimationComplete});
 
   @override
   State<Splashfull> createState() => _SplashfullState();
@@ -17,11 +17,17 @@ class _SplashfullState extends State<Splashfull> {
     super.initState();
 
     Future.delayed(const Duration(milliseconds: 400), () {
+      if (!mounted) return;
       setState(() => showLogo = true);
     });
 
     Future.delayed(const Duration(milliseconds: 2000), () {
+      if (!mounted) return;
       setState(() => slideUp = true);
+
+      Future.delayed(const Duration(milliseconds: 700), () {
+        widget.onAnimationComplete?.call();
+      });
     });
   }
 
@@ -31,7 +37,6 @@ class _SplashfullState extends State<Splashfull> {
     return Scaffold(
       body: Stack(
         children: [
-          const SplashScreen(),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 700),
             curve: Curves.easeInOut,
@@ -40,7 +45,7 @@ class _SplashfullState extends State<Splashfull> {
             right: 0,
             bottom: slideUp ? height : 0,
             child: Container(
-              decoration: const BoxDecoration(color: Colors.white),
+              color: Colors.transparent,
               child: Center(
                 child: AnimatedOpacity(
                   opacity: showLogo ? 1.0 : 0.0,

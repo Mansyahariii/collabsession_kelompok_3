@@ -1,9 +1,10 @@
 import 'package:collabsession/pages/admin/admin_dashboard.dart';
-import 'package:collabsession/pages/logo.dart';
+import 'package:collabsession/pages/logo.dart'; // Splashfull
 import 'package:collabsession/pages/user/user_dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:collabsession/pages/splashscreen1.dart';
 
 class AuthChecker extends StatefulWidget {
   const AuthChecker({super.key});
@@ -14,71 +15,45 @@ class AuthChecker extends StatefulWidget {
 
 class _AuthCheckerState extends State<AuthChecker> {
   @override
-  void initState() {
-    super.initState();
-    _checkAuthStatus();
-  }
+  Widget build(BuildContext context) {
+    return Splashfull(
+      onAnimationComplete: () async {
+        final user = FirebaseAuth.instance.currentUser;
 
-  Future<void> _checkAuthStatus() async {
-    await Future.delayed(const Duration(milliseconds: 500));
+        if (user == null) {
+          if (!mounted) return;
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const SplashScreen()),
+          );
+          return;
+        }
 
-    final user = FirebaseAuth.instance.currentUser;
-
-    if (!mounted) return;
-
-    if (user == null) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const Splashfull()),
-      );
-    } else {
-      try {
-        final profile = await Supabase.instance.client
-            .from('profiles')
-            .select('role')
-            .eq('firebase_uid', user.uid)
-            .maybeSingle();
-
-        if (!mounted) return;
+        Map<String, dynamic>? profile;
+        try {
+          profile = await Supabase.instance.client
+              .from('profiles')
+              .select('role')
+              .eq('firebase_uid', user.uid)
+              .maybeSingle();
+        } catch (_) {
+          profile = null;
+        }
 
         final role = profile?['role'] ?? 'user';
 
-        if (role == 'admin') {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => const AdminDashboard()),
-          );
-        } else {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => const UserDashboard()),
-          );
-        }
-      } catch (e) {
-        if (mounted) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (_) => const UserDashboard()),
-          );
-        }
-      }
-    }
-  }
+        if (!mounted) return;
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(color: Colors.black),
-            SizedBox(height: 16),
-            Text('Memuat...', style: TextStyle(color: Colors.grey)),
-          ],
-        ),
-      ),
+        final nextPage = role == 'admin'
+            ? const AdminDashboard()
+            : const UserDashboard();
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => nextPage),
+        );
+      },
     );
   }
 }
+
