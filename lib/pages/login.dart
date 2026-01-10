@@ -85,7 +85,6 @@ class _MyLoginState extends State<MyLogin> {
           (route) => false,
         );
       }
-
     } on FirebaseAuthException catch (e) {
       _showError(e.message ?? 'Login gagal');
     } catch (e) {
@@ -208,30 +207,23 @@ class _MyLoginState extends State<MyLogin> {
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(color: Colors.grey[400]!),
                         ),
-                        suffixIcon: Container(
-                          margin: const EdgeInsets.only(right: 8),
-                          padding: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(12),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscurePassword
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            size: 20,
+                            color: Colors.grey[600],
                           ),
-                          child: IconButton(
-                            icon: Icon(
-                              _isLoading
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                              size: 20,
-                              color: Colors.grey[600],
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _obscurePassword = !_obscurePassword;
-                              });
-                            },
-                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscurePassword = !_obscurePassword;
+                            });
+                          },
                         ),
                       ),
                     ),
+
                     const SizedBox(height: 12),
 
                     Row(
