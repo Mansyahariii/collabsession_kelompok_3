@@ -13,6 +13,16 @@ class _SplashfullState extends State<Splashfull> {
   bool slideUp = false;
 
   @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(milliseconds: 400), () {
+      setState(() => showLogo = true);
+    });
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
