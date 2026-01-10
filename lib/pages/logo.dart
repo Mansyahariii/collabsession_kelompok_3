@@ -1,3 +1,4 @@
+import 'package:collabsession/pages/splashscreen1.dart';
 import 'package:flutter/material.dart';
 
 class Splashfull extends StatefulWidget {
@@ -10,6 +11,12 @@ class Splashfull extends StatefulWidget {
 class _SplashfullState extends State<Splashfull> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Stack(
+        children: [
+          const SplashScreen()
+        ]
+        )
+    );
   }
 }
