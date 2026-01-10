@@ -75,16 +75,17 @@ class _MyLoginState extends State<MyLogin> {
       if (!mounted) return;
 
       if (role == 'admin') {
-        Navigator.pushReplacement(
-          context,
+        Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (_) => const AdminDashboard()),
+          (route) => false,
         );
       } else {
-        Navigator.pushReplacement(
-          context,
+        Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (_) => const UserDashboard()),
+          (route) => false,
         );
       }
+
     } on FirebaseAuthException catch (e) {
       _showError(e.message ?? 'Login gagal');
     } catch (e) {
