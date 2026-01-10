@@ -1,5 +1,5 @@
 import 'package:collabsession/pages/admin/admin_dashboard.dart';
-import 'package:collabsession/pages/splashscreen1.dart';
+import 'package:collabsession/pages/logo.dart';
 import 'package:collabsession/pages/user/user_dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class _AuthCheckerState extends State<AuthChecker> {
     if (user == null) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const SplashScreen()),
+        MaterialPageRoute(builder: (_) => const Splashfull()),
       );
     } else {
       try {
