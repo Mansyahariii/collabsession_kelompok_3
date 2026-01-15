@@ -37,7 +37,7 @@ Dengan Campus Event App, pengguna dapat dengan mudah melihat event kampus yang a
 ## Screenshots
 
 <div align="center">
-  <img src="assets/screenshots/splash1.jpeg" alt="Splash Screen" width="200"/>
+  <img src="assets/screenshots/splah1.jpeg" alt="Splash Screen" width="200"/>
   <img src="assets/screenshots/splash2.jpeg" alt="Splash Screen" width="200"/>
   <img src="assets/screenshots/splash3.jpeg" alt="Splash Screen" width="200"/>
   <img src="assets/screenshots/splash4.jpeg" alt="Splash Screen" width="200"/>
