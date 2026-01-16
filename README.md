@@ -1,7 +1,7 @@
 # Campus Event App - Flutter Application
 
 <div align="center">
-  <img src="https://lms.global.ac.id/lms/pluginfile.php/1/theme_klass/footerlogo/1745232397/logo-global-institute-stroke.png" alt="Institut Teknologi dan Bisnis Bina Sarana Global" width="200"/>
+  <img src="https://lms.global.ac.id/lms/pluginfile.php/1/theme_klass/footerlogo/1745232397/logo-global-institute-stroke.png" alt="Institut Teknologi dan Bisnis Bina Sarana Global" width="100"/>
 </div>
 
 <div align="center">
@@ -61,20 +61,20 @@ Dengan Campus Event App, pengguna dapat dengan mudah melihat event kampus yang a
 
 Lihat video demo aplikasi kami untuk melihat semua fitur dalam aksi!
 
-**[Watch Full Demo on YouTube](soon)**
+**[Watch Full Demo on YouTube](https://youtu.be/f1GYfjcU0r8?si=Y-odQ4LBZTGLrQkJ)**
 
-Alternative link: **[Google Drive Demo](soon)**
+Alternative link: **[Google Drive Demo](https://drive.google.com/file/d/1pHFMU6CIvmsNBIvVW4IGzasZ-AtExpdv/view?usp=sharing)**
 
 ## Download APK
 
 Download versi terbaru aplikasi Campus Event App:
 
 ### Latest Release v1.0.0
-- [**Download APK**](soon)
+- [**Download APK**](https://github.com/Mansyahariii/collabsession_kelompok_3/releases/download/v1.0.0/Event-Campus.apk)
 
 **Minimum Requirements:**
 - Android 6.0 (API level 23) or higher
-- ~25MB free storage space
+- ~50MB free storage space
 
 ## Built With
 
